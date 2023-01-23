@@ -1,0 +1,58 @@
+
+Technology		Java		.net
+	
+Programming lan.		Java		C#
+			package		namespace
+			.java		.cs
+package manager.	
+		maven		nugget
+		jdbc		ado.net
+		hibernate		entity framework
+		jsp/servlet		asp.net
+		spring mvc	asp.net mvc
+		spring boot	web api
+		junit		nunit, xunit
+		oops		oops
+		types		types
+		reflection		reflection
+		multithreading	multithreading
+		exception handling	exception handling
+		interfaces		interfaces
+		polymorphism	polymorphism
+		generics		generics
+		GC		GC
+		final		sealed
+		file io		file IO
+		Serialization	Serialization
+		comparator	IComparer
+		comparable	ICompable
+		POJO		POCO
+		JVM		CLR
+		bytecode		ilcode/ msilcode
+		class file		dll file
+		authentication	authentication
+		session		session
+		cookie		cookie
+		querystring	querysting
+		doGet		MapGet						doPost		MapPost
+		AOP		AOP
+		DI		DIP
+		Collection		Collection
+		annotation			attribute
+		Tomcat		Kestrel, IIS, nginx
+		platform ind.	.net  platform ind
+async, await			async, await
+var				var
+		managed code	managed/unmanaged code
+				delegate
+				event
+				unsafe
+				.................
+		windows apps	windows apps
+	
+
+
+			
+
+
+			

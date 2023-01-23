@@ -1,0 +1,18 @@
+div
+{
+    background-color: coral;
+    width: 200px;
+    height: fit-content;
+}
+
+.prachis_font
+{
+    font-size: 20px;
+    font-style: oblique;
+    color: blue;
+}
+
+.standard_background
+{
+    background-color:yellowgreen;
+}

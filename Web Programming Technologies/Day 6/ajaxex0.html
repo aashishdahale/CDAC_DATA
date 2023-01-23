@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function handler()
+        {//fire a GET query
+            let http = new XMLHttpRequest()
+            http.open("GET","https://reqres.in/api/users?page=2",true)
+            http.onreadystatechange =function(){
+                if(http.readyState == 4)
+                {
+                    //console.log(http.responseText)
+                    let res = JSON.parse(http.responseText)
+
+                    arr = res.data
+                    ui="<select>"
+                    arr.forEach(element => {
+                        ui=ui.concat(`<option>${element.first_name}</option>`)
+                    });
+                    ui=ui.concat("</select>")
+                    document.getElementById("p1").innerHTML = ui
+
+                }
+            }
+            http.send(null)
+
+        }
+    </script>
+</head>
+<body>
+    <button onclick="handler()">OK</button>
+    <div id="p1">THE NAMES COME HERE</div>
+</body>
+</html>

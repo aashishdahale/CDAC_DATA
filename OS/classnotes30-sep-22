@@ -1,0 +1,224 @@
+
+Good Morning :)
+
+Redirection in bash --
+	>  output redirection with overwrite
+	>> output redirection with append
+	< input redirection 
+	
+Redirect  --- change the source or destination 
+
+by default the destination of any command output is 
+monitor/console
+by redirection we change the destination to a FILE
+
+Ex
+ls >myfiles 
+sort data > myfiles
+
+Ex - write a shell script that accepts name surname and jersey number from user and adds it to the data file
+
+_______________
+ tr command 
+      tr "a" "A" < data 
+      
+      observe use of input redirection
+      observe tr command
+      
+      convert to uppercase using tr
+      tr [a-z] [A-Z] < data
+
+      convert to uppercase and save in upper file
+		tr [a-z] [A-Z] < data >>upper
+		tr [p-s] [P-S] < data
+
+
+      replace all aeiou with X
+      tr [a,e,i,o,u] "X" < data
+      
+  Ex - accept a name from user and convert it to title case
+  	pRachi ==  Prachi
+  	
+		
+tr can be used to delete from the input
+echo "hello" | tr -d "e"
+tr -d "a" < data
+
+tr can be used to squeeze from input		
+echo "Hiiii" | tr -s "i"
+
+_______________________________
+
+ grep = this command is used to search a string/pattern in a file or input
+ 
+ grep SEARCHES !!
+ 
+ patterns are represented by regular expression
+ 
+ Ex - search and show all lines that have echo in ifex.sh
+ 
+ grep "echo" ifex.sh
+
+Also count how many lines !!
+grep "echo" ifex.sh | wc -l
+
+
+Reverse search -- find all the lines that do not have echo 
+
+    grep -v "echo"  ifex.sh
+		
+		
+show all the lines that begin with v
+  grep "^v" data
+
+use the cap symbol ^		
+		
+show all the lines that end with 0
+grep "0$" data
+use the $ symbol
+
+find all the empty lines in a file and count them
+grep "^$" ifex.sh | wc -l
+11
+
+show all lines without blank lines 
+shellscripts#grep -v "^$" ifex.sh
+
+_____________________________
+command line arguments --- positional parameters in bash 
+
+
+$0 $1 , $2 .....
+
+try out  set `date` as 
+
+Friday 30 September 2022 12:04:51 PM IST
+ 1      2    3       4       5     6  7
+ 
+ check $1 $2 ...$7
+___________________________________
+Process = program in execution
+
+
+every program that has to execute MUST have a path of execution
+
+Thread = path of execution
+
+Every process MUST have at least one thread 
+	default thread in any process = MAIN thread
+
+Why we may need more threads ??
+	when we want to execute multiple tasks simutaneously  --- Multitasking ---Multithreading
+
+Ex ----	
+	process = zoom
+	threads =  video,audio , chat 
+	
+Ex----
+	process = game
+	threads =  player1 , player2 ,timer
+	
+Ex---  proces =Music 
+	threads = listen , change vol, change playlist
+	
+Ex  --- process = WORD
+	threads = editor , spellchecker , autosave
+	
+_______________________
+
+Process life cycle =  created , Ready, execution , IO wait state, terminated
+
+Thread life cycle = same states as process life cycle 
+threads will run in RR 
+
+______________
+
+Creation of Process 
+	1. PCB 
+	2. load process space ( C,D,S,H ) in RAM 
+
+Creation of new thread
+	1. TCB
+	2. create a new thread stack
+		other spaces are shared
+___________________________________
+
+ Linux uses a library called as pthread library
+ 
+ pthread = POSIX thread  API 
+
+MultiTASKING = layman --- at a time many applications(task) appear to run simulatneously 
+
+MultiProcessing = many processes compete for cpu in ready queue in RR  - they appear to run simultaneously
+
+Multithreading = many threads compete for cpu in ready queue in RR - they appear to run simultaneously
+
+
+Multiprogramming = many processes are in the RAM at a time
+
+
+Mulitple processing = many CPUs are present in a system that actually run processes parallely 
+
+___________
+
+pthread_join = it makes the calling thread ( in our ex main )   wait till the parameter thread has not terminated .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+

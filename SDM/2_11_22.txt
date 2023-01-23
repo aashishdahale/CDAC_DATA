@@ -1,0 +1,83 @@
+
+SDM:
+Software Development Methodologies
+
+Software:
+	System Software:
+	device driver
+	   windows,
+	   linux,anroid, mac OS
+	Application Software
+			 Desktop Software
+			 Distributed Software
+
+
+Machine:
+	Hardware:
+		Processor
+		Memory:
+			RAM,
+			HDD
+		I/O Devices:
+			keyboard,mouse, 
+			monitor, scanner, electronic pen
+			google glass
+			wacom
+			
+
+		
+	Firmware:
+		software that is burned into hardware chips-------embedded system
+		RTOS
+		
+
+
+Software Engg.
+	Importance of Software Engg.
+	Software Developent Life Cycle
+	Waterfall Model:Incremental Software Development Life Cycle
+	Spiral Model: iterative and incremental Software Development Life Cycle
+	Phases of Software Engg. SDLC
+
+	planning 
+	Phases of Software Engg. SDLC
+
+	IT Environment
+	1.Production Environment
+		Compiled Software (.class files)
+		Libraries
+		Java Runtime ( JVM, JRE)
+		Database server
+		apache server
+		 
+
+	2.Tesing Enviornment
+		Compiled Software (.class files)
+		Libraries
+		testing tools
+		Java Runtime ( JVM, JRE)
+		Database server
+		apache server
+		test server
+	
+	3.Developer Environment
+		Source Code (.java files)
+		Libraries
+		Eclipse tool
+		Java Runtime ( JVM, JRE)
+		compiler
+		Database server
+		apache server
+		debugger
+	
+
+
+	ODC  : offshore development centre
+
+	IDC:   India 
+
+	Ravi Tambade :    9881735801
+		     First name, Last name , prn number
+
+
+

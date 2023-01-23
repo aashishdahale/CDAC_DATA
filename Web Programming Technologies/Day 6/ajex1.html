@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    
+<script>
+    function handler(){
+    var http = new XMLHttpRequest();
+    console.log("handler called")
+    let myData ={
+    name: "prachi",
+    job: "trainer"
+    }
+    http.open('POST', 'https://reqres.in/api/users',true);
+    http.setRequestHeader('Content-Type', 'application/json');
+    http.onreadystatechange = function () {
+        if (http.readyState == 4) {
+            alert(http.responseText);
+        }
+    }
+    http.send(JSON.stringify(myData));
+    }
+    </script>
+</head>
+<body>
+    <button onclick="handler()">POST</button>
+</body>
+</html>

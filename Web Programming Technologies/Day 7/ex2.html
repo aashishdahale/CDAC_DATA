@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="E:\Courses\javascript\JQuery\jquery-3.6.0.js"></script>
+    <script>
+        $(function(){
+            $(".myclass2").click(function()
+            {
+                    let v = $(".myclass").val()
+                    $("#grocery").append(`<li>${v}</li>`)
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="text" class="myclass"  />
+    <input type="button" class="myclass2" value="add" />
+    <div>
+        <ol id="grocery"></ol>
+    </div>
+    
+</body>
+</html>

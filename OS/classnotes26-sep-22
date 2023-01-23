@@ -1,0 +1,222 @@
+
+
+Good Morning :))
+
+ linux topmost folder  = /
+  ~   =  user login folder
+  pwd = shows the current folder  
+  
+  cd /  = change current folder to topmost 
+  cd ..  = change current folder to parent folder 
+  mkdir ../ex1/ex2   = 
+  
+  remove a folder that is empty = rmdir  folder-path
+  remove a folder that is non-empty = 
+  	  rm -r folderpath
+  	  rm = command
+  	  -r  = option , recursively remove all 		subfolders
+  
+  How to create a file on terminal ?
+    touch filepath  = it creates a 0kb file
+    
+  How to see detail listing of folder content ?
+      ls -l
+      
+  How to open a command line editor in linux terminal?
+     gedit = GUI editor
+     vi  = vi editor - famous command line editor 
+    
+      vi  filepath
+        to enter - change mode to INSERT mode
+        	   by pressing   i  
+        to enter on a new line - press o
+           
+        to save - change mode to COMMAND mode
+        		by pressing esc key
+        	type  :w  = save only
+        	type :q  = exit saved file
+        	type :wq  = exit and save 
+        	type :q! = exit without saving
+        	type 3dd = delete 3 lines
+        	type p = paste the content of clipboard wherever the cursor
+        	type 2yy  = to copy 2 lines
+        yy = yanking = copying to clipboard
+        	
+        	   
+    
+    
+    to see the contents of a file ?  cat  filepath 
+    
+   ___________________________________
+   Segmentation /Paging / 
+  
+   Paged Segmentation
+   	process is divided into SEGMENTS
+   		EACH segment is divided into PAGES
+   	RAM is divided into Frames
+   		and pages are loaded in the FRAME
+   		
+   For every segment a different page table
+   
+   ________________________________________
+   
+   
+   Demand Paging / Virtual memory management technique
+   
+   --  partial process is loaded in RAM 
+   --- on non consecutive locations 
+   
+   Advantage 
+   	--- process greater than RAM size can be executed
+   	---  unnecessary loading is avoided
+   	--- degree of multiprogramming IMPROVES
+   	number of process present in the RAM at a time
+   		this number increases
+   
+  _____________________
+  
+  Virtual memory  = Swap space , part of the hard disk that holds the remaining pages of the process
+  
+  
+  Partial process in loaded in RAM  = forx 10% of total pages  
+   P1 that has 100 pages
+   Pages loaded in RAM = 10 
+   Remaining pages on virtual memory/swap space = 90
+   
+ Page table is created for 10 pages
+ 
+ --- Program starts
+ ---  f1()   Jump to Page 23 ,offset 8
+ ---   As only 10 pages are in RAM -- page 23 not present ---- interrupt occurs = PAGE FAULT INTERRUPT
+ --- IST of Page fault interrupt will RUN
+ 	*it will load the DEMANDED PAGE in a free frame
+ 	*add the page entry in page table
+ 	* move the process to ready state
+ 	 
+  As pages are loaded on demand hence called as DEMAND PAGING  !!!
+   
+   What if ??? PAGE FAULT occurs and no free frame present  ????  PAGE  REPLACEMENT will be done
+   
+   Page replacement -- replace existing page in a frame with demanded page!!
+   WHICH page should be replaced ??
+   	depends on Page replacement algorithm used in the Kernel  !!!
+   	
+   	Common Page Replacement Algorithms ---
+   	1. FIFO =  every page is tagged with arrival time , the page with earlies arrival is removed first.
+   	
+   	2. OPT = optimal page replacement algorithm
+   replace that page which will not be needed again 
+   		THERORETICAL !!
+   		
+     a. LRU = replace the page that is NOT used for a long time .LEAST RECENTLY USED
+     
+     
+     b. MRU = Most recently used= replace the page that is used just now 
+     
+ ------------------
+ Page access string =  1,3,2,1,4,5,3,4
+  find the number of page faults and page replacements if the RAM is 3 frames  
+  use FIFO
+  use LRU 
+  use MRU 
+  
+  HW  -- Page access string = 1,2,3,4,1,2,1,4,5
+  find the number of page faults and page replacements if the RAM is 4 frames  
+  use FIFO
+  use LRU 
+  use MRU 
+ 
+ _____________________________________
+ Page replacement Policy ----
+ 	1. Global Page Replacement Policy= If there is a page fault in P1 , the page of p6 may get replaced
+ 	disadvantage --- THRASHING problem that many processes may start faulting as their pages are replaced , systems hangs
+ 	
+ 	Solution to THRASHING -- 2 Local page replacement policy - If there is a page fault in P1 then another page of p1 is replaced. 
+ __________________________________
+ 
+ File Handling Commands  ----
+   clear , pwd, ls, ls -l , cd , mkdir, rmdir, rm -r , rm , touch , vi , cat  
+   
+ Bash commands ----  Bash is the Linux SHELL program
+ 
+ CLI  = shell program
+ 	  it takes command as input and gives result as output 
+  
+  Linux has many shells --- 
+  	default shell = bash shell
+  	 k shell, c shell , TCSH  ,.....
+  	
+  	every shell has a different command set !!!
+  	
+   x=10  creates a variable
+   echo $x   prints value 
+   export PS1="\u\h\w >>>"   change the Prompt string
+   
+   
+  
+  
+  
+  
+  
+  
+     
+     	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    
+    
+    
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+

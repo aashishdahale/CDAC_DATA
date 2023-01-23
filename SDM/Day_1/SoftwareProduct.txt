@@ -1,0 +1,85 @@
+
+Software is any set of instructions that directs a computer processor (hardware) to perform specific operations.
+
+
+What is Software Product?
+
+A software product is any software that has users.
+
+You have certainly used some software products; after all, the internet is made of them. Google, Facebook and Twitter are good examples of what you’ve used, or maybe use on a daily basis. When you shop on Amazon or on eBay, you are using a software product as well. The internet banking system from your bank can also be considered one, such as Netflix, that you can access from your computer, smartphone, tablet or even directly from your TV.
+
+
+Software products have become an inextricable part of the fabric of modern life. Without them, business would grind to a halt, and leisure time would look radically different. The majority of people interact with software products every day, multiple times a day, but would probably have a tough time defining what a software product actually is.
+
+So, any software can be considered a software product? No, because there is software that doesn’t have any users. They are the software that interface with other ones. Some examples are:
+
+1.Hardware drivers that translate the information between the device and the applications or operational system.
+2.Firmware, which is the set of operational instructions programmed directly into the hardware of an electronic equipment.
+3.Compatibility layer, that allows software to run in an environment in which they are not originally programmed to run, such as a host system.
+
+
+So, any software can be considered a software product? No, because there is software that doesn’t have any users. They are the software that interface with other ones. Some examples are:
+
+Hardware drivers that translate the information between the device and the applications or operational system.
+Firmware, which is the set of operational instructions programmed directly into the hardware of an electronic equipment.
+Compatibility layer, that allows software to run in an environment in which they are not originally programmed to run, such as a host system.
+
+
+For end customers: 
+
+in this type of product, a problem is solved for end customers who are willing to pay in order to use the software. Some examples are Netflix, LinkedIn and online games. There are also software products for end customers who pay indirectly, i.e., customers pay for another service and the software product is only a small part of this service. Some examples are internet banking, school or college intranets, access to lab exams and embedded software in general. E-commerce websites also belong to this category, since its use is free and the fee is paid for the products you buy and are delivered to you.
+
+For companies: 
+
+this type of product solves companies’ problems, who are more willing to pay for a software than the end customer. Some examples are Locaweb, Google AdWords, SAP, AutoCAD and Microsoft Office.
+
+Mixed: 
+
+in this case, the product solves the problem both for end customers and companies. Usually, this type of products doesn’t have any cost for the end customer; companies pay the bill. The most common model for revenue generation in this type of product is advertising, paid for the company when the final customer sees it, clicks on it or buys something because of it. A great example is Google Search, which is a software product for end customers, and Google AdWords, a software product for companies.
+
+
+Note that while describing each type I had the concern of getting clear who’s paying the bill. This is very important, because every software product has costs. Even though the costs might be hidden, they exist; ergo, every software product needs to generate income in some way.
+
+Even though I prefer to categorize software products while understanding to whom it solves the problem, there are other ways of classifying them. For example, Netflix is a software product for the final user, but also an online software product for entertainment.
+
+____________________________________________________________________________________________________________________________________________________
+
+
+Characteristics of Computer Software Products
+
+Of course, software products need to function well to fulfill their main purpose of delivering value to the end user. In a well-made product, both the backend (the logic and data persistence) and the front end (the User Interface/User Experience) should share some key characteristics:
+
+1.Efficiency: 
+The software should optimize processes for both the machines and the humans working with those machines.
+
+2.Maintainability: 
+Bugs and issues should be spotted and resolved rapidly so that users don’t experience annoying work interruptions.
+
+3.Dependability: 
+Well-built software should be reliable, secure, and compliant with privacy and security conventions.
+
+4.Functionality: 
+Software should perform all the functions it is supposed to perform to maximize the user experience and deliver the promised value.
+
+5.Adaptability: 
+The software system should have the ability to be adapted, within reason, to changing user requirements.
+
+If a software product doesn’t solve a real problem that people would be willing to pay for, then it’s not going to succeed—no matter how well it’s built. Moreover, even if a product does solve a need, if the experience of interacting with that product isn’t intuitive, then people probably aren’t going to want to use it.
+
+
+____________________________________________________________________________________________________________________________________________
+
+Benefits of Software Products
+
+Software products should solve specific problems for users. 
+
+To that end, software products should:
+
+1.Offer an exclusive solution, or solve a problem in a much better way than other products do
+2.Offer a competitive edge by clearly differentiating from the crowd
+3.Minimize time to value by putting the smallest solution to the largest problem in the hands of users.
+4.Solve for real-world needs while anticipating the needs of the future
+5.Excel at change by knowing when to pivot and how to do so rapidly and with ease
+
+
+

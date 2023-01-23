@@ -1,0 +1,38 @@
+    |                              ^
+  2 |
+
+db1> edit
+Opening an editor...
+
+db1> const p3 = { job: 'manager' }; const p4 = { _id: 0, ename: 1, job: 1, sal: 1, comm: 1 };
+
+db1> p3
+{ job: 'manager' }
+db1> p4
+{ _id: 0, ename: 1, job: 1, sal: 1, comm: 1 }
+db1>
+
+db1>
+
+db1> p3;
+{ job: 'manager' }
+db1> p4
+{ _id: 0, ename: 1, job: 1, sal: 1, comm: 1 }
+db1> db.emp.find(p3, p4);
+[
+  { ename: 'smith', job: 'manager', sal: 3400, comm: null },
+  { ename: 'james', job: 'manager', sal: 4700, comm: null },
+  { ename: 'bob', job: 'manager', sal: 4900, comm: null }
+]
+db1>
+
+db1>
+
+db1>
+
+db1> edit
+Opening an editor...
+
+db1> const p3 = { job: 'manager' }; const p4 = { _id: 0, ename: 1, job: 1, sal: 1, comm: 1 };
+
+db1>

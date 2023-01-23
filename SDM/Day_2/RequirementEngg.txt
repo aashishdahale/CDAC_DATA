@@ -1,0 +1,17 @@
+https://binaryterms.com/requirement-engineering.html
+
+https://medium.com/omarelgabrys-blog/requirements-engineering-introduction-part-1-6d49001526d3
+
+List of elicitation techniques
+
+Interviews
+Existing System
+Project Scope
+Brain Storming
+Focus Groups
+Exploratory Prototypes
+User Task Analysis
+Observation
+Surveys
+Questionnaire
+Story Board

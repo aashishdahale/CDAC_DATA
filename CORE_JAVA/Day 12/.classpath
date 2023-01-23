@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Accountsproject/src"/>
+	<classpathentry kind="src" path="BackedCollectin/src"/>
+	<classpathentry kind="src" path="CityTreeProject - Copy/src"/>
+	<classpathentry kind="src" path="CityTreeProject/src"/>
+	<classpathentry kind="output" path="Accountsproject/bin"/>
+</classpath>

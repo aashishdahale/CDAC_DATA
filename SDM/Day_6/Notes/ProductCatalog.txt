@@ -1,0 +1,32 @@
+ priority	Estimate	 Sprint    User Type	Story
+
+
+Story Type
+EndUser		I can see List of products available 
+		I can select categories of Product to be explored
+		I can select picture of product to get details.
+		I can ratings and reviews about the product selected.
+		I can select the product to be added to my Cart
+		I can check List of Items added to Cart maintined for myself
+		I can remove selected Item from shopping cart
+		I can update quantity of Item available in shopping cart
+			
+Authrozied User As a user I want to be able to be able to reset mypassword
+		As a user I want to be able to change personal information
+		As a user I want to be validated to get controlled access
+
+
+		As a staff I need to be able to see customers previous orders placed
+		As a cusomer I need to 
+
+staff		Add new categories
+		Add new product
+		update Reviews and ratings
+		block access to user
+		Create an account
+		View Customer Profile
+
+
+
+
+Priority	: Must, Could , should, 

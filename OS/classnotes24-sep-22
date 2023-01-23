@@ -1,0 +1,234 @@
+	
+	
+	1. RAM addressing
+		physical, logical,offset, base
+	2. variable partition
+		--- num of partitions change
+		--- size of partitions change
+		
+	3.  techniques of mem alloc
+		1. First fit  holesize>= processSize
+		2. Best fit 
+			Min(holeSize- processSize>=0)
+		3. Worst fit 
+			Max(holeSize- processSize>=0)
+
+
+	VARIABLE  PARTITION SCHEME
+	
+	Problem  --- External Fragmentation
+	 when LTS rejects a process loading request
+	 because the available free space is not 
+	 consecutive !!!!
+	 
+	 
+Actual addres = physical address calculated in variable partition scheme
+
+actual address = base  +  offset 
+	 
+	External Fragmentation can be solved
+	1. Compaction ( theoretical solution )
+	2. Paging 
+	
+_________________________________________
+	 	
+Fixed partition scheme ---
+	number of partitions is fixed
+	size of partitions is fixed  
+	
+	-- fixed during bootstrapping
+	
+RAM is LOGICALLY divided into fixed sized partitions called as FRAMES  
+	Frame size for ex - is pre decided 
+		For ex  - 4Kb or 2kb  etc
+		
+When a process demands space , LTS will allocate the FRAMES to the process.
+
+When process size is NOT exact multiples of Frame size  then the space INSIDE the last frame may remain unused and hence wasted = this problem is INTERNAL FRAGMENTATION  
+
+will this have EXTERNAL FRAGMENTATION problem  ???
+YES -- when free frames available are not consecutive then the process cannot be loaded in the RAM
+
+________________
+	Actual address = baseaddressofBaseFrame
+				+
+			   offset
+_________________________________________
+
+
+Variable Partition Scheme /Fixed Partition Scheme 
+--- the whole process is loaded in the RAM at consecutive locations !!!
+
+
+INSISTING   on consecutive memory locations
+	leads to EXTERNAL Fragmetation Problem
+	
+
+Segmentation / Paging  ==== Let whole process be loaded in the RAM - but at non consecutive locations
+
+Segmentation =  It is like Variable partition scheme!!
+
+Process is DIVIDED into partitions called as Segments
+	basis of division is -TYPE of CONTENT
+	Ex -- code segment, data segment ......
+	Length of segments are UNEQUAL 
+	number of segments may be different 
+	
+Ex  P1  
+	  ( every segment has a segment offset )
+	  S0  ( 0-2)
+	  S1  (0-3 )
+	  S2  (0 - 4)
+	  
+     Segments are loaded in suitable FREE HOLES
+     non consecutively
+     
+     To keep track of the segments 
+     	--- one segment table per PROCESS
+     	---  columns of segment table
+     --seg number, seg base address, seg length
+     
+     seg number    seg base      seg length
+         0	     1             3
+         1           4             4
+         2           21            5
+     
+     
+    Is External Fragmentation totally abolished ???
+    No - as a segment needs consecutive space
+    
+    Advantage of Segmentation - external fragmentation is REDUCED
+    no  internal fragmentation
+        
+    
+    Disadvantage - external fragmentation is still present.
+    overhead of segment table
+    
+    
+   _______________
+ Actual address calculation using Segmentation ---
+ 
+ PC  =  SegNo , Segoffset
+ 
+ PC  = 0,2
+   
+   find the seg number
+   using segment table - find the seg base
+   
+   Actual = segBase  +  segoffSet
+   
+  
+  _____________________________
+  
+  Paging - similar to Fixed Partition Scheme 
+  
+  RAM - is logically divided into equal size FRAMES
+ Process- is logically divided into equal size PAGES
+   
+   Basis of division  =  SIZE 
+    A page is loaded in a free frames non consecutively .
+    
+    To keep track of which frame has which page 
+    PAGE TABLE -- 2 columns -  Page num, Frame num
+       Page num    frame num
+         0		1
+         1		4
+         2		5
+         3		8
+         4		10 
+   
+   One page table per process 
+   
+   Advantage : External fragmentation is totally removed
+   
+   
+   Disadvantage :Internal Fragmentation
+   	Overhead of page table 
+   	Very Long Page Tables
+   ___________________________________________
+   
+   
+   
+   
+   
+   
+   
+    
+    
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	 	
+	 	
+	 	
+	 	
+	 	
+	 	
+	 	
+	 	
+	 	
+	 	
+	 	
+	 	
+	 	
+	 	
+	

@@ -1,0 +1,249 @@
+
+
+Good Morning :)
+
+define Os , IVT ,  POST  , CPU instructions, DMA
+
+
+	    HDD   SSD      RAM              L2   L1
+material   Al+Fe  Si      Semiconductors
+size    1TB    120GB-30Tb    2GB- 128GB  4-8MB 512kb 
+accesstime  10ms    100microsec  10ns      10ns  1ns
+brand      seagate  toshiba    kingston            
+
+____________________________
+  Types of Operating Systems 
+  GPOS=  General purpose OS
+  Embedded OS =  it is machine specific OS 
+  RTOS = Real Time OS-- deadline intensive OS
+  MultiUser OS = at a time many users can log in the system 
+  Network OS
+  Server OS
+  
+  R & D  ----  find the brands of each type of OS
+  also take a look at how many OSs
+  
+  ____________________________________
+  
+  Two types of Kernels --- 
+  monolithic kernel   = Ubuntu , Communication overhead is less
+
+  microkernel  = windows - fault resistant
+  communication overhead is more
+
+________________________________________
+ Process Management-----
+ 
+    Process = Executing program
+    		program in execution
+    		
+    Every process gets a unique PID 
+    Every process gets a PROCESS SPACE in the RAM
+    
+    C process space is of 4 parts 
+    Code , Data , Stack , Heap 
+    
+    Process space = Address Space!!!!
+    
+    Process space  = IS  EXCLUSIVE 
+   _______________________________________
+   
+   Every process has a Life Cycle  ----
+   	Different States of Process Life Cycle
+   	
+   State/Phase 
+   1 . Created State  ---
+   	 Kernel creates a PCB variable for each process - to store the METADATA of the process
+   	 PCB = process control block
+   	 What will PCB have ?
+   	 1. Process ID 
+   	 2. current process state
+   	 3. location of process space
+   	 4. statistical Info - time/priority etc
+   	 5. context info 
+   	 
+   LOAD the process in the process space from HDD
+   
+   ______________________________________
+   
+  Ready State -------
+  
+   number of CPUs are few 
+   processes are too many  
+   
+   so the newly created process WAITS in a 
+   READY  QUEUE   for the CPU to be free
+   ___________________________________
+   
+   Run /Execute State
+   
+   when the cpu is avaialble the waiting process in the ready queue get a chance to run on the CPU 
+   
+   HOW Long will process use CPU  ?
+   1. for CPU instructions CPU will be used,
+   	 for IO instructions process leaves this 
+   	 state
+   	 
+   2. Interrupt occurs -- process moves to read state as CPU has to execute the ISR
+   
+   _______________________________________
+   
+   IO Wait State  ---  Process is waiting for DMA to complete IO 
+   when DMA completes the IO , interrupt occurs
+   process is moved to ready state
+   
+   __________________
+   
+   Terminate state
+   
+   entire code executes and reaches the last line
+   process terminates
+   
+   PCB is released
+   Process space is released 
+   _____________________________________
+   
+   draw a life cycle diagram
+   	 states in rectangle
+   	 and show state transitions by a line
+   	 	and write reason for transition
+   ___________________________________________
+   
+   
+   Process has to be loaded in the RAM 
+  	Which process can be loaded depending on available RAM  this is decided by a part of the Kernel = LTS = Long term schedular = high level schedular
+   
+   Process has to use CPU 
+   	Which process can use the CPU NEXT this is decided by part of the Kernel = CPU Scheduler OR
+  Short term schedular  =  Low level schedular
+  
+  ________________________________________
+  
+  Ready Queue has many processes 
+  |
+    CPU schedular 
+  |
+  Running State
+   
+   How will cpu schedular work ? 
+   
+   Terminology ----
+   1. CPU burst time (Tcpu)= total time needed to complete all cpu instructions of a process
+   
+   2. IO  burst time =total time needed to complete all IO instructions of a process
+   
+   3. Average Waiting Time =
+   	Wt  = total wait time of a process in the 			ready queue
+   
+   	avg Wt =  sum of Wt / num of processes
+   
+   	avg Wt should be LESS  is GOOD
+   			 HIGH   is BAD
+   			 
+   	unit  time
+   	
+   4. Average Turnaround time  =
+   	Ta  =  total time needed for a process to complete its life cycle [ IO is not considered ]	
+   	
+   	Ta  =  End -  Start
+   	Ta  =  Tcpu  + Wt
+   	
+   	Avg Ta = Total Ta / num of processes
+   	
+   	unit = time
+   	LESS  is GOOD
+   	HIGH is BAD
+   	
+   5. Throughput of a system -
+   	
+   -- number of process completed in unit time	
+   	unit  = processes/sec
+   	
+   	HIGH is GOOD
+   	LESS is BAD
+   	
+   6.  Response Time of a process - 
+   	time needed for a process to RESPOND to user request
+   	unit = time
+   	LESS is GOOD
+   	HIGH is BAD
+   	
+  CPU schedular will try to IMPROVE the above factors by selecting proper process to run NEXT !!!
+  
+  CPU schedular is implemented using a scheduling algorithm  !!!!
+  
+  Operating Systems --- Silberschatz , Galvin 	
+  
+  
+We will see common basic sceduling algorithms --
+	FCFS, SJF , PRIORITY,Round Robin 
+	____________________
+  
+  
+  
+  
+  
+  
+  
+  
+  
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    		
+    		
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

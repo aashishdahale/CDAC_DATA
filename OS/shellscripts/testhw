@@ -1,0 +1,5 @@
+ppp 100
+qqq 1000
+rrr 2222
+
+execl("/bin/sort", "/bin/sort", "-r" ,"states",NULL )

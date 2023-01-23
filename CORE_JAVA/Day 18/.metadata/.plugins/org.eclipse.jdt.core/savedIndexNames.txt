@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+C:\Users\IET\Desktop\javaMam\Day 18\.metadata\.plugins\org.eclipse.jdt.core
+2854191625.index
+1865797976.index
+1887506431.index

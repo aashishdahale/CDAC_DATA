@@ -1,0 +1,33 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        $(document).ready(()=>{
+            $("button").click(()=>{
+                let uname = $("#uname").val()
+                let job = $("#job").val()
+                let dataobj ={}
+                dataobj.name=uname
+                dataobj.job=job
+
+            let settings = { url:"https://reqres.in/api/users",
+                             method:"POST",
+                             async:true,
+                             //data:{name:'virat',job:'cricketer'},
+                             data:dataobj,
+                             success : (response)=>{
+                                    console.log("data created new id is :",response)
+                                }
+                            }                
+            $.ajax(settings)
+            })//end of click
+        })//end of ready
+    </script>
+</head>
+<body>
+    <button  >POST DATA TO SERVER </button>
+    <input type="text" id="uname" />
+    <input type="text"  id="job" />
+    <div id="d1"></div>
+</body>
+</html>

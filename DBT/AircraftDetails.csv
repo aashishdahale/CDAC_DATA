@@ -1,0 +1,31 @@
+Name,Model,Age,Type,totalSeats
+VT-102,737,3,Short Haul,180
+VT-318,A320,5,Medium Haul,200
+VT-103,787-800,6,Long Haul,350
+VT-302,A320,10,Medium Haul,250
+SG-161,ATR,15,Short Haul,48
+SG-162,777-301 ER,12,Long Haul,400
+VT-AJP,A220,3,Medium Haul,180
+VT-AJQ,C919,5,Long Haul,200
+VT-AJR,DD818,6,Medium Haul,350
+VT-AJS,LR227,4,Long Haul,250
+VT-AJT,HX789,3,Short Haul,48
+VT-AJU,AW183,7,Medium Haul,400
+VT-AJV,737,5,Long Haul,350
+VT-AJW,A320,7,Medium Haul,225
+VT-AJX,787-800,1,Short Haul,100
+VT-AJY,A320,3,Long Haul,175
+VT-AJZ,ATR,4,Medium Haul,180
+VT-AKA,777-301 ER,5,Long Haul,200
+VT-AKB,A220,3,Medium Haul,190
+VT-AKC,C919,4,Long Haul,288
+VT-AKD,DD818,2,Short Haul,240
+VT-AKE,LR227,4,Medium Haul,120
+VT-AKF,HX789,6,Long Haul,85
+VT-AKG,AW183,12,Medium Haul,100
+VT-AKH,A320,14,Short Haul,120
+VT-AKI,787-800,17,Long Haul,145
+VT-AKJ,A320,1,Medium Haul,230
+VT-AKK,ATR,4,Long Haul,210
+VT-AKL,A430,5,Medium Haul,200
+VT-AKM,A808,13,Long Haul,135

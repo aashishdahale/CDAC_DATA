@@ -1,0 +1,264 @@
+
+
+
+Good Morning : )
+
+	fork = creates a child process
+	duplicates process space
+	
+	What is the return type of fork ?
+		on success
+		parent gets -pid of child
+		child gets -0
+	This is used to assign different jobs to parent and child
+	
+HW --- Write a fork example such that parent process prints the tables from 2 to 20
+	2
+	4
+	6
+	8
+	...
+	20
+	3
+	6
+	9
+	12
+	15
+	...
+	30
+	4
+	8
+	12
+	16
+	20
+	..
+	40
+	...
+	20
+	40
+	60
+	..200
+	
+	Child process asks the user to enter a number
+	and it shows the square of that number
+	this happens for 5 times
+____________________
+    How many processes will be created ?
+      void main()
+      {    int x,y;
+      	   x= fork()
+      	   if(x > 0)
+      	   {
+      	   	fork();
+      	   	//fork();  //add it later
+      	   	printf("hi there %d\n",getpid());
+      	   }
+      	   else
+      	   {
+      	   	prinf("bye %d",getpid());
+      	   }	  
+      }
+  ________________________________
+	
+  What is an Orphan process ?
+      If the parent of the process finishes before the child process, in this case the process is called as orphan process and it will be adopted by some system process.
+      
+ What is a Zombie process ?
+      If the parent of the process terminates first then ---
+      METADATA of the process in Kernal process tables is NOT removed 
+      IF the process table fills with metadata of terminated process then newer process may not get space
+      Such a process that has terminated but not cleared from process table is called as ZOMBIE 
+      
+     To avoid a zombie  the parent or the adopted parent MUST use wait system call
+     wait system call makes the parent wait till the child has not terminated, so that parent can cleanup metadata , avoiding zombies
+ ___________________________
+ 
+ Process space - is exclusive to each process
+ 
+ How is inter process communication achieved ?
+   1. Using signals 
+   2. Using IPC techniques
+   
+   IPC techniques 
+   1. Pipes
+   2. Message Queue
+   3. Shared Memory
+   4. Semaphores
+ _______________________________
+ 
+  1. Pipes =  Unidirectional flow of bytes
+  A shared space is allocated on the hard disk     
+  	= PIPE
+  One process WRITE to PIPE ,Another READs from PIPE
+    
+    system call= pipe()
+      
+      
+    2.  Message Queue =  
+    	  A queue is created in the RAM 
+    	 Both process can insert at the end of Queue
+    	 and Read from front of queue -- FIFO
+    	 Message is a structured variable
+    	 	 struct message
+    	 	 {
+    	 	 	int msgId;
+    	 	 	char *msg ;
+    	 	 }
+      
+      system call = 
+       msgget()  = makes kernel create a queue and 				return its msgqueueID
+       When a process wants to insert in queue
+       	msgsnd( msgqueueID , message)
+      
+     When a process wants to read a message from queue
+  	  Message * msg =  msgrcv(msgqueueID )
+  
+  ______________________
+  
+  3. Shared Memory technique
+  	A buffer or a shared memory in RAM is allocated by the kernel 
+  	
+  	Both processes can read and write to the shared memory 
+  	It is prone to Shared memory problems like RACE CONDITION - as two process are writing from same space at a time
+  	
+  	system calls -
+  		shmget() = make the kernel allocate a required size shared memory in RAM, this returns the shmID
+  		
+  void * shmptr= shmat(shmID)
+  		
+  	shmat =  attach the shared memory pointer to our variable 
+  	 shmdt = detach the shared memory 
+ 
+ ___________________________________________
+ 
+ When 2 processes share same data 
+ 	due to interrupts the data may not be totally modified at a time , this can lead to INCONSISTENCY in the value of the data . this problem is called as RACE CONDITION 
+ 	
+Solution to RACE CONDITION = MUTUAL EXCLUSION
+If 2 processes are sharing the same data
+then their CRITICAL SECTIONS cannot run at a time.
+
+CRITICAL SECTION = the code that uses/modifies shared data
+
+The flag used to achieve mutual exclusion is a special data type called as SEMAPHORE 
+
+SEMAPHORE = is an int data 
+		but the access to this data is 
+		done only through 2 atomic functions
+		called as  wait/signal
+		OR
+		called as  P/V
+___________________________
+
+mv ./sum.h ./sum.sh
+
+
+    Shell scripting  ----
+ 
+	constructs if , loops 
+	
+     1. accept 2 numbers from user and add them
+	  expr 
+	    - integer arithmetic
+	    - use spaces
+	    - use  + , - , \*  , / , %
+	    - use backquote to use in statement
+	    
+      2. accept a number and tell whether it is odd or even 
+      
+      3.  accept a number and tell whether it is greater that equal to or less than 100
+	    
+	    
+	    the test conditions in if can be
+	    for numbers 
+	    	-gt , -lt , -le ,-ge ,-eq ,-ne
+	    for strings
+	    	  == , !=    
+	    	  
+	   unary operators
+	   	-f  to check if regular file exists
+	   	-e  to check if file or folder exists
+	   	-d  to check if dir exists
+	   	-z
+	    	  
+	    	  
+	    	  
+	    
+	    
+	    
+	    
+	    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 		
+  		
+  		
+  		
+  		
+  		
+  		
+  		
+  	   
+  		
+  		
+  		
+  		
+  		
+  		
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+	
+	
+	
+	
+	
+	
+	
+	
+	

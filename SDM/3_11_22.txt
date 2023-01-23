@@ -1,0 +1,181 @@
+
+Browser:
+	Rich Client Application
+	Generating http request , sending http request to server
+	Waiting for http response 
+	and rendering output on screen with the help HTML script
+
+server: 
+	Dedicated application continounously running and
+	Listening for incomming request from client 
+	Responsible for processing incomming request
+	Generting  response
+	Sending response to client
+
+Web Application:
+	It is an application hosted using Web Server
+	it is an application responsible for managing 
+		authentication, 
+			Credential management
+			Verfication of customer, staff, admin, etc.
+		authorization
+			Role based Access 
+			Permission
+			Permission level
+			Group (Role)
+			
+
+		state Management,
+			Cookies
+			Session,
+			Cache
+		Routing request for processing
+				
+		Request Processing,
+		Response Generation
+
+	will contain
+		Graphical User Interface resources 
+		  1.static web pages (html pages)
+		  2.dynamic web pages (html pages along with javascript or java )
+
+	 	 3. Web services:
+			Programmable logic accessed via  HTTP protocol
+			User Identity verfication logic
+			Product catalog logic
+			Product details logic
+			CRUD Operations
+			Adding product logic
+			Removing product
+
+Load Balacing:
+	Load balancing is a technique used while implementing Server Applications to be scaled automatically with the help of mulitple clonned Web servers
+to handle maximum web requests comming from client  without crashing Web Application.
+
+
+Web Fram:
+	a logical collection of servers ( web servers, application servers, email servers,
+				  database servers,etc.)
+
+Database Cluster:
+	Collection of database server machines to maintain one data store
+
+Database server:
+	Special Purpose application for data management
+	querying data
+	organizing data
+	Backup and Restore 
+	Monitoring database operations (Health Monitoring) ( Instrumentation)
+	a dedicated application responsible for managing databases and operations
+
+Application Server:
+	index server
+	serach server
+	Core business logic server
+
+
+Failover server:
+	replicated server for existing server  to work under failure
+	reserved server
+
+Firewall:
+	it is a dedicated server application
+	always receive incomming request comming from client.
+	it is a server with incomming rules and outgoing rules configuration.
+	
+
+Cloud:
+	network of network
+	internet
+	Web 
+Web Front End Server:
+	it is the first server who receices http request  after firewall.
+
+Connectivity: networking
+	physical connectivity
+			cabling
+	logical connectivity
+			protocol
+			 TCP
+			
+			 HTTP:public site access
+
+			HTTPS: secure site access	
+
+Title:System Requirment Specification document for Online Shopping System (OSP)
+
+Team:
+	Director, customer,
+	Indirect customer, Business analyst, Domain Expert,QA
+
+Objective:ECommerce Application for EndUsers, Customers, Selleres, BOD, Vendors
+	The online shopping system is intended to provide complete solution for vendors, Consumers 
+as well as internal  users (staff)  through a single Gateway using internet. It will enable vendors to set up online shops , customers to browse through virtual shop and purchase products online without visiting the shop physically.
+
+Description:
+	 ECommerce Solution will be online Shopping portal ( OSP). using Ecommerce Solution  consumers 
+will be able to exprience Shopping, Selling products from anywhere.
+
+Scope:
+         This Online shopping system allows shoppers to maintain their proucts for adding or removing from catalog based on their availableibiliyt. Customes will be alble to review orders history and may able to candel order with in 24 hours order placed. The system will be able to show liver businsess Operation statistic trends through customized dashboard for stake holders.
+
+Definitions:
+	BOD: borad of directors
+	QA:Quality Assurance Team
+	OSP:Online Shopping Portal
+	
+Functional Requirements
+	
+product catalog:
+Any visitor to OSP will be able to view products available for sale.  Visistors will be able to filter products based on category.  Visitor can view product details , he or she interested. System will encourage visitor to view simple type of products from different sellers. Visitor will be guided to find suitable product for purchasing based on  trending data, reviews, comments,ratings.
+Sellers can add or remove products from product catalog based on warehouse availability. Sellers would be able to get feedback about products being sold to customers. Sellers will be able to view sale of thier product through Seller Dashboard.
+Sellers product promotion will be controlled by online shopping system by sales team through Product lanuch Approval mechanism.
+Sellers will be updated about thier product launch request status.
+
+shopping cart
+
+Order processing
+
+payment processing
+
+delivery tracking
+Social Media Integration
+AI Enabled 
+
+
+
+
+
+NonFunctional Requirements:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		

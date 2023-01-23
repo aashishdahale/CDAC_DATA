@@ -1,0 +1,27 @@
+1) Login to aws account.(ex root user-->veerp599@gmail.com)
+2) create new instance--->(got to services-->compute-->EC2-->instances-->)
+how to launch instances-->go to launch instances-->(Enter web server name ex veer)-->quick start(select ubuntu)
+-->key pair(create new key pair )-->key pair name(enter name veer1)-->select key pair type(RSA)-->Private key file format-->(.ppk)--enter
+-->in below newtwork setting click on -->Allow HTTP traffic from the internet
+--> right corner -->launch instance
+-->view all instances-->click instance ID-->security-->security group link-->edit inbound rule-->edit second rule-->info (all traffic)-->source(Anywhere IPV4).
+after doing all setting connect to instances.new cmd open in new tab.
+download Putty-->open-->enter your instance ip address-->left side menu bar-->connections-->data-->enter user name-->ubuntu-->SSH-->Auth-->credential-->browse-->(paste key path from downloads ex key pair name is veer1 for ref.)
+then open putty-->accept.		
+putty commands-->1) sudo apt update
+2)sudo apt install docker.io
+3)sudo systemctl status docker
+4)sudo docker images
+5)sudo docker pull nginx
+6)sudo docker run --name veer -d -p 8080:80 nginx:latest
+7)open google chrome-->enter ip address from instance-->ex(65.0.178.159:8080)
+//
+open github-->open repository-->copy link of repository.
+open Ec2 connectcmd prompt-->enter command
+9) git clone (link of repository)
+10)ls
+11)cd (repository name or shown in in ls)
+13)sudo docker build -t (repository name) .     (ex. sudo docker build -t veer) . 
+14)sudo docker run --name veer -d -p (default 9000:our server proxy)
+ex-->sudo docker run --name veer -d -p 9000:9000 veer 
+

@@ -1,0 +1,285 @@
+https://www.youtube.com/watch?v=uM_m6EzMg3k
+Jira beginners step by step
+https://www.youtube.com/watch?v=pXsPIYwTg64
+Todays Agenda:
+
+		Introduction Agile Development Model
+		Agile development component
+		tools to used for Agile web development
+		Exploring tool Jira------
+
+	Submission:
+			 has been set  by seniors
+			 imposed on us
+				Resistence:
+				seniors  push---------- 
+							members resist
+
+							members somehow ready to work
+								
+							Application:
+							Documentation:
+______________________________________________________________________________________________________________
+
+
+	Introduction Agile Development Model:
+	
+	change focus from process,-------------------sdlc------waterfall  model--------
+			  tool,
+			  project
+			  documentation
+
+
+	set focus to people.
+			
+		     people ready mindset ( Team) 
+			
+		     Person
+		
+		     self
+
+
+	Spiral  model--
+			
+	Set focus to Customer
+	Get your customer into the loop of Product creation process
+
+
+
+	Change requirement management:
+
+	 collect all requirements
+	      in the form of single requirement
+	      List of requirments
+				set the priority of some requirement--
+
+	     Spiral Model
+				you will always start with imature product----- journey  will continue ------mature product
+
+						timelines------- 1.anlysis--design--development-testing-demo (iterative)----week1
+								 2.anlysis--design--development-testing-demo (iterative)----week2
+								 3.anlysis--design--development-testing-demo (iterative)----week3
+
+	
+
+	  incremental
+
+	  Agile development model
+
+		Resistence				Agile
+
+		Push					Pull
+		Convince				Inspire
+		Need to					want to
+		Tell					Co-Create
+		sell					Listen
+
+	Agile:
+	 
+		people, practice and process
+
+Character:
+	   IT Pro.
+		
+
+4 Values of Agile Manifesto:
+
+			1.Individuals and interactions over processes and tools
+			2.Working software over comprehensive documentation
+			3.Customer collaboration over contract negotiation
+			4.Responding to change over following a plan
+
+Value 1: Individuals and interactions
+
+In the past, a lot of software teams would concentrate on having the best possible tools or processes with which to build their software. 
+The Agile Manifesto suggests that while those things are important, the people behind the processes are even more so.
+
+Having the right group of individuals on your software team is vital to success. 
+The best possible tools in the wrong hands are worthless. 
+Perhaps even more important is how these individuals communicate with each other. 
+The interactions between team members are what helps them to collaborate and solve any problems that arise.
+
+
+Value 2: Working software
+Previously, software developers would spend ages creating detailed documentation. 
+That was before they even started writing a single line of code. 
+And while documentation isn’t a bad thing, there comes a point when you should focus on providing your customers with working software.
+
+The Agile Manifesto places shipping software to your customers as one of the highest priorities. 
+You can then gather feedback to help you improve future releases.
+
+
+
+Value 3: Customer collaboration
+Once upon a time, contracts were king. 
+You would draw up contracts with your customers who would then detail the finished product. 
+As a result, there was often a contrast between what the contract said, what the product did, and what the customer actually required.
+
+According to the Agile Manifesto, the focus should be on continuous development. 
+You need to build a feedback loop with your customers so that you can constantly ensure that your product works for them.
+
+
+Value 4: Responding to change
+Can you imagine a time where you would draw up a roadmap and it would never change? Well, in the past that’s exactly what happened.
+
+The trouble with static roadmaps is that we don’t live in a static world. 
+Needs and requirements are always shifting, and priorities are always changing. 
+That static roadmap will soon grow outdated.
+
+That’s why the Agile Manifesto suggests that a software team should have the ability to pivot and change direction whenever they need to, with a flexible roadmap that reflects that. 
+A dynamic roadmap can change from quarter to quarter, sometimes even month to month, and agile teams are able to keep up with those changes.
+
+
+_________________________________________________________________________________________________________________________________
+
+12 principles: 
+
+
+1.Customer satisfaction through early and continuous software delivery 
+
+Customers are happier when they receive working software at regular intervals, rather than waiting extended periods of time between releases.
+
+2.Accommodate changing requirements throughout the development process
+
+The ability to avoid delays when a requirement or feature request changes.
+
+3.Frequent delivery of working software
+
+Scrum accommodates this principle since the team operates in software sprints or iterations that ensure regular delivery of working software.
+
+4.Collaboration between the business stakeholders and developers throughout the project
+Better decisions are made when the business and technical team are aligned.
+
+
+5.Support, trust, and motivate the people involved
+Motivated teams are more likely to deliver their best work than unhappy teams.
+
+
+6.Enable face-to-face interactions
+Communication is more successful when development teams are co-located.
+
+7.Working software is the primary measure of progress
+Delivering functional software to the customer is the ultimate factor that measures progress.
+
+
+8.Agile processes to support a consistent development pace 
+Teams establish a repeatable and maintainable speed at which they can deliver working software, and they repeat it with each release.
+
+
+9.Attention to technical detail and design enhances agility
+The right skills and good design ensures the team can maintain the pace, constantly improve the product, and sustain change.
+
+10.Simplicity 
+Communication is more successful when development teams are co-located.
+
+11.Self-organizing teams encourage great architectures, requirements, and designs
+Skilled and motivated team members who have decision-making power, take ownership, communicate regularly with other team members, and share ideas that deliver quality products.
+
+12.Regular reflections on how to become more effective 
+Self-improvement, process improvement, advancing skills, and techniques help team members work more efficiently.
+
+
+Agile IT Pro:--------------------------------------	
+
+using Waterfall model  projects fail  
+	( rate of failing is high)-------------------------------
+	(80-20 rule)
+
+
+Agile does not fail,  we do.
+	
+	we fail to fully embrace the manifesto and its principles
+	we fail to transform our mindset around  how work is done
+	we fail to properly implement the tries and proven practices
+	we fail to commit and preserve.
+
+
+sucees is possible.
+
+Commit to the agile mindset
+
+
+Agile is a mindset; everything else flows from that
+
+Transformation takes time
+	Be consistent, persistent , and intentional
+
+Agile works if we commit to the process
+	If something is going wrong , it's not agile, it's us.
+
+Seek help - you will nedd it.
+	Agile concepts are simple, organization transformation is not.
+	Agile training for everyone
+	Embedding trained and experienced agile leaders into your team.
+	Consider developing an AGIL PMO for organization-wide agile coaching
+
+_____________________________________________________________________________________________________________________________
+
+
+Scrum is an iterative software engineering process to develop and deliver software.
+
+Although the software is the main focus of the Scrum framework, iterative and 
+agile Scrum process can be and is already being applied outside the software industry as well.
+
+Scrum can be used in all kinds of software development projects. 
+To develop and deliver complete software packages or only some modules of larger systems — both for products and services of internal and external clients.
+
+The Scrum Framework is a lightweight process. 
+It focuses on increasing the productivity of teams while reducing wastes and redundant activities.
+
+
+The main components of Scrum framework are:
+
+Three Scrum Roles: 
+	The Scrum Product Owner, the Scrum Team, and the Scrum Master.
+
+Five Scrum Events (Scrum Rituals) or Ceremonies: 
+	1.Scrum Grooming (Backlog Refinement) Meeting, 
+	2.Sprint Planning Meeting, 
+	3.Daily Scrum Meeting, 
+	4.Sprint Review Meeting, and 
+	5.Sprint Retrospective Meeting.
+
+
+Product Backlog (Scrum Backlog) or Scrum Product Backlog: 
+An artifact that is used to manage and prioritize all of the known requirements of a Scrum project.
+
+Sprints: 
+
+Cycles of work activities to develop shippable software product or service increments.
+
+Sprint Backlog: 
+
+An artifact to keep track of requirements committed by the Scrum teams for a given Sprint.
+
+Another cornerstone of the Scrum framework is transparency and direct communication. 
+
+The Scrum Product Owner works closely with the Scrum Team to identify and prioritize requirements. 
+These requirements are written down as user stories and stored in the Scrum Product 15 Backlog. 
+The Scrum Product Backlog consists of all tasks that need to be implemented to deliver a working software system successfully.
+
+A Scrum Team is empowered to select the user stories with which they are conﬁdent to deliver within the 2-4 weeks of Sprints. 
+Because the Scrum Team commits its own goals, the team members feel more engaged, and they know that their opinions are listened to. 
+This inclusion of Scrum team members to the natural ﬂow and planning of software projects increases the team morale and subsequently augments the team performance.
+
+Scrum Masters possess another vital role in the Scrum Framework as they work as servant leaders for and with their Scrum Teams.
+
+Scrum Masters are trained facilitators to ensure ﬂawless operation of their Scrum Teams. 
+Sometimes they are master negotiators to protect their Scrum Teams from interruptions and ﬁctive priorities of their stakeholders. 
+Other times they are master communicators to remove or prevent known or anticipated impediments before these impediments bring their teams to dead-end streets. 
+To only call a few of the responsibilities of Scrum Masters. 
+We will cover more about the duties of various Scrum roles later.
+
+
+The Scrum Framework, in its pure form, is best suitable for highly independent, one team green field or brown field projects.
+
+However, the practical common sense of Scrum professionals did not stop there. 
+With the introduction of additional roles and addendums such as "Chief Scrum Product Owner" and "Scaled Scrum", it can be used within diﬀerent project conﬁgurations too, including multi-team and geographically distributed project setups. 
+
+
+
+
+
+
+
+	

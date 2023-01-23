@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <script>
+            alert("Hello");
+        </script>
+        <script src="classjs1.js" ></script>
+        <script>
+        function sayHello()
+        {
+            alert("hello from function");
+            console.log("welcome to javascript");
+        }
+        
+        sayHello();
+        </script>
+        <script src="classcalculate.js">
+        </script>
+        <script> 
+        function mycalculate()
+        {
+            var num1 = document.myform.num1.value;
+            var num2 = document.myform.num2.value;
+
+            var res =calculate(num1,num2,"+");
+            document.getElementById("result").innerHTML="<b>"+res+"</b>"
+            ;
+        }
+        </script>
+    </head>
+
+    <body>
+        <form name="myform">
+            <input type="number" name="num1" id="dtid1"  />
+            <input type="number" name="num2" id="dtid2" />
+            <input type="button" value="ok"  onclick="mycalculate()" />
+            <input type="button" value="validate" onclick="validate()" />
+            <br>
+            result = <span id="result"></span>
+        </form>
+    </body>
+
+
+
+
+
+</html>

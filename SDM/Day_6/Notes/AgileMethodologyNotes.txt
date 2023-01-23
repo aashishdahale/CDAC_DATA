@@ -1,0 +1,208 @@
+
+
+Many development companies are moving towards Agile methodology and moving away from the predictive, Waterfall methodology when developing software
+
+
+Conventional Waterfall Methodology
+
+The conventional Waterfall development method involves strict phases. Developers are supposed to stick to the original design plan created at the beginning of the project. In a Waterfall approach of development, the project manager spends a lot of time negotiating milestones, allocating resources, features, and working at length in a project's planning stage.
+
+The customer finalizes the requirements before the development process begins. It takes a lengthy development process where the project manager tracks every project's movement throughout the delivery. In such an approach, the biggest drawbacks are that the software is not responsive to change, and the process took too long to deliver working software. When software is ready to use and drives every change, a six-month (or longer) release cycle, with requirements chiselled in stone, does not meet the business need.
+
+
+The Agile Methodology
+
+The frustration developed in the traditional Waterfall method gave birth to the Agile software development methodology. Agile methodology is based on the concept of catering changes and a faster process of software development. Agile project managers play the lead role in planning, executing, monitoring, controlling and closing projects. The Agile methodology doesn't base on milestones. It is based on hours, feature selection, prioritization, and meeting the client's requirements.
+
+The process in Agile methodology is divided into sprints or iterations. At the beginning of each iteration or Sprint, the development team decides what can be accomplished within this time frame and what sets of features will be delivered. At the end of each Sprint, the software is placed in a production environment so the client can take a look and provide their feedback.
+
+
+
+Roles & Responsibilities in Agile Software
+
+
+The Agile software development lifecycle (SDLC) is developed with a clear goal of rapid delivery of the software through an incremental and iterative process designed to adapt and improve software quality from the client's perspective.
+
+Agile teams are comprised of the following key roles and responsibilities:
+
+Product Owner
+
+The Product Owner represents the Stakeholder of the project. He/she understands the project from the Stakeholder's perspective. The crucial role of a Product Owner is to set the direction for product development or project progress.
+
+Key Responsibilities for Product Owner:
+	1.Product backlog management
+	2.Release management
+	3.Stakeholder management
+
+
+Team Lead or Scrum Master
+
+The Team Lead or the Scrum Master is the main bridge between the team members and the Product Owner. The Team Lead ? Scrum Master takes instructions from the Product Owner and supports the project's progress between individual team members.
+
+Key Responsibilities for Team Lead/Scrum Master
+	1.Arranging and managing the daily Scrum and Sprint initiatives
+	2.Coordinating between team members about changing requirements
+	3.Motivating team members for delivering results
+	4.Managing tasks such as conducting meetings, facilitating collaboration, and eliminating hurdles affecting project progress
+	5.Keeping team members protected from external interferences and distractions
+
+
+This role also plays extra responsibilities, such as:
+
+1.Implementing changes
+2.Coordinating between stakeholders to find necessary resources
+3.Helping Product Owners optimize the backlog planning for maximum performance
+
+
+Development Team Members
+
+Team members within the Development Team comprise experienced individuals who are directly or indirectly linked to product development. The team is a combination of different roles responsible for taking an idea or requirements and transforming it into a tangible product for end-users.
+
+
+Key Roles of Team Members
+	1.Product designer
+	2.Programmer
+	3.Tester
+	4.UX/UI specialist
+
+
+Key Responsibility for Development Team
+
+	1.Delivering the work throughout the Sprints according to the Product Owner's requirements,
+	2.Taking items from Product Backlog to the Sprint Backlog and committing to deliver the value during the Sprint, 
+	3.Self-organizing in order to fulfil their tasks.
+
+Stakeholders
+	
+The Stakeholder may not be directly involved in the development process, but they play key roles, and their decision can impact the Scrum team's work. A stakeholder can be:
+
+1.The end-user of the product (Client)
+2.Business Executives (Employees of the company for whom the Software is under development)
+3.Production Support staff (Testing Staff)
+4.Investors
+5.External Auditors (Appointed by the Client)
+6.Scrum Team Members from Associated Projects and Teams
+
+
+Additional Roles for Larger Scrum Projects
+
+
+If there is a larger product, it needs some additional roles. Here’re the details of these additional roles.
+
+1.Technical domain experts with the knowledge of technology and a wide variety of stakeholder requirements or expectations.
+2.An independent testing and audit team may join the Scrum team members and work throughout the product development lifecycle.
+3.An Integrator may be required among large teams that work on independent but closely coordinated subsystems for a project.
+4.An Architect Owner may be required for architectural envisioning, planning, and decision making.
+
+
+Agile Development Models: Scrum & Kanban
+
+There are many methods that Agile teams use to develop software. But the most prominent methods are two:
+
+1.Scrum Methodology
+2.Kanban Methodology
+
+
+
+Scrum Methodology
+
+Agile Scrum Methodology is the most prominent and simplest method. According to the State of Agile Report, a whopping 56% of teams use the Scrum methodology. It is a framework for developing and sustaining complex products. 
+
+
+It works on these bases:
+
+1.The Scrum method revolves around the responsibilities of the Scrum Master, who supports the Product Owner to identify and prioritize goals. The details of the goals and the set-of-features are then added to what's called a "Product Backlog."
+
+2.The cross-functional team reviews the backlog and decides the Sprints to deliver "potentially shippable increments" of software. A Sprint is up to 4 weeks.
+
+3.There are daily standup meetings for clear communication between the team members to stay up-to-date with development progress.
+
+4.After every Sprint ends, the team analyzes the backlog and gathers for a demo meeting to present the functionality to the Product Owner and his stakeholders.
+
+5.The last step of the Agile Scrum method is a retrospective meeting. In this meeting, the team discusses the parts of their process which need improvements.
+
+
+Kanban Method
+
+Kanban is also a popular method among development teams. This method focuses more on continuous delivery where things are kept simple, so the team doesn't get overstressed.
+
+It works this way:
+
+1.The teams visualize their workflow with the help of Kanban boards. These Kanban boards use cards and columns to help teams make their work visible, show it to others, and complete the job. The team can also use software like Jira or Atlassian. The software offers a "board" style interface where teams can see their "to-do" or "in progress" tasks.
+
+2.The best part about the Kanban approach is that the team knows how much they can or will do in a sprint, and nothing will be added more. This helps balance the workflow, and teams stay motivated without being burnout.
+
+3.In the Kanban approach, the team knows exactly what will come next, so they have half the preparation of the tasks in advance. This helps keep the priorities fulfilled.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

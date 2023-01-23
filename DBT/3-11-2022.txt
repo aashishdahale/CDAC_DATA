@@ -1,0 +1,433 @@
+Microsoft Windows [Version 10.0.19044.2130]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\IET>mysql --host=localhost --port=3306 --user=root --password
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.31 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2022, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use db1
+Database changed
+mysql> source C:\dataFile\pl1.sql
+Query OK, 0 rows affected, 1 warning (0.05 sec)
+
+ERROR 1415 (0A000): Not allowed to return a result set from a trigger
+mysql> desc dept;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| DEPTNO    | int         | NO   | PRI | NULL    |       |
+| DNAME     | varchar(12) | YES  |     | NULL    |       |
+| LOC       | varchar(10) | YES  |     | NULL    |       |
+| PWD       | varchar(20) | YES  |     | NULL    |       |
+| STARTEDON | varchar(10) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+5 rows in set (0.14 sec)
+
+mysql> create table d as  select * from dept where 1=2;
+Query OK, 0 rows affected (0.29 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc dept;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| DEPTNO    | int         | NO   | PRI | NULL    |       |
+| DNAME     | varchar(12) | YES  |     | NULL    |       |
+| LOC       | varchar(10) | YES  |     | NULL    |       |
+| PWD       | varchar(20) | YES  |     | NULL    |       |
+| STARTEDON | varchar(10) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> desc d;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| DEPTNO    | int         | NO   |     | NULL    |       |
+| DNAME     | varchar(12) | YES  |     | NULL    |       |
+| LOC       | varchar(10) | YES  |     | NULL    |       |
+| PWD       | varchar(20) | YES  |     | NULL    |       |
+| STARTEDON | varchar(10) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> select * from dept;
++--------+------------+----------+------------+------------+
+| DEPTNO | DNAME      | LOC      | PWD        | STARTEDON  |
++--------+------------+----------+------------+------------+
+|     10 | ACCOUNTING | NEW YORK | r50mpm     | 24/03/1989 |
+|     20 | RESEARCH   | DALLAS   | a12recmpm  | 12/04/1989 |
+|     30 | SALES      | CHICAGO  | sales@2017 | 13/04/1989 |
+|     40 | OPERATIONS | BOSTON   | opr@123    | 12/07/1989 |
+|     50 | HR         | PUNE     | PUN@8877   | 22/12/1989 |
++--------+------------+----------+------------+------------+
+5 rows in set (0.03 sec)
+
+mysql> select * from d;
+Empty set (0.00 sec)
+
+mysql> select * from dept;
++--------+------------+----------+------------+------------+
+| DEPTNO | DNAME      | LOC      | PWD        | STARTEDON  |
++--------+------------+----------+------------+------------+
+|     10 | ACCOUNTING | NEW YORK | r50mpm     | 24/03/1989 |
+|     20 | RESEARCH   | DALLAS   | a12recmpm  | 12/04/1989 |
+|     30 | SALES      | CHICAGO  | sales@2017 | 13/04/1989 |
+|     40 | OPERATIONS | BOSTON   | opr@123    | 12/07/1989 |
+|     50 | HR         | PUNE     | PUN@8877   | 22/12/1989 |
++--------+------------+----------+------------+------------+
+5 rows in set (0.00 sec)
+
+mysql> select * from d;
+Empty set (0.00 sec)
+
+mysql> source C:\dataFile\pl1.sql
+Query OK, 0 rows affected, 1 warning (0.12 sec)
+
+ERROR 1418 (HY000): This function has none of DETERMINISTIC, NO SQL, or READS SQL DATA in its declaration and binary logging is enabled (you *might* want to use the less safe log_bin_trust_function_creators variable)
+mysql> source C:\dataFile\pl1.sql
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> source C:\dataFile\pl1.sql
+Query OK, 0 rows affected (0.04 sec)
+
+Query OK, 0 rows affected (0.13 sec)
+
+mysql> source C:\dataFile\pl1.sql
+Query OK, 0 rows affected, 1 warning (0.12 sec)
+
+Query OK, 0 rows affected (0.13 sec)
+
+mysql> insert into dept values(f3(), 'abc','baroda','pwd','2020-01-01' );
+Query OK, 1 row affected (0.09 sec)
+
+mysql> select * from dept;
++--------+------------+----------+------------+------------+
+| DEPTNO | DNAME      | LOC      | PWD        | STARTEDON  |
++--------+------------+----------+------------+------------+
+|     10 | ACCOUNTING | NEW YORK | r50mpm     | 24/03/1989 |
+|     20 | RESEARCH   | DALLAS   | a12recmpm  | 12/04/1989 |
+|     30 | SALES      | CHICAGO  | sales@2017 | 13/04/1989 |
+|     40 | OPERATIONS | BOSTON   | opr@123    | 12/07/1989 |
+|     50 | HR         | PUNE     | PUN@8877   | 22/12/1989 |
+|     51 | abc        | baroda   | pwd        | 2020-01-01 |
++--------+------------+----------+------------+------------+
+6 rows in set (0.00 sec)
+
+mysql> select * from d;
++--------+-------+--------+------+------------+
+| DEPTNO | DNAME | LOC    | PWD  | STARTEDON  |
++--------+-------+--------+------+------------+
+|     51 | abc   | baroda | pwd  | 2020-01-01 |
++--------+-------+--------+------+------------+
+1 row in set (0.00 sec)
+
+mysql> desc d;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| DEPTNO    | int         | NO   |     | NULL    |       |
+| DNAME     | varchar(12) | YES  |     | NULL    |       |
+| LOC       | varchar(10) | YES  |     | NULL    |       |
+| PWD       | varchar(20) | YES  |     | NULL    |       |
+| STARTEDON | varchar(10) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> alter table d add (insertedOn date, insertedTime time, who varchar(40));
+Query OK, 0 rows affected (0.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> desc d;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| DEPTNO       | int         | NO   |     | NULL    |       |
+| DNAME        | varchar(12) | YES  |     | NULL    |       |
+| LOC          | varchar(10) | YES  |     | NULL    |       |
+| PWD          | varchar(20) | YES  |     | NULL    |       |
+| STARTEDON    | varchar(10) | YES  |     | NULL    |       |
+| insertedOn   | date        | YES  |     | NULL    |       |
+| insertedTime | time        | YES  |     | NULL    |       |
+| who          | varchar(40) | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> select curdate();
++------------+
+| curdate()  |
++------------+
+| 2022-11-03 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select curdate(), curtime(), user();
++------------+-----------+----------------+
+| curdate()  | curtime() | user()         |
++------------+-----------+----------------+
+| 2022-11-03 | 03:45:11  | root@localhost |
++------------+-----------+----------------+
+1 row in set (0.00 sec)
+
+mysql> source C:\dataFile\pl1.sql
+Query OK, 0 rows affected (0.03 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> select * from dept;
++--------+------------+----------+------------+------------+
+| DEPTNO | DNAME      | LOC      | PWD        | STARTEDON  |
++--------+------------+----------+------------+------------+
+|     10 | ACCOUNTING | NEW YORK | r50mpm     | 24/03/1989 |
+|     20 | RESEARCH   | DALLAS   | a12recmpm  | 12/04/1989 |
+|     30 | SALES      | CHICAGO  | sales@2017 | 13/04/1989 |
+|     40 | OPERATIONS | BOSTON   | opr@123    | 12/07/1989 |
+|     50 | HR         | PUNE     | PUN@8877   | 22/12/1989 |
+|     51 | abc        | baroda   | pwd        | 2020-01-01 |
++--------+------------+----------+------------+------------+
+6 rows in set (0.00 sec)
+
+mysql> select * from d;
++--------+-------+--------+------+------------+------------+--------------+------+
+| DEPTNO | DNAME | LOC    | PWD  | STARTEDON  | insertedOn | insertedTime | who  |
++--------+-------+--------+------+------------+------------+--------------+------+
+|     51 | abc   | baroda | pwd  | 2020-01-01 | NULL       | NULL         | NULL |
++--------+-------+--------+------+------------+------------+--------------+------+
+1 row in set (0.00 sec)
+
+mysql> insert into dept values(f3(), 'abc1','baroda1','pwd1','2020-01-02' );
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select * from dept;
++--------+------------+----------+------------+------------+
+| DEPTNO | DNAME      | LOC      | PWD        | STARTEDON  |
++--------+------------+----------+------------+------------+
+|     10 | ACCOUNTING | NEW YORK | r50mpm     | 24/03/1989 |
+|     20 | RESEARCH   | DALLAS   | a12recmpm  | 12/04/1989 |
+|     30 | SALES      | CHICAGO  | sales@2017 | 13/04/1989 |
+|     40 | OPERATIONS | BOSTON   | opr@123    | 12/07/1989 |
+|     50 | HR         | PUNE     | PUN@8877   | 22/12/1989 |
+|     51 | abc        | baroda   | pwd        | 2020-01-01 |
+|     52 | abc1       | baroda1  | pwd1       | 2020-01-02 |
++--------+------------+----------+------------+------------+
+7 rows in set (0.00 sec)
+
+mysql> select * from d;
++--------+-------+---------+------+------------+------------+--------------+----------------+
+| DEPTNO | DNAME | LOC     | PWD  | STARTEDON  | insertedOn | insertedTime | who            |
++--------+-------+---------+------+------------+------------+--------------+----------------+
+|     51 | abc   | baroda  | pwd  | 2020-01-01 | NULL       | NULL         | NULL           |
+|     52 | abc1  | baroda1 | pwd1 | 2020-01-02 | 2022-11-03 | 03:47:01     | root@localhost |
++--------+-------+---------+------+------------+------------+--------------+----------------+
+2 rows in set (0.00 sec)
+
+mysql> source C:\dataFile\pl1.sql
+Query OK, 0 rows affected (0.05 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> delete from dept where deptno=40;
+Query OK, 1 row affected (0.09 sec)
+
+mysql> delete from dept where deptno=50;
+ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails (`db1`.`emp`, CONSTRAINT `EMP_FOREIGN_KEY_deptno` FOREIGN KEY (`DEPTNO`) REFERENCES `dept` (`DEPTNO`))
+mysql> select * from dept;
++--------+------------+----------+------------+------------+
+| DEPTNO | DNAME      | LOC      | PWD        | STARTEDON  |
++--------+------------+----------+------------+------------+
+|     10 | ACCOUNTING | NEW YORK | r50mpm     | 24/03/1989 |
+|     20 | RESEARCH   | DALLAS   | a12recmpm  | 12/04/1989 |
+|     30 | SALES      | CHICAGO  | sales@2017 | 13/04/1989 |
+|     50 | HR         | PUNE     | PUN@8877   | 22/12/1989 |
+|     51 | abc        | baroda   | pwd        | 2020-01-01 |
+|     52 | abc1       | baroda1  | pwd1       | 2020-01-02 |
++--------+------------+----------+------------+------------+
+6 rows in set (0.00 sec)
+
+mysql> show variables like 'auto%';
++--------------------------+-------+
+| Variable_name            | Value |
++--------------------------+-------+
+| auto_generate_certs      | ON    |
+| auto_increment_increment | 1     |
+| auto_increment_offset    | 1     |
+| autocommit               | ON    |
+| automatic_sp_privileges  | ON    |
++--------------------------+-------+
+5 rows in set (0.04 sec)
+
+mysql> select * from d;
++--------+------------+---------+---------+------------+------------+--------------+----------------+
+| DEPTNO | DNAME      | LOC     | PWD     | STARTEDON  | insertedOn | insertedTime | who            |
++--------+------------+---------+---------+------------+------------+--------------+----------------+
+|     51 | abc        | baroda  | pwd     | 2020-01-01 | NULL       | NULL         | NULL           |
+|     52 | abc1       | baroda1 | pwd1    | 2020-01-02 | 2022-11-03 | 03:47:01     | root@localhost |
+|     40 | OPERATIONS | BOSTON  | opr@123 | 12/07/1989 | 2022-11-03 | 03:53:11     | root@localhost |
++--------+------------+---------+---------+------------+------------+--------------+----------------+
+3 rows in set (0.00 sec)
+
+mysql> source C:\dataFile\pl1.sql
+Query OK, 0 rows affected (0.04 sec)
+
+ERROR 1362 (HY000): Updating of NEW row is not allowed in after trigger
+mysql> source C:\dataFile\pl1.sql
+Query OK, 0 rows affected, 1 warning (0.03 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> insert into dept values(f3(), 'abc','surat','pwd','2020-01-01');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select * from dept;
++--------+------------+----------+------------+------------+
+| DEPTNO | DNAME      | LOC      | PWD        | STARTEDON  |
++--------+------------+----------+------------+------------+
+|     10 | ACCOUNTING | NEW YORK | r50mpm     | 24/03/1989 |
+|     20 | RESEARCH   | DALLAS   | a12recmpm  | 12/04/1989 |
+|     30 | SALES      | CHICAGO  | sales@2017 | 13/04/1989 |
+|     50 | HR         | PUNE     | PUN@8877   | 22/12/1989 |
+|     51 | abc        | baroda   | pwd        | 2020-01-01 |
+|     52 | abc1       | baroda1  | pwd1       | 2020-01-02 |
+|     53 | abc        | SURAT    | pwd        | 2020-01-01 |
++--------+------------+----------+------------+------------+
+7 rows in set (0.00 sec)
+
+mysql> create table x (c1 int);
+Query OK, 0 rows affected (0.12 sec)
+
+mysql> source C:\dataFile\pl1.sql
+Query OK, 0 rows affected (0.08 sec)
+
+ERROR 1362 (HY000): Updating of NEW row is not allowed in after trigger
+mysql> source C:\dataFile\pl1.sql
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> select * from x;
+Empty set (0.00 sec)
+
+mysql> desc x;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| c1    | int  | YES  |     | NULL    |       |
++-------+------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> insert into  values(100);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'values(100)' at line 1
+mysql> insert into x values(100);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> select * from x;
++------+
+| c1   |
++------+
+|  200 |
++------+
+1 row in set (0.00 sec)
+
+mysql> drop table x;
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> create table x (c1 int primary key auto_increment, c2 int);
+Query OK, 0 rows affected (0.13 sec)
+
+mysql> create table x1 (c1 int);
+Query OK, 0 rows affected (0.11 sec)
+
+mysql> source C:\dataFile\pl1.sql
+Query OK, 0 rows affected, 1 warning (0.03 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> desc x;
++-------+------+------+-----+---------+----------------+
+| Field | Type | Null | Key | Default | Extra          |
++-------+------+------+-----+---------+----------------+
+| c1    | int  | NO   | PRI | NULL    | auto_increment |
+| c2    | int  | YES  |     | NULL    |                |
++-------+------+------+-----+---------+----------------+
+2 rows in set (0.00 sec)
+
+mysql> desc x1;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| c1    | int  | YES  |     | NULL    |       |
++-------+------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> select * from x;
+Empty set (0.00 sec)
+
+mysql> select * from x1;
+Empty set (0.00 sec)
+
+mysql> insert into x(c2) values(-1);
+Query OK, 1 row affected (0.08 sec)
+
+mysql> select * from x;
++----+------+
+| c1 | c2   |
++----+------+
+|  1 |   -1 |
++----+------+
+1 row in set (0.00 sec)
+
+mysql> select * from x1;
++------+
+| c1   |
++------+
+|    0 |
++------+
+1 row in set (0.00 sec)
+
+mysql> truncate tble x;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'x' at line 1
+mysql> truncate table x;
+Query OK, 0 rows affected (0.15 sec)
+
+mysql> truncate table x1;
+Query OK, 0 rows affected (0.20 sec)
+
+mysql> source C:\dataFile\pl1.sql
+Query OK, 0 rows affected (0.05 sec)
+
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> insert into x(c2) values(-1);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> select * from x;
++----+------+
+| c1 | c2   |
++----+------+
+|  1 |   -1 |
++----+------+
+1 row in set (0.00 sec)
+
+mysql> select * from x1;
++------+
+| c1   |
++------+
+|    1 |
++------+
+1 row in set (0.00 sec)
+
+mysql>

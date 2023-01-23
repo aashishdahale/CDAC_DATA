@@ -1,0 +1,79 @@
+ Concept of Programming in Java
+
+Class and Object Assignments
+
+Q1.Create a class Date which has below data members
+int day,month,year.
+Write below methods for the class.
+1.Constructor
+2.Setter methods setDay(),setMonth(),setYear()
+3.toString method for the date class
+Create another class TestDate which will have main() method and creates three date objects.
+try all combinations of calling setter and getter functions and observe the outputs.
+
+Q2.
+create a class Employee with data fields as empid,name,salary
+
+Write below methods for the class.
+1.Constructor
+2.getter and setter
+3.toString() method to print all data members 
+4.also write method public void getBonus(int atesal)  which calculates the bonus as per below conditions
+if salary is > 15000 then give bonus of 20% of salary
+ else no bonus should be printed 
+create 3 different objects of the Employee class and then call all methods.
+
+
+Q3.Assignment in Java: Basic statements and expressions
+Write a Java program to convert Centigrade to Fahrenheit 
+    Fahr=(Cent*5/9) + 32
+
+4. Write a Java program that prints the perimeter of a rectangle given its
+   height and width. 
+    perimeter = 2 * (width + height)
+
+5. Write a program that converts kilometers per hour to miles per hour.
+     miles = (kilometer  * 0.6213712)
+
+6. Swap two numbers without using a third variable. 
+
+Assignment List: (if..else if..else) 	
+
+7.Write a Java program to enter three numbers and print maximum number.
+
+8. While purchasing certain items, a discount of 10% is offered 
+if the quantity purchased is more than 1000. If quantity and price 
+per item are input through the keyboard, 
+
+9. write a program to calculate the total expenses. 
+
+10.Write a Java program to handle the above situation.
+
+11.The current year and the year in which the employee joined the organization
+are entered through the keyboard. If the number of years for which the employee has served the organization is greater than 3 then a 
+bonus of Rs. 25000/- is given to the employee. If the years of service are not greater than 3, 
+then the program should do nothing. Write a Java program to handle above situation.
+
+12.Write a program to input a character from user and print whether it is vowel or consonant
+
+Assignment List: (Loop)
+
+13.Write a Java program to input a number and a digit and count & print number of times the digit occurs in number.
+
+14.Write a Java program to print reverse of a entered number.
+
+15.Write a menu driven program to build a calculator as shown below. 
+				MENU
+	1.	Addition
+	2.	Subtraction
+	3.	Multiplication
+	4.	Division
+	5.	Power
+	6.	Exit.
+
+16.Accept a choice from the user and perform the operation. Display the answer. 
+(Hint: use do..while and switch .. case structure)
+
+17. Write a Java program to accept a number n and print 
+sum of squares of all numbers from 1 to n.
+

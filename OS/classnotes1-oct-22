@@ -1,0 +1,343 @@
+
+
+Good Morning :))
+
+thread = 
+
+SINGLE THREAD ---- Sequential execution
+	main
+	    Task1
+	    Task2
+	    
+Task 2 will start ONLY after Task1 completes
+
+_______________________
+Signal --- used for interprocess communication
+	--- it is an interrupt sent to a process
+		
+SIGNAL is a positive integer sent to a process while it is executing 
+	For ex -SIGCHLD = sent to parent when child terminate
+	
+	SIGINT  = when u enter ctrl-c  = value is 2
+	SIGKILL = non maskable signal and it will certainly terminate a process = value is 9
+	SIGSTOP = ctrl z  suspend or stop a process
+	
+for different signals we have corresponding signal handlers !!!!
+
+signals can be sent using 
+   -kill command or kill system call 
+(MASKABLE) signal SIGINT  kill -2 2710
+(M) signal SIGTERM kill -15 2710  same as kill 2719 
+ (NON M )signal SIGKILL kill -9 2710   NONMASKABLE 
+
+system call = signal()
+	this can be used if WE WANT to change the default signal handler 
+_______________________________________________	
+	kill(pid,SIGTERM) = kill system call
+	when we want one c process to send a signal to another c process
+______________________________________
+
+Deadlocks --- when many processes are waiting for each other indefinitely
+
+
+when process needs IO resources , it may land in deadlock if 4 neccessary conditions occur ---
+
+	- mutual exclusion - when the IO resource is mutually exclusive - cannot be shared at a time -Ex printer 
+	
+	- no preemption - kernel does not use force to release a resource from a process
+	
+	- hold and wait - one process holds a resource and waits for another resource
+	
+	- circular wait -- P1 waits for P2 to realease a resource and P2 waits for p1 to realeases  a resources
+	P1---P2---P3--P4---P1
+
+ When there is a cycle in RAG  -- high possibility of deadlock
+ 
+ ________________________
+ 
+ how to solve deadlock ?
+  1. deadlock prevention -dont let the 4 conditions occur at a time
+     deadlock avoidance -- use BANKERs algorithm to assign resource 
+     If a process makes a request
+     	kernel checks using algo will system be in SAFE STATE  ? YES  accept request
+     	? NO system will go in UNSAFE state -reject request
+      
+     
+  2.  handling deadlock --- Post deadlock handling
+  	find a low prio process and kill
+  	the resources held by that process are freed
+  	so try solving deadlock 
+  	else repeat
+  
+  3.  IGNORE -- Linux flavours
+ ___________________________
+ 
+  deadlock  ---  process waits indefinitely
+  	CAUSE ---  4 neccessary conditions 
+  	SOLUTION ---  1, prevention , avoidance
+  			2, handling
+  			3. ignore
+  	FOR ex --process waits for IO resource
+  	    --- process waits for signalling a semaphore and the other process forgets to signal
+  	    problem during process synchronization
+  	    
+  
+  starvation --- process waits indefinitely
+ 	CAUSE -- Low PRIORITY 
+ 	SOLUTION --- PROMOTE the low priority process
+ 			if its waiting for more than 
+ 			threshold time
+ 	FOR ex - process waits for CPU 
+ 
+ _________________________________________________
+ classical dining philosopher's problem ----
+ _____________________________________
+ 
+ Memory Management  ----
+   --- Paging  ---
+          RAM - holds the page table 
+            cache = TLAB  = Translation Look Aside Buffer -- VERY VERY FAST ACCESS MEMORY 
+            it holds the page tables ( parts ) 
+            for different process
+            
+       Actual page tables are in RAM 
+       
+       Whenever there is a request for a page
+       first refer to the page table part in TLAB 
+       	TLAB HIT = found and frame number available  
+       	TLAB MISS = then that page table entry is not found and must be fetched from RAM 
+      
+      Advantage - TLAB HIT reduces RAM access to one time for fetching an Instruction   --- Access is FAST 
+      
+_________________________________
+Sometimes the pages are shared between processes !
+Reentrant code --- PURE code ---code that does not change or modify itself  based on data .
+
+OS finds reentrant code and it may share the pages with multiple processes 
+
+SPACE / FRAMES saved 
+Time to load the pages is saved
+
+__________________________________
+   
+   Dirty bit --- so every page is associated with a dirty bit -- it will be 0 if page is not modified
+   it will be 1 if page is modified
+   
+  During page replacement - kernel wil write back the page to hard disk ONLY IF dirty bit is 1 . This saves unneccessary writes .
+________________________________________________
+  Belady's anomaly --- 
+  
+  Natural Thought ----
+  If number of available frames increases Page fault should reduce !!
+  
+  Belady's anomaly  for LRU --- If number of available frames increases then the page fault increase !!
+_________________________________
+
+   chmod  command  --- command is used to give permissions to files and folders 
+   
+   which permissions ?  r w x 
+      file 
+        r    vi , cat , tac , gedit
+        w     in vi you can change and use :w
+        	in gedit we can change and save
+        	
+        x    we can execute that file
+   
+     folder  
+       r    ls
+       w     mkdir , rm , rmdir , rm -r  mv  cp 
+       	touch 
+       
+       x     we can cd to the folder 
+       
+   _________________
+     rwx = owner of the file
+     rwx = group of the file
+     rwx = others 
+     
+     
+       login user name = owner 
+       
+       Groups -------------
+       admin    ---  u1, u2, u3
+       faculty  --- f1, f2, f3
+       guest --- g1, g2, g3
+       
+       if u1 logs in and creates a file test
+       
+       test  owner  = u1
+              group = u2 ,u3
+              others = f1 f2 f3 g1 g2 g3 
+     
+     
+     rw-(OWNER) rw-(GROUP) r--(OTHERS)
+     
+     ______________________
+     
+     rwxrw-r--   } add wx permision to others
+      chmod o+wx ex.sh
+      
+      rwxrw-rwx } remove w of all
+        chmod ugo-w ex.sh
+     
+     r-xr--r-x  } for g make it wx 
+        chmod g=wx ex.sh
+     
+     r-x-wxr-x  } 
+     
+       Octal way  --- 
+       000 0
+       001 1
+       010 2
+       011 3
+       100 4
+       101 5
+       110 6
+       111 7
+       rwx 
+       
+      u = rwx go = read only
+       chmod 744 ex.sh
+       
+       
+       
+       
+       
+       
+       
+       
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+   
+   
+   
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+      
+      
+      
+      
+      
+            
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 	
+
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

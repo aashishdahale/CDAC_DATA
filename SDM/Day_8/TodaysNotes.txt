@@ -1,0 +1,32 @@
+A full stack web developer is a person who can develop both client and server software. In addition to mastering HTML and CSS, he/she also knows how to: Program a browser (like using JavaScript, jQuery, Angular, or Vue) Program a server (like using PHP, ASP, Python, or Node).
+
+
+Node Package Manager (NPM) is a command line tool that installs, updates or uninstalls Node. js packages in your application. It is also an online repository for open-source Node. js packages
+
+npm commands
+npm install
+npm uninstall
+
+This command installs a package, and any packages that it depends on. If the package has a package-lock or shrinkwrap file, the installation of dependencies will be driven by that, with an npm-shrinkwrap. json taking precedence if both files exist.
+
+Node Modules
+
+In Node. js, Modules are the blocks of encapsulated code that communicates with an external application on the basis of their related functionality. Modules can be a single file or a collection of multiples files/folders
+
+Express js
+
+Express is a node js web application framework that provides broad features for building web and mobile applications. It is used to build a single page, multipage, and hybrid web application. It's a layer built on the top of the Node js that helps manage servers and routes
+
+
+MySQL provides standards-based drivers for JDBC, ODBC, and .Net enabling developers to build database applications in their language of choice. In addition, a native C library allows developers to embed MySQL directly into their applications.
+
+
+node js middleware
+
+The middleware in node.js is a function that will have all the access for requesting an object, responding to an object, and moving to the next middleware function in the application request-response cycle. This function can be used for modifying the req and res objects for tasks like adding response headers, parsing requesting bodies, and so on.
+
+Express. js Request and Response objects are the parameters of the callback function which is used in Express applications. The express. js request object represents the HTTP request and has properties for the request query string, parameters, body, HTTP headers, and so on.
+
+Express has a built-in express. json() function that returns an Express middleware function that parses JSON HTTP request bodies into JavaScript objects. The json() middleware adds a body property to the Express request req .
+
+

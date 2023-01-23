@@ -1,0 +1,160 @@
+	Todays agenda:
+
+	Waterfall model
+			1.Requirement Gathering-------meetings, interaction, studying existing operations
+						      collection user expectations
+			2.Analysis--------------------BRS,
+						      SRS
+			3.Design----------------------Functional Approach
+								data flow diagrams (DFD)
+								ER Diagrams
+
+			4.Build---(Development activity)-----------
+				  
+					Choose technology
+						front End	: Client side Web Technology----html, css, js
+												React 
+												
+						Server Side	: Server side Web Technology
+									  JSP, servlet
+									  Spring MVC
+									  Spring BOOT API
+									  asp
+									  asp.net
+									  php
+									  django
+						back end	: RDBMS
+									mySQL, Oracle, Ingress,
+									Sybase, SQL Gupta
+
+								  No SQL
+									mongo db, consoms db
+					framework:
+						Client Side:
+						 Responsive UI Framework
+							Bootstrap
+							Material UI
+							Stylus
+							Office Fabric UI ( Fluent UI)
+							Componenbe based UI Frameowork
+							MVVM + MVC
+									
+									 React JS
+									 Angular
+
+							Server Side:
+								     Spring MVC 
+								     Struts
+								     Spring boot
+								     asp.net core mvc
+								     asp.net web api
+								     flask
+								     jhommla
+								     Laravel 
+								    express js --jade
+								    django
+								    JPA
+								    Hibernate
+								    Entity Framework......
+	
+						object model
+								componnets, services, router (React )
+								JDBC
+								FILE I/O
+								Persistence object model
+								ADO
+								DAO
+								ADO.NET
+					reusable libraries
+								jQuery
+								react js
+								bootstrap.min.js
+								boostrap.min.css
+								jQuery.js
+
+
+								Server Side libraries
+
+											jar files
+											dlls files
+
+											js files
+									  Tools needed: ( Package manager tools)
+											
+											external libraries to be downloaded for application development
+													maven--------------------------java
+													npm-----------------------------nodejs
+													nget-----------------------------.net
+													graddle---------------------------andriod
+
+
+
+	Spiral  model
+		 for Solution Development:
+			
+	
+
+
+	From perspective of Online Shopping portal Application
+
+	1.Object Oriented Analaysis and Design
+
+	
+	2.How to go about project implementation ?
+		Layered architecture
+		loosely Coupled , highly cohesive Application
+	
+	
+	4.Coding standards---- coding conventions	
+
+	Software Engineer  Role:
+
+	Illusion of  simplicity  is nothing but hiding of complexity
+
+
+______________________________________________________________________________________________________________________________________________________________
+
+	Tomorrows Agenda :
+		Spiral model
+		Agile methodology
+		Sprint
+	        Srum master,
+	 	Jira :Team, practices, Methodology
+	
+		
+		3.Design Principles overview
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+_______________________________________________________________________________________________________________
+
+
+	
+	Tomorrows Agenda:
+	

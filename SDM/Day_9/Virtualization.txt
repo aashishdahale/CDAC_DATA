@@ -1,0 +1,68 @@
+
+
+Bare metal Hypervisor
+
+A hypervisor, also known as a virtual machine monitor or VMM, is a type of virtualization software that supports the creation and management of virtual machines (VMs) by separating a computer’s software from its hardware. Hypervisors translate requests between the physical and virtual resources, making virtualization possible. When a hypervisor is installed directly on the hardware of a physical machine, between the hardware and the operating system (OS), it is called a bare metal hypervisor. Some bare metal hypervisors are embedded into the firmware at the same level as the motherboard basic input/output system (BIOS). This is necessary for some systems to enable the operating system on a computer to access and use virtualization software.
+
+
+Because the bare metal hypervisor separates the OS from the underlying hardware, the software no longer relies on or is limited to specific hardware devices or drivers.  This means bare metal hypervisors allow operating systems and their associated applications to run on a variety of types of hardware. They also allow multiple operating systems and virtual machines (guest machines) to reside on the same physical server (host machine). Because the virtual machines are independent of the physical machine, they can move from machine to machine or platform to platform, shifting workloads and allocating networking, memory, storage, and processing resources across multiple servers according to needs. For example, when an application needs more processing power, it can seamlessly access additional machines through the virtualization software. This results in greater cost and energy efficiency and better performance, using fewer physical machines. 
+
+
+What is meant by bare metal?
+The term bare metal refers to the fact that there is no operating system between the virtualization software and the hardware. The virtualization software resides on the “bare metal” or the hard disk of the hardware, where the operating system is usually installed. 
+
+Bare metal isn’t only used to describe hypervisors. A bare metal server is a regular, single-tenant server. However, it can be a host machine for virtual machines with the addition of a hypervisor and virtualization software. A bare metal cloud refers to a customer renting the actual servers that host the public cloud from a cloud service provider, in addition to renting the public cloud services.
+
+
+
+What is the difference between bare metal hypervisors and hosted hypervisors?
+
+The bare metal hypervisor is the most commonly deployed type of hypervisor. This is where the virtualization software is installed directly on the hardware, where the operating system is normally installed. Bare metal hypervisors are extremely secure since they are isolated from the attack-prone operating system. They perform better and more efficiently than hosted hypervisors, and most companies choose bare metal hypervisors for enterprise and data center computing needs. 
+
+
+There is another type of hypervisor, known as a client or hosted hypervisor. While bare metal hypervisors run directly on the computing hardware, hosted hypervisors run within the operating system of the host machine. Although hosted hypervisors run within the OS, additional operating systems can be installed on top of it. Hosted hypervisors have higher latency than bare metal hypervisors because requests between the hardware and the hypervisor must pass through the extra layer of the OS. Hosted hypervisors are also known as client hypervisors because they are most often used with end users and software testing, where the higher latency is not as much of a concern. 
+
+
+Hardware acceleration technology can boost processing speed for both bare metal and hosted hypervisors by doing some of the resource-intensive work of creating and managing virtual resources. A virtual Dedicated Graphics Accelerator (vDGA) is a type of hardware accelerator that can take care of sending and refreshing high-end 3-D graphics, freeing up the main system for other tasks and greatly increasing the speed at which images are displayed. This technology is very useful for industries such as oil and gas exploration, where companies need to quickly visualize complex data.
+
+
+
+What is the difference between a hypervisor and bare metal virtualization?
+
+A bare metal server is a dedicated server with a single tenant, controlled by a single client. For bare metal virtualization, that client can install a bare metal hypervisor directly onto the hardware of that server to enable virtualization technology including virtual applications, multiple virtual machines, or private clouds. 
+
+
+Hosted hypervisors, in contrast, are installed on top of the operating system, not on the bare metal of the server. Both types of hypervisors can run multiple virtual servers for multiple tenants on one physical machine. Public cloud service providers lease server space on the different virtual servers to different companies. So one server can host several virtual servers that are running workloads for multiple companies. The sharing of resources can pose more of a security risk than a dedicated bare metal server and can result in a “noisy neighbor” effect when one of the tenants runs a large workload that interferes with the server performance for other tenants. 
+
+
+Since a single company has full control over a bare metal server, that server will always provide higher performance than a virtual server that is sharing a physical server’s bandwidth, memory, and processing power with other virtual servers. Companies also have more control over the hardware for bare metal servers and can optimize them to increase performance. Because bare metal servers do not share resources with other tenants, they are often used to host private clouds, especially for companies that need to comply with regulations that require physical separation of resources. 
+
+
+Hypervisors hosting multiple virtual machines do offer some advantages over bare metal servers. Hypervisors allow virtual machines to be created instantly, providing more resources as needed for dynamic workloads. It is much harder to provide an additional physical server when it is needed. Hypervisors also allow for more utilization of a physical server, since it is able to run several virtual machines on one physical machine’s resources. Running several virtual machines on one physical machine is more cost and energy efficient than running multiple underutilized physical machines for the same task.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

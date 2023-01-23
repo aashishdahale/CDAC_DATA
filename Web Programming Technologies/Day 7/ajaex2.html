@@ -1,0 +1,31 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script>
+        $(document).ready(()=>{
+            $("button").click(()=>{
+            let settings = { url:"https://reqres.in/api/users?page=2",
+                             method:"GET",
+                             async:true,
+                             success : (response)=>{
+                                    console.log(response)
+                                    let str ="<ol>"
+                                    let names = response.data.map((user)=>{return user.first_name})
+                                    for(var i=0;i<names.length;i++)
+                                    {
+                                        str+=`<li>${names[i]}</li>`
+                                    }
+                                    str+="</ol>"
+                                    $("#d1").html(str)                             
+                             }
+                            }                
+            $.ajax(settings)
+            })//end of click
+        })//end of ready
+    </script>
+</head>
+<body>
+    <button  >GET DATA FROM SERVER </button>
+    <div id="d1"></div>
+</body>
+</html>

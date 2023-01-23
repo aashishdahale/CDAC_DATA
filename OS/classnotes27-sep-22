@@ -1,0 +1,175 @@
+
+
+Good Morning :)
+
+  C program in linux .
+  
+    /home/iet/commands/hello.c 
+    		===>gcc
+    		===>/home/iet/a.out
+    		
+    a.out is the executable file
+    
+ To create output executable file with other name and path.use -o option
+ 
+    gcc -o ./commands/hello ./commands/hello.c
+ _________________________________________________
+ Shell -- program for CLI
+ Default Shell program--- Bash
+ 
+ Where is the executable of bash ?  /bin
+  
+ Variables  --- normal variables
+ OR
+ Environment variables ---variables are used by all programs in the system including kernel programs
+ 
+   PATH = this env variable gives a list of folder paths that may have the executable program
+   
+   
+ How to see a variable value ? 
+ 	using a meta character = $varname
+ 	
+  How to change the value of environment variable ?
+      export PATH=""
+      export PS1="\W >>"
+      
+   To see most of the environment variables --
+   	 type env
+   	 
+  _______________________________
+  What is shell scripting ?
+  
+  	shell = bash command set
+script = program = set of instructions(commands)
+
+shell script = program written using BASH commands 
+
+bash acts as an interpreter = to translate and run the shell script .
+
+   ls -a  }  show all files including hidden files
+   		files starting with . are hidden
+
+
+1. Write a shell script that prints hello world.	
+  	vi  first.sh  -- to type the code
+  	bash first.sh -- to run the code
+  	
+  	use echo 
+  	use echo  -n  (stops new line )
+  	
+   sudo apt install vim
+    vim first.sh
+    
+ ______________________
+ 
+  read command = get input from user kbd
+  
+  2. write a shellscript that will accept a name from user and print it 
+  
+ ____________________________
+ 
+ 3. write a shellscript to accept a folder name from the user 
+ 	in the current folder,create that folder
+ 	show its detail 
+ 	
+ 4. write a shellscript to accept a filename from the user create a file of 0kb in the parent folder 
+ 
+ _____________________________
+ 
+ Process Management 
+ 
+ process, PCB -- process Id
+ 
+ What is the command to see the processes on our system ?
+    ps  - pid , tty = terminal where the process was created, time , cmd =program
+ 
+ command tty = terminal type = ID of the terminal
+ command man ps   ( quit :q )
+ 
+ 	ps -e  [ show active processes on entire system
+ 
+   command kill pid [ kill a process with given pid 
+   
+     ps -e -f   [ -f option for full details 
+     OR
+     ps -ef
+     
+     To see a few columns use -o 
+     ps -e -o pid,ppid,cmd
+     
+     PPID = parent process Id
+     PPID 1 = init process
+     
+    IF we want to create a child process from our C program , how to do it ?  fork system call
+    
+    What is a system call ?
+       calling the function of the kernel 
+       
+    If you want to make a system call ?
+     	header file name, name of function, parameters
+     	return value
+    Linux man pages  
+     
+  1. getpid 
+  2. getppid   
+     
+     number of processes created will be
+     2 raised to number of forks 
+                     
+     
+     
+     
+     
+     
+     
+   
+   
+   
+   
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+    
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+

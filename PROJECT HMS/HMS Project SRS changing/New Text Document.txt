@@ -1,0 +1,151 @@
+
+
+
+
+ 
+SRS Outline: 
+•  1. Introduction 
+•  1.1 Purpose 
+•  1.2 Project Scope 
+•  1.3 Document conventions 
+•  1.4 Intended audience 
+•  1.5 Additional information 
+•  1.6 References 
+•  2. Overall Description 
+•  2.1 Product perspective 
+•  2.2 Product functions 
+•  2.3 User classes and characteristics 
+•  2.4 Operating environment 
+•  2.5 User environment 
+•  2.6 Design/implementation constraints 
+•  2.7 Assumptions and dependencies 
+•  3. External Interface Requirements 
+•  3.1 User interfaces 
+•  3.2 Hardware interfaces 
+•  3.3 Software interfaces 
+•  3.4 Communication protocols and interfaces 
+•  4. Positioning 
+•  4.1 Business Opportunity 
+•  4.1.1 Market strategy 
+•  5. Other Nonfunctional Requirements 
+•  5.1 Performance requirements 
+•  5.2 Safety requirements 
+•  5.3 Security requirements 
+•  5.4 Software quality attributes 
+•  5.5 Project documentation 
+•  5.6 User documentation 
+•  6. Other Requirements 
+Appendix A: Terminology/Glossary/Definitions list 
+
+
+ 
+
+1. Introduction: 
+My project Hospital Management system includes registration of patients, storing their disease details into the system. My software has the facility to give a unique id for every patient and stores the details of every patient. The Hospital Management System can be used by entering respective username and password. It is accessible either by an administrator or receptionist. Only the respective person can add data in the database. The data can be retrieved easily. The interface is very user-friendly. The data are well protected and data processing is very fast, accurate and relevant. 
+1.1 Purpose: 
+A hospital management system is a software designed to manage all the areas of a hospital such as medical, financial, administrative and the corresponding processing of services. 
+1.2 Project Scope: 
+Daily functions like patient registration, managing admission and overall management of various departments can be easily performed with higher accuracy after the installation of hospital software. The modules of hospital management software are user-friendly and easy to access. 
+1.3 Document Conventions: 
+The document is prepared using Microsoft Word 2010 and has used the font type 'Times New Roman'. The fixed font size that has been used to type this document is 14pt and for headings 18pt with 1.5 linespacing. It has used the bold property to set the headings of the document. All pages except the cover page are numbered, the numbers appear on the lower right-hand corner of the page. Every image and data table are numbered and referred to the in the main text. 
+1.4 Intended audience: 
+The intended audience of this document would be the client and specific employees like Manager and Receptionist, consultants and System Operators of the St Joseph Hospital, and project team, supervisor with the objective to refer and analyze the information. The SRS document can be used in any case regarding the requirements of the project and the solutions that have been taken. The document would finally provide a clear idea about the system that is building. 
+1.5 Additional Information: 
+Hospital Management System can be used by entering respective username and password. It is accessible either by an administrator or receptionist. Only the respective person can add data in the database. The data can be retrieved easily. The interface is very user-friendly. The data are well protected and data processing is very fast, accurate and relevant. A hospital management system is a software designed to manage all the areas of a hospital such as medical, financial, administrative and the corresponding processing of services. 
+1.6 References: 
+Available: http://www.itu.dk/~slauesen/Papers/IEEEtasks.pdf 
+2.Overall Description: 
+A hospital management system is a software designed to manage all the areas of a hospital such as medical, administrative and the corresponding processing of services. HMS is an abbreviation of hospital management system. The hospital management system (HMS) is an integrated software that handles different directions of clinic workflows. It manages the smooth healthcare performance along with administrative, medical, legal, and financial control. That is a cornerstone for the successful operation of the healthcare facility. 
+2.1 Product Perspective: 
+This Hospital Patient Management System is a self- contained system that manages activities of the hospital as bed assignment, operations scheduling, personnel management, and administrative issues. Various stakeholders are involved in the hospital system. 
+2.2 Product Features: 
+Doctor Module: 
+•  • Add patients report 
+•  • Delete patients report 
+•  • Display reports 
+•  • Give prescriptions 
+•  • Search reports of patient 
+Receptionist Module: 
+•  • Add patient’s data 
+•  • Delete patient’s data 
+•  • Display records 
+•  • Refer to different doctors 
+•  • Search the record of patients 
+Patient Module: 
+The different functionalities of the module are listed below: 
+•  • Search reports 
+•  • Search his record 
+2.3 User Classes and Characteristics: 
+The system will be used in the hospital. The administrators, front-desk staff will be the main users. Given the condition that not all the users are computer-literate. Some users may have to be trained on using the system. 
+2.4 Operating Environment: 
+The system is also designed to be user-friendly. The software will operate, including the hardware platform, operating system and versions, and any other software components or applications with which it must peacefully coexist. 
+2.5 Design and Implementation Constraints: 
+•  1. Anticipate difficulties and limitations regarding system upgrades and improvements due to the coordination required to stop clinical systems that require continuity of operation. 
+•  2. Be able to handle a significant number of transactions at any time. 
+•  3. Support a high rate of concurrent electronic transactions as different health professionals may have to enter new information or modify it. 
+•  4. Always log all transactions to be able to know what happened, allowing you to replay events, understanding bugs and ensuring the integrity of information. 
+•  5. Always ensure the integrity of the information, even in concurrent consultation. 
+•  6. Always make information accessible, even in concurrent consultation. 
+•  7. Guarantee a speed of data display, no matter how much information to look for in several different databases. 
+3. Positioning: 
+3.1 Business opportunity: 
+3.1.1 Improved Processes 
+It helps to optimize the user experience. Medical specialists, patients, and hospital authorities can interact online. 
+3.1.2 Financial control and tax planning 
+The management can monitor different financial operations including expenses, profits, and losses, paying bills and taxes, in and outpatient billing. The financial awareness helps to analyze business prospects quite clear and move in the right direction. 
+3.2 Market strategy 
+Due to the high market competitive nature, the medical industry is also open to all the different innovations that enable communication between patients, doctors, suppliers, and marketing services providers. 
+4. External Interface Requirements: 
+4.1 User Interfaces: 
+Describe the logical characteristics of each interface between the software product and the users. This may include sample screen images, any GUI standards or product family style guides that are to be followed, screen layout constraints, standard buttons and functions (e.g., help) that will appear on every screen, keyboard shortcuts, error message display standards, and so on. Define the software components for which a user interface is needed. Details of the user interface design should be documented in a separate user interface specification. 
+4.2 Hardware Interfaces: 
+Describe the logical and physical characteristics of each interface between the software product and the hardware components of the system. This may include the supported device types, the nature of the data and control interactions between the software and the hardware, and communication protocols to be used. 
+4.3 Software Interfaces: 
+Describe the connections between this product and other specific software components (name and version), including databases, operating systems, tools, libraries, and integrated commercial components. Identify the data items or messages coming into the system and going out and describe the purpose of each. Describe the services needed and the nature of communications. Refer to documents that describe detailed application programming interface protocols. Identify data that will be shared across software components. If the data sharing mechanism must be implemented in a specific way (for example, use of a global data area in a multitasking operating system), specify this as an implementation constraint. 
+5. Non-Functional Requirements 
+5.1 Security 
+SRS012 Patient Identification 
+The system requires the patient to identify himself /herself using PHN 
+SRS013 Logon ID 
+Any user who uses the system shall have a Logon ID and Password. 
+SRS014 Modification 
+Any modification (insert, delete, update) for the Database shall be synchronized and done only by the administrator in the ward. 
+SRS015 Front Desk staff Rights 
+Front Desk staff shall be able to view all information in HPIMS, add new patients to HPIMS but shall not be able to modify any information in it. 
+SRS016 Administrators' Rights 
+	Administrators shall be able to view and modify all information in 
+HPIMS. 	
+5.2 Performance Requirements 
+SRS017 Response Time 
+The system shall give responses in 1 second after checking the patient’s information. 
+SRS018 	Capacity 
+The System must support 1000 people at a time. 
+SRS019 	User-interface 
+The user-interface screen shall respond within 5 seconds. 
+SRS020 	Conformity 
+The systems must conform to the Microsoft Accessibility guidelines 
+5.3 Maintainability 
+SRS021 	Back Up 
+The system shall provide the capability to back-up the Data 
+SRS022 	Errors 
+The system shall keep a log of all the errors. 
+5.4 Reliability 
+SRS023 Availability 
+The system shall be available all the time 
+6.Other Requirements: 
+Appendix A: Terminology/Glossary/Definitions list 
+UML Class Diagram for Hospital Management System: 
+
+CRC for Hospital Management System: 
+
+Entity Relationship Diagram for Hospital Management System: 
+
+Data Flow Diagram (DFD) for Hospital Management System: 
+Context level: 
+
+Level 0: 
+
+Level 1: 
+
+Level 2: 
+

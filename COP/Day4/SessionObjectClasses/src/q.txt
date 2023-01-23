@@ -1,0 +1,28 @@
+The current year and the year in which the employee joined the organization
+are entered through the keyboard. If the number of years for which the employee has served the organization is greater than 3 then a 
+bonus of Rs. 25000/- is given to the employee. If the years of service are not greater than 3, 
+then the program should do nothing. Write a Java program to handle above situation.
+
+Q11.Write a program to input a character from user and print whether it is vowel or consonant
+
+Assignment List: (Loop)
+
+Q12.Write a Java program to input a number and a digit and count & print number of times the digit occurs in number.
+
+Q13.Write a Java program to print reverse of a entered number.
+
+Q14.Write a menu driven program to build a calculator as shown below. 
+				MENU
+	1.	Addition
+	2.	Subtraction
+	3.	Multiplication
+	4.	Division
+	5.	Power
+	6.	Exit.
+
+Accept a choice from the user and perform the operation. Display the answer. 
+(Hint: use do..while and switch .. case structure)
+
+Q15. Write a Java program to accept a number n and print 
+sum of squares of all numbers from 1 to n.
+

@@ -1,0 +1,415 @@
+Good Morning :)
+
+   process , process space  , ready queue ,
+   Turnaround time, IR , define OS
+   ______________________
+   
+   Process scheduling algorithm ---
+   	used by cpu schedular module of kernel
+   	To do what  ?   to select which process of ready queue will execute NEXT .
+   	
+   	
+   	We will see the basic cpu schedular algorithms----
+   	
+   1. FIFO /FCFS   = select the front most process in the ready queue to execute NEXT on CPU
+       How long will process get cpu ?
+       	IDEALLY = till process completes
+       	PRACTICALLY = 
+       	1. till interrupt
+       	2. IO instruction occurs
+   	
+   Advantages :
+   	1. Simplicity
+   	2. NO STARVATION
+  
+   
+   Disadvantages :
+  	1.  If process P1 of small Tcpu waits after process P2 of High Tcpu  then  Wt of P1 increases , thus Ta of P1 increases thus AVG Ta and throughput is badly affected.	
+   	
+   	Process  Arrival-Time   Tcpu(ms)
+   	 P1        0             3
+   	 P2        2             4
+   	 P3        1             5
+   	 
+   	 
+  Calculate Avg Ta and Avg Tw usign FIFO 
+  
+      Ta = Wt + Tcpu
+      Wt  = Start-time  minus  arrival-time
+      		
+      		Wt(ms)		Ta(ms)
+    P1       0-0= 0          0+3= 3
+    P2       8-2= 6          6+4 = 10
+    P3       3-1 = 2         2+5=  7
+   avg      (0+6+2)/3        (3+10+7)/3 
+  
+  ____________________________________________
+  
+  For every PCB there is a CONTEXT information --
+  
+  CONTEXT -- Snapshot of CPU registers at a given time
+  	   -- the state of CPU
+  	   
+CONTEXT  SWITCHING ---------------
+  When a process leaves CPU , CONTEXT is stored in PCB
+  When a process resumes execution , CONTEXT is loaded in the CPU 
+  --------------------------------
+  
+  Because of CONTEXT SWITCHING ---- the process can resume from where it left !!
+  
+ _______________________________
+ 
+ 2. SJF  = Shortest JOB FIRST 
+ 	The shortest Tcpu job in the ready queue is selected as Next process to use CPU 
+ 
+ How long will process get cpu ?
+       	IDEALLY = till process completes
+       	PRACTICALLY = 
+       	1. till interrupt
+       	2. IO instruction occurs
+ 
+ ADVANTAGE  : Short Tcpu process dont wait long
+ 		so avg Wt and Ta are reduced, 	 			throughput is improved
+ 
+ DISADVANTAGE :
+ 1.   It is not possible to predict Tcpu 
+ before execution of process
+ For ex ------
+    scanf(%d , &num )
+     for(i=0;i<num;i++)
+     {
+     	a+b
+     }
+  So this SJF is a theoritical algorithm 
+  
+  2. Starvation ---  process with high Tcpu may starve for CPU as newer smaller Tcpu processes keep arriving
+  
+  
+    Process   Arrival-time       Tcpu
+      P1          2                3
+      P2          0                4
+      P3          0                6         
+  
+  Calculate Avg Ta and Wt  using SJF 
+  
+  
+  Wt =  start-time minus arrival-time
+  Ta =  Wt + Tcpu
+  
+  		Wt         Ta
+  P1        4-2= 2         2+ 3= 5
+  P2        0-0 =0         0+5 = 4
+  P3        7-0= 7         7+6 = 13
+  avg =     (2+0+7)/3     (5+4+13)/3
+  
+  ______________________________
+  
+3.  Priority  Scheduling ----
+the process in ready queue with highest priority is selected for NEXT execution
+
+Priority is assigned by the Kernel or by program itself
+
+Ususally priority is from 1 to 10 
+1 lowest , 10 highest 
+5  =  normal priority 
+
+Multiuser OS = linux --- userwise priorities may be given by kernel
+
+
+ How long will process get cpu ?
+       	IDEALLY = till process completes
+       	PRACTICALLY = 
+       	1. till interrupt
+       	2. IO instruction occurs
+       	3. For preemptive priority till a higher process arrives and preempts the current one
+
+PREEMPTIVE  or  NONPREEMPTIVE priority scheduling ---
+
+PREEMPTIVE =  P1 is running , P2 has prio > P1
+	      P2 PREEMPTS P1 , starts using CPU
+	      P1 returns to ready queue
+	      
+	      P1 is running , P3 has prio <=P1
+	      P1 continues , P3 waits in ready queue
+	     
+Advantage :  priority is considered
+disadvantage : starvation of lower prio process
+	
+	Consider 1 as lowest and 10 as highest      
+    process  Arrival-time   Tcpu   Priority
+     P1         0            3        3
+     P2         1            5        8
+     P3         0            4        5
+     
+   Calc Avg Wt and Ta using Non preemptive PRIO 	      
+      Wt = starttime minus arrivaltime
+      Ta = Wt + Tcpu
+      
+      		Wt             Ta
+      P1     9-0 = 9          9+3 = 12
+      P2     4-1 = 3          3+5  = 8
+      P3     0-0  =0          0+4 = 4
+     avg     (9+3+0)/3        (12+8+4)/3
+     
+  _________________________________________
+  
+  Consider 1 as lowest and 10 as highest      
+    process  Arrival-time   Tcpu   Priority
+     P1         0            3        3
+     P2         1            5        8
+     P3         0            4        5
+     
+   Calc Avg Wt and Ta using preemptive PRIO   
+     
+   Wt = (start-arrival ) + (resume-preempt) +...
+   Ta =  Wt + Tcpu 
+   
+   		Wt         Ta
+   p1	    9-0= 9        9+3= 12
+   p2       (1-1=0)       0+5 = 5
+   p3       (0-0=0)       5 + 4 = 9
+   	    + ( 6-1=5)      
+      		
+   avg      9+0+5)/3        (12+5+9)/3   
+      
+      
+  PRACTICE  HW --------
+  
+process   arrivaltime   Tcpu   priority(1-10high)
+   P1       0		 4       4
+   P2       3            6       3
+   P3       4            4       7
+   P4       1            2       5
+   
+ calc avg Wt, Ta using FIFO , non preemptive SJF
+ non preemptive priority , preemptive prio
+  
+ __________________________________________
+ 
+ Round Robin Scheduling -- RR 
+ 	Select the process that is in the FRONT of the ready queue as Next process to use CPU
+  
+     How long will process get cpu ?
+       IDEALLY = FOR a specific time slice 
+       
+       	PRACTICALLY = 
+       	1. till interrupt
+       	2. IO instruction occurs
+  
+  Time Slice = small time quantum , decided by Kernel
+  after that time slice a TIMER Interrupt occurs
+  
+  
+  Advantage :
+        1.  EFFECT of multitasking - end user feels that all the programs are running at a time/simultaneously
+  	2. No Starvation
+  	3. Better Response time
+  
+  Disadvantage :
+  	1. too much context switiching overhead
+  	2. Wt increases , Ta increases , throughput 			decreases
+  
+  
+   Process  arrivaltime    Tcpu
+    P1         0             4
+    P2         1             5
+    P3         2             2
+    
+    Time slice = 2ms 
+    
+   find avg Wt , Ta using RR 
+    Wt =(start-arrival) +  ( resume-timer )+....
+    Ta  = Wt + Tcpu
+    
+    		Wt              Ta
+    P1      (0-0)+(6-2)=4       4+4 = 8
+    P2      (2-1)+(8-4)+(10-10)
+    	      1+ 4 = 5          5+5 = 10
+    P3      (4-2) = 2            2+2 = 4   
+    avg     (4+5+2)/3            8+10+4)/3
+  _______________________________________
+  
+  Linux  ---- 
+  	Flavors of Linux 
+  Red Hat, Fedora, Kali , MINT , Mandriva, Mandrake
+  Ubuntu , BOSS, Debian, SUSE, ........
+  
+  We use Linux based OS 
+  	-- open source = source code is availbale 
+  		for viewing and for changing(patches )
+  	-- GPL  = Gnu Public license
+  		anybody can install and use freely
+  		
+  		
+ ________________
+ TERMINAL =  CLI
+ 
+ Prompt > Command
+ 
+ 1.  clear 
+ 2. ls  = list the contents of current folder
+ 3. pwd =  show the present working directory
+ 	  show the current folder 
+ 	  
+ 4. cd    = change directory ( change the pwd )
+ 	  
+ What is the topmost folder in Linux File System ?  /   (  forward slash )  
+ 
+ To go to the parent folder   cd ..
+ To go to the USERS login home   cd ~
+ To go to a folder within current folder
+ 	 cd  folder-name
+ To go to topmost folder directly 
+ 	  cd  /
+ 	  
+
+ 	  
+ 	  
+ 	  
+ 	  
+ 	  
+ 	  
+ 	  
+  		
+  		
+  		
+  		
+  		
+  		
+  		
+  		 	      
+    	      
+    	      
+    	      
+    	    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+       
+      
+      
+      
+	      
+	      
+	      
+	      
+	      
+	      
+
+  
+
+
+
+
+
+
+
+	
+	
+  
+  
+  
+  
+    
+  		
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+   	 
+   	 
+   	 
+   	 
+   	 
+   	 
+   	 
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   

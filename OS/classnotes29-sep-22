@@ -1,0 +1,298 @@
+
+Loops 
+	while
+	for
+	for
+	until
+	
+Ex1 - print numbers from 1 to 20
+
+syntax -----
+while test
+do
+   do whatever
+done
+
+Ex2  
+Write a loop that asks user to enter name 
+and prints welcome name
+as long as user does not enter quit
+
+
+Ex3 
+Print the squares of all numbers from 1 to 20
+use simple for loop
+
+Ex4 
+  print numbers from 1 to 20 using until loop
+
+
+Ex5 use second type of for to print each word in a sentence , ask the user to enter a sentence
+
+_____________________________________
+
+Text handling commands in linux 
+
+  1. wc  = word count 
+      wc
+      wc -c
+      wc -l
+      wc -w
+
+  2. head -number 
+  	it shows top (number) lines in the file
+  	
+  3. tail -number 
+  	it shows bottom (number) lines in the file
+
+  4. sort = sort the lines 
+  	 by default sort by first column 
+  	 alphabetically / lexicographically 
+  	 ascending 
+  	 
+  	 sort -k 2 [ sort by second column ]
+  	 sort -n [ sort numerically ]
+  	 sort -r [ sort in descending ]
+  	 
+ _____________________________________
+ using pipes on command line 
+     |   = this symbol is used as a pipe bet commands
+     
+     command1 |  command2 | command 3 | ....
+ 
+ each command is a process
+ so this is IPC
+ 
+ 
+ write a command to show the highest jersey number player !!!
+ 
+ Ex - write a shellscript to show the NAME of the player with highest jersey number.
+ 
+ Ex show all file names in descending order
+ 	ls | sort -r
+	OR
+	ls  -r
+	
+Ex -- show how many entries in current folder ?
+	ls | sort -r | wc -l
+
+
+Ex - write a shell script to accept a string from user and show its length 
+
+
+Ex - WASS , ask the user to enter a string
+	show each letter of string on one line
+	ex -- welcome
+	w
+	e
+	l
+	c
+	o
+	m
+	e
+	
+    cut -c number  filename
+     it cuts the (number) char from each line of file
+    
+   _________________________________
+   
+   int execl(const char *path, const char *arg, …, NULL);
+   
+int execlp(const char *file, const char *arg, …, NULL );
+
+
+int execv(const char *path, char *const argv[]);
+
+
+int execvp(const char *file, char *const argv[]);
+
+
+
+int execle(const char *path, const char *arg, …, NULL, char * const envp[] );
+int execve(const char *file, char *const argv[], char *const envp[]); 
+    
+    
+ ___________________________________
+ 
+ system call = exec system call
+ 	used to run programs from our c programs
+ 	the exec process takes over the current process space.
+ 	
+Example - I want to run a command from my c program .   ls  /
+
+____________________________________
+
+RACE CONDITION = Problem due to sharing same data
+Solution MUTUAL EXCLUSION ( MUTEX )
+	2 processes using same data cannot run their
+	CRITICAL SECTIONS at a time
+How is mutex achieved ?  Semaphore
+
+Semaphore is an int variable - accessed by atomic fucntions that will not have interrupt when they run.
+
+Those functions are wait and signal
+
+	wait(sema)
+	{
+		if( sema > 0)
+		{
+		    sema--
+		    return ; //code proceeds
+		}
+		else
+		 {
+		 wait in a loop ; //code is block
+		 }
+	}
+
+
+	signal (sema)
+	{
+		sema++
+	}
+	  
+   2 types of semaphores
+ a)  MUTEX  = to achieve mutual exclusion of critical section
+     
+  b) COUNTING SEMAPHORE = used as a data itself in IPC
+	value increases from 0 to n and decreases from n to 0
+___________________________________
+
+Classical synchronization problem --- 
+	Producer Consumer problem !!!
+	OR
+	Bounded Buffer problem ---
+	
+P1 = Producer
+|
+|
+buffer
+|
+|
+P2 = Consumer
+
+
+	producer
+	
+	while(1){
+	-producing the item
+	  wait(empty)
+	 wait(mutex)
+	-add-to-buffer
+	 signal(mutex)
+	 signal(full)
+	}
+	
+	consumer
+	  while(1)
+	  {
+	      wait(full)
+	      wait(mutex)
+	    - pick from buffer
+	      signal(mutex)
+	      signal(empty)
+	
+	    -consume
+	  }
+	
+	
+We has one mutex 
+We will have 2 counting semaphores  full =0 , empty=10	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+    
+    
+	
+	
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  	 
+  	 
+  	 
+  	 
+  	 
+  	 
+  	 
+  	 
+  	 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

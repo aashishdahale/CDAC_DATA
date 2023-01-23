@@ -1,0 +1,855 @@
+
+
+mysql> select database();
++------------+
+| database() |
++------------+
+| NULL       |
++------------+
+1 row in set (0.00 sec)
+
+mysql> use db2;
+Database changed
+mysql> select database();
++------------+
+| database() |
++------------+
+| db2        |
++------------+
+1 row in set (0.00 sec)
+
+mysql> show tables;
++---------------+
+| Tables_in_db2 |
++---------------+
+| t2            |
++---------------+
+1 row in set (0.00 sec)
+
+mysql> drop table t2;
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> show tables;
+Empty set (0.00 sec)
+
+mysql> create table blog(blogID int primary key, post date, postTime time, blog varchar(40));
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> create table comments(Id int, comment varchar(40), user varchar(40), foreign key(id) references blog(blogid));
+Query OK, 0 rows affected (0.55 sec)
+
+mysql> drop table blog;
+ERROR 3730 (HY000): Cannot drop table 'blog' referenced by a foreign key constraint 'comments_ibfk_1' on table 'comments'.
+mysql> desc blog;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| blogID   | int         | NO   | PRI | NULL    |       |
+| post     | date        | YES  |     | NULL    |       |
+| postTime | time        | YES  |     | NULL    |       |
+| blog     | varchar(40) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> desc comments;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| Id      | int         | YES  | MUL | NULL    |       |
+| comment | varchar(40) | YES  |     | NULL    |       |
+| user    | varchar(40) | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+desc blog;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| blogID   | int         | NO   | PRI | NULL    |       |
+| post     | date        | YES  |     | NULL    |       |
+| postTime | time        | YES  |     | NULL    |       |
+| blog     | varchar(40) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+desc comments;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| Id      | int         | YES  | MUL | NULL    |       |
+| comment | varchar(40) | YES  |     | NULL    |       |
+| user    | varchar(40) | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+insert into blog values(1, '2022-10-19', '08:30','Indian Sports');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> select* from blog;
++--------+------------+----------+---------------+
+| blogID | post       | postTime | blog          |
++--------+------------+----------+---------------+
+|      1 | 2022-10-19 | 08:30:00 | Indian Sports |
++--------+------------+----------+---------------+
+1 row in set (0.00 sec)
+
+mysql> insert into comments values(1, 'Cricket', 'saleel');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into comments values(1, 'Cricket tow', 'sharmin');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into comments values(1, 'Cricket three', 'ruhan');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> select * from blog;
++--------+------------+----------+---------------+
+| blogID | post       | postTime | blog          |
++--------+------------+----------+---------------+
+|      1 | 2022-10-19 | 08:30:00 | Indian Sports |
++--------+------------+----------+---------------+
+1 row in set (0.00 sec)
+
+mysql> select * from comments;
++------+---------------+---------+
+| Id   | comment       | user    |
++------+---------------+---------+
+|    1 | Cricket       | saleel  |
+|    1 | Cricket tow   | sharmin |
+|    1 | Cricket three | ruhan   |
++------+---------------+---------+
+insert into comments values(null, 'Cricket five', 'neel');
+Query OK, 1 row affected (0.06 sec)
+
+mysql> select * from blog;
++--------+------------+----------+---------------+
+| blogID | post       | postTime | blog          |
++--------+------------+----------+---------------+
+|      1 | 2022-10-19 | 08:30:00 | Indian Sports |
++--------+------------+----------+---------------+
+1 row in set (0.00 sec)
+
+mysql> select * from comments;
++------+---------------+---------+
+| Id   | comment       | user    |
++------+---------------+---------+
+|    1 | Cricket       | saleel  |
+|    1 | Cricket tow   | sharmin |
+|    1 | Cricket three | ruhan   |
+| NULL | Cricket five  | neel    |
++------+---------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> update comments set id=1 where id = null;
+Query OK, 0 rows affected (0.02 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+mysql> select * from comments;
++------+---------------+---------+
+| Id   | comment       | user    |
++------+---------------+---------+
+|    1 | Cricket       | saleel  |
+|    1 | Cricket tow   | sharmin |
+|    1 | Cricket three | ruhan   |
+| NULL | Cricket five  | neel    |
++------+---------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> update comments set id=1 where id is null;
+Query OK, 1 row affected (0.05 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from comments;
++------+---------------+---------+
+| Id   | comment       | user    |
++------+---------------+---------+
+|    1 | Cricket       | saleel  |
+|    1 | Cricket tow   | sharmin |
+|    1 | Cricket three | ruhan   |
+|    1 | Cricket five  | neel    |
++------+---------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> update comments set id := null where user='neel';
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from comments;
++------+---------------+---------+
+| Id   | comment       | user    |
++------+---------------+---------+
+|    1 | Cricket       | saleel  |
+|    1 | Cricket tow   | sharmin |
+|    1 | Cricket three | ruhan   |
+| NULL | Cricket five  | neel    |
++------+---------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> update comments set id := null;
+Query OK, 3 rows affected (0.04 sec)
+Rows matched: 4  Changed: 3  Warnings: 0
+
+mysql> select * from comments;
++------+---------------+---------+
+| Id   | comment       | user    |
++------+---------------+---------+
+| NULL | Cricket       | saleel  |
+| NULL | Cricket tow   | sharmin |
+| NULL | Cricket three | ruhan   |
+| NULL | Cricket five  | neel    |
++------+---------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> update comments set id := 1;
+Query OK, 4 rows affected (0.04 sec)
+Rows matched: 4  Changed: 4  Warnings: 0
+
+mysql> select * from comments;
++------+---------------+---------+
+| Id   | comment       | user    |
++------+---------------+---------+
+|    1 | Cricket       | saleel  |
+|    1 | Cricket tow   | sharmin |
+|    1 | Cricket three | ruhan   |
+|    1 | Cricket five  | neel    |
++------+---------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> set autocommit= off
+    -> ;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> show variable;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'variable' at line 1
+
+mysql> show variables like 'autoc%';
++---------------+-------+
+| Variable_name | Value |
++---------------+-------+
+| autocommit    | OFF   |
++---------------+-------+
+1 row in set (0.00 sec)
+
+mysql> show variables like 'autoc%';
++---------------+-------+
+| Variable_name | Value |
++---------------+-------+
+| autocommit    | ON    |
++---------------+-------+
+1 row in set (0.00 sec)
+
+mysql> set autocommit = off;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> show variables like 'autoc%';
++---------------+-------+
+| Variable_name | Value |
++---------------+-------+
+| autocommit    | OFF   |
++---------------+-------+
+1 row in set (0.00 sec)
+
+mysql> select * from blog;
+ERROR 1046 (3D000): No database selected
+mysql> user db2
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'user db2' at line 1
+mysql> use db2;
+Database changed
+mysql> select * from blog;
++--------+------------+----------+---------------+
+| blogID | post       | postTime | blog          |
++--------+------------+----------+---------------+
+|      1 | 2022-10-19 | 08:30:00 | Indian Sports |
++--------+------------+----------+---------------+
+1 row in set (0.00 sec)
+
+mysql> select * from comments;
++------+---------------+---------+
+| Id   | comment       | user    |
++------+---------------+---------+
+|    1 | Cricket       | saleel  |
+|    1 | Cricket tow   | sharmin |
+|    1 | Cricket three | ruhan   |
+|    1 | Cricket five  | neel    |
++------+---------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> update comments set id = null;
+Query OK, 4 rows affected (0.00 sec)
+Rows matched: 4  Changed: 4  Warnings: 0
+
+mysql> select * from comments;
++------+---------------+---------+
+| Id   | comment       | user    |
++------+---------------+---------+
+| NULL | Cricket       | saleel  |
+| NULL | Cricket tow   | sharmin |
+| NULL | Cricket three | ruhan   |
+| NULL | Cricket five  | neel    |
++------+---------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> rollback;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> select * from comments;
++------+---------------+---------+
+| Id   | comment       | user    |
++------+---------------+---------+
+|    1 | Cricket       | saleel  |
+|    1 | Cricket tow   | sharmin |
+|    1 | Cricket three | ruhan   |
+|    1 | Cricket five  | neel    |
++------+---------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> update comments set id = null;
+Query OK, 4 rows affected (0.00 sec)
+Rows matched: 4  Changed: 4  Warnings: 0
+
+mysql> select * from comments;
++------+---------------+---------+
+| Id   | comment       | user    |
++------+---------------+---------+
+| NULL | Cricket       | saleel  |
+| NULL | Cricket tow   | sharmin |
+| NULL | Cricket three | ruhan   |
+| NULL | Cricket five  | neel    |
++------+---------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> commit;
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> select * from comments;
++------+---------------+---------+
+| Id   | comment       | user    |
++------+---------------+---------+
+| NULL | Cricket       | saleel  |
+| NULL | Cricket tow   | sharmin |
+| NULL | Cricket three | ruhan   |
+| NULL | Cricket five  | neel    |
++------+---------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> rollback;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from comments;
++------+---------------+---------+
+| Id   | comment       | user    |
++------+---------------+---------+
+| NULL | Cricket       | saleel  |
+| NULL | Cricket tow   | sharmin |
+| NULL | Cricket three | ruhan   |
+| NULL | Cricket five  | neel    |
++------+---------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> update comments set id = 1;
+Query OK, 4 rows affected (0.00 sec)
+Rows matched: 4  Changed: 4  Warnings: 0
+
+mysql> select * from comments;
++------+---------------+---------+
+| Id   | comment       | user    |
++------+---------------+---------+
+|    1 | Cricket       | saleel  |
+|    1 | Cricket tow   | sharmin |
+|    1 | Cricket three | ruhan   |
+|    1 | Cricket five  | neel    |
++------+---------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> rollback;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> select * from comments;
++------+---------------+---------+
+| Id   | comment       | user    |
++------+---------------+---------+
+| NULL | Cricket       | saleel  |
+| NULL | Cricket tow   | sharmin |
+| NULL | Cricket three | ruhan   |
+| NULL | Cricket five  | neel    |
++------+---------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> update comments set id = 1;
+Query OK, 4 rows affected (0.00 sec)
+Rows matched: 4  Changed: 4  Warnings: 0
+
+mysql> commit;
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> select * from comments;
++------+---------------+---------+
+| Id   | comment       | user    |
++------+---------------+---------+
+|    1 | Cricket       | saleel  |
+|    1 | Cricket tow   | sharmin |
+|    1 | Cricket three | ruhan   |
+|    1 | Cricket five  | neel    |
++------+---------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> rollback;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from comments;
++------+---------------+---------+
+| Id   | comment       | user    |
++------+---------------+---------+
+|    1 | Cricket       | saleel  |
+|    1 | Cricket tow   | sharmin |
+|    1 | Cricket three | ruhan   |
+|    1 | Cricket five  | neel    |
++------+---------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> update comments set id = null;
+Query OK, 4 rows affected (0.00 sec)
+Rows matched: 4  Changed: 4  Warnings: 0
+
+mysql> select * from comments;
++------+---------------+---------+
+| Id   | comment       | user    |
++------+---------------+---------+
+| NULL | Cricket       | saleel  |
+| NULL | Cricket tow   | sharmin |
+| NULL | Cricket three | ruhan   |
+| NULL | Cricket five  | neel    |
++------+---------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> create table a(c1 int);
+Query OK, 0 rows affected (0.12 sec)
+
+mysql> desc a;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| c1    | int  | YES  |     | NULL    |       |
++-------+------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> rollback;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from comments;
++------+---------------+---------+
+| Id   | comment       | user    |
++------+---------------+---------+
+| NULL | Cricket       | saleel  |
+| NULL | Cricket tow   | sharmin |
+| NULL | Cricket three | ruhan   |
+| NULL | Cricket five  | neel    |
++------+---------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> update comments set id = 1;
+Query OK, 4 rows affected (0.00 sec)
+Rows matched: 4  Changed: 4  Warnings: 0
+
+mysql> select * from comments;
++------+---------------+---------+
+| Id   | comment       | user    |
++------+---------------+---------+
+|    1 | Cricket       | saleel  |
+|    1 | Cricket tow   | sharmin |
+|    1 | Cricket three | ruhan   |
+|    1 | Cricket five  | neel    |
++------+---------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> commit;
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> select * from comments;
++------+---------------+---------+
+| Id   | comment       | user    |
++------+---------------+---------+
+|    1 | Cricket       | saleel  |
+|    1 | Cricket tow   | sharmin |
+|    1 | Cricket three | ruhan   |
+|    1 | Cricket five  | neel    |
++------+---------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> select * from blog;
++--------+------------+----------+---------------+
+| blogID | post       | postTime | blog          |
++--------+------------+----------+---------------+
+|      1 | 2022-10-19 | 08:30:00 | Indian Sports |
++--------+------------+----------+---------------+
+1 row in set (0.00 sec)
+
+mysql> delete from comments;
+Query OK, 4 rows affected (0.00 sec)
+
+mysql> select * from comments;
+Empty set (0.00 sec)
+
+mysql> rollback;'
+Query OK, 0 rows affected (0.01 sec)
+
+    '> ;
+    '> ff
+    '>
+    '> fg
+    '> ^C
+mysql> select * from comments;
++------+---------------+---------+
+| Id   | comment       | user    |
++------+---------------+---------+
+|    1 | Cricket       | saleel  |
+|    1 | Cricket tow   | sharmin |
+|    1 | Cricket three | ruhan   |
+|    1 | Cricket five  | neel    |
++------+---------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> delete from comments where user='neel';
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from comments;
++------+---------------+---------+
+| Id   | comment       | user    |
++------+---------------+---------+
+|    1 | Cricket       | saleel  |
+|    1 | Cricket tow   | sharmin |
+|    1 | Cricket three | ruhan   |
++------+---------------+---------+
+3 rows in set (0.00 sec)
+
+mysql> rollback;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> select * from comments;
++------+---------------+---------+
+| Id   | comment       | user    |
++------+---------------+---------+
+|    1 | Cricket       | saleel  |
+|    1 | Cricket tow   | sharmin |
+|    1 | Cricket three | ruhan   |
+|    1 | Cricket five  | neel    |
++------+---------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> create table abc(id int primary key, ename varchar(10), mgr int,  foreign key(mgr) references abc(id) );
+Query OK, 0 rows affected (0.13 sec)
+
+mysql> desc abc
+    -> ;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | NO   | PRI | NULL    |       |
+| ename | varchar(10) | YES  |     | NULL    |       |
+| mgr   | int         | YES  | MUL | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> insert into abc values(1,'saleel',null);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from abc;
++----+--------+------+
+| id | ename  | mgr  |
++----+--------+------+
+|  1 | saleel | NULL |
++----+--------+------+
+1 row in set (0.00 sec)
+
+mysql> insert into abc values(2,'sharmin',1);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from abc;
++----+---------+------+
+| id | ename   | mgr  |
++----+---------+------+
+|  1 | saleel  | NULL |
+|  2 | sharmin |    1 |
++----+---------+------+
+2 rows in set (0.00 sec)
+
+mysql> update abc set mgr=2 where mgr is null;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from abc;
++----+---------+------+
+| id | ename   | mgr  |
++----+---------+------+
+|  1 | saleel  |    2 |
+|  2 | sharmin |    1 |
++----+---------+------+
+2 rows in set (0.00 sec)
+
+mysql> rollback;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> select * from abc;
+Empty set (0.00 sec)
+
+mysql> insert into abc values(1,'saleel',null);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into abc values(2,'sharmin',1);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> commit;
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> select * from abc;
++----+---------+------+
+| id | ename   | mgr  |
++----+---------+------+
+|  1 | saleel  | NULL |
+|  2 | sharmin |    1 |
++----+---------+------+
+2 rows in set (0.00 sec)
+
+mysql> update abc set mgr=2 where mgr is null;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from abc;
++----+---------+------+
+| id | ename   | mgr  |
++----+---------+------+
+|  1 | saleel  |    2 |
+|  2 | sharmin |    1 |
++----+---------+------+
+2 rows in set (0.00 sec)
+
+mysql> rollback;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> select * from abc;
++----+---------+------+
+| id | ename   | mgr  |
++----+---------+------+
+|  1 | saleel  | NULL |
+|  2 | sharmin |    1 |
++----+---------+------+
+2 rows in set (0.00 sec)
+
+mysql> update abc set mgr=3 where mgr is null;
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`db2`.`abc`, CONSTRAINT `abc_ibfk_1` FOREIGN KEY (`mgr`) REFERENCES `abc` (`id`))
+mysql>
+mysql> select * from abc;
++----+---------+------+
+| id | ename   | mgr  |
++----+---------+------+
+|  1 | saleel  | NULL |
+|  2 | sharmin |    1 |
++----+---------+------+
+2 rows in set (0.00 sec)
+
+mysql> insert into abc values(3, 'some',3);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from abc;
++----+---------+------+
+| id | ename   | mgr  |
++----+---------+------+
+|  1 | saleel  | NULL |
+|  2 | sharmin |    1 |
+|  3 | some    |    3 |
++----+---------+------+
+3 rows in set (0.00 sec)
+
+mysql> select * from abc;
++----+---------+------+
+| id | ename   | mgr  |
++----+---------+------+
+|  1 | saleel  | NULL |
+|  2 | sharmin |    1 |
+|  3 | some    |    3 |
++----+---------+------+
+3 rows in set (0.00 sec)
+
+mysql> insert into abc(mgr, ename, id) values(4,'someone',4);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from abc;
++----+---------+------+
+| id | ename   | mgr  |
++----+---------+------+
+|  1 | saleel  | NULL |
+|  2 | sharmin |    1 |
+|  3 | some    |    3 |
+|  4 | someone |    4 |
++----+---------+------+
+4 rows in set (0.00 sec)
+
+mysql> select * from comments;
++------+---------------+---------+
+| Id   | comment       | user    |
++------+---------------+---------+
+|    1 | Cricket       | saleel  |
+|    1 | Cricket tow   | sharmin |
+|    1 | Cricket three | ruhan   |
+|    1 | Cricket five  | neel    |
++------+---------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> update comments set comment='abc', id=null where user='neel';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from comments;
++------+---------------+---------+
+| Id   | comment       | user    |
++------+---------------+---------+
+|    1 | Cricket       | saleel  |
+|    1 | Cricket tow   | sharmin |
+|    1 | Cricket three | ruhan   |
+| NULL | abc           | neel    |
++------+---------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> rollback;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> select * from comments;
++------+---------------+---------+
+| Id   | comment       | user    |
++------+---------------+---------+
+|    1 | Cricket       | saleel  |
+|    1 | Cricket tow   | sharmin |
+|    1 | Cricket three | ruhan   |
+|    1 | Cricket five  | neel    |
++------+---------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> update comments set comment='abc', id=null where user='neel' and user='ruhan';
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+
+mysql> select * from comments;
++------+---------------+---------+
+| Id   | comment       | user    |
++------+---------------+---------+
+|    1 | Cricket       | saleel  |
+|    1 | Cricket tow   | sharmin |
+|    1 | Cricket three | ruhan   |
+|    1 | Cricket five  | neel    |
++------+---------------+---------+
+4 rows in set (0.00 sec)
+
+mysql> update comments set comment='abc', id=null where user='neel' or user='ruhan';
+Query OK, 2 rows affected (0.00 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+
+mysql> source C:\MySQLDEMOBLD7.SQL
+Query OK, 0 rows affected, 1 warning (0.05 sec)
+
+
+mysql> select * 'abc' from emp;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''abc' from emp' at line 1
+mysql> select ename from emp;
+
+
+
+mysql> select ename, job, ename from emp;
++----------+---------------------+----------+
+| ename    | job                 | ename    |
++----------+---------------------+----------+
+| GITA     | Compliance officers | GITA     |
+| VRUSHALI | Compliance officers | VRUSHALI |
+| SHARMIN  | Public Relation     | SHARMIN  |
+| BANDISH  | Public Relation     | BANDISH  |
+| SMITH    | CLERK               | SMITH    |
+| AARAV    | CLERK               | AARAV    |
+| THOMAS   | CLERK               | THOMAS   |
+| ALLEN    | SALESMAN            | ALLEN    |
+| WARD     | SALESMAN            | WARD     |
+| JONES    | MANAGER             | JONES    |
+| MARTIN   | SALESMAN            | MARTIN   |
+| BLAKE    | MANAGER             | BLAKE    |
+| CLARK    | MANAGER             | CLARK    |
+| SCOTT    | ANALYST             | SCOTT    |
+| KING     | PRESIDENT           | KING     |
+| FRED     | vice PRESIDENT      | FRED     |
+| TURNER   | SALESMAN            | TURNER   |
+| ADAMS    | CLERK               | ADAMS    |
+| JAMES    | CLERK               | JAMES    |
+| FORD     | ANALYST             | FORD     |
+| HOFFMAN  | MANAGER             | HOFFMAN  |
+| GRASS    | SALESMAN            | GRASS    |
+| MILLER   | CLERK               | MILLER   |
+| AARUSH   | SALESMAN            | AARUSH   |
+| ALEX     | MANAGER             | ALEX     |
+| NATASHA  | CLERK               | NATASHA  |
+| SANGITA  | Compliance officers | SANGITA  |
+| SUPRIYA  | ANALYST             | SUPRIYA  |
++----------+---------------------+----------+
+28 rows in set (0.00 sec)
+
+mysql> select ename, job from emp;
++----------+---------------------+
+| ename    | job                 |
++----------+---------------------+
+| GITA     | Compliance officers |
+| VRUSHALI | Compliance officers |
+| SHARMIN  | Public Relation     |
+| BANDISH  | Public Relation     |
+| SMITH    | CLERK               |
+| AARAV    | CLERK               |
+| THOMAS   | CLERK               |
+| ALLEN    | SALESMAN            |
+| WARD     | SALESMAN            |
+| JONES    | MANAGER             |
+| MARTIN   | SALESMAN            |
+| BLAKE    | MANAGER             |
+| CLARK    | MANAGER             |
+| SCOTT    | ANALYST             |
+| KING     | PRESIDENT           |
+| FRED     | vice PRESIDENT      |
+| TURNER   | SALESMAN            |
+| ADAMS    | CLERK               |
+| JAMES    | CLERK               |
+| FORD     | ANALYST             |
+| HOFFMAN  | MANAGER             |
+| GRASS    | SALESMAN            |
+| MILLER   | CLERK               |
+| AARUSH   | SALESMAN            |
+| ALEX     | MANAGER             |
+| NATASHA  | CLERK               |
+| SANGITA  | Compliance officers |
+| SUPRIYA  | ANALYST             |
++----------+---------------------+
+28 rows in set (0.00 sec)
+
+mysql> select ename EmployeeName, job from emp;
++--------------+---------------------+
+| EmployeeName | job                 |
++--------------+---------------------+
+| GITA         | Compliance officers |
+| VRUSHALI     | Compliance officers |
+| SHARMIN      | Public Relation     |
+| BANDISH      | Public Relation     |
+| SMITH        | CLERK               |
+| AARAV        | CLERK               |
+| THOMAS       | CLERK               |
+| ALLEN        | SALESMAN            |
+| WARD         | SALESMAN            |
+| JONES        | MANAGER             |
+| MARTIN       | SALESMAN            |
+| BLAKE        | MANAGER             |
+| CLARK        | MANAGER             |
+| SCOTT        | ANALYST             |
+| KING         | PRESIDENT           |
+| FRED         | vice PRESIDENT      |
+| TURNER       | SALESMAN            |
+| ADAMS        | CLERK               |
+| JAMES        | CLERK               |
+| FORD         | ANALYST             |
+| HOFFMAN      | MANAGER             |
+| GRASS        | SALESMAN            |
+| MILLER       | CLERK               |
+| AARUSH       | SALESMAN            |
+| ALEX         | MANAGER             |
+| NATASHA      | CLERK               |
+| SANGITA      | Compliance officers |
+| SUPRIYA      | ANALYST             |
++--------------+---------------------+
+28 rows in set (0.00 sec)

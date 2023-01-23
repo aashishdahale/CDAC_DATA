@@ -1,0 +1,63 @@
+Steps for starting and running Docker on Ubuntu Virtual Machine on AWS
+
+
+
+
+Please find  git hub code repositories  for having dockerized webappp from Ravi Tambade's   repo
+
+https://github.com/RaviTambade/containerapps.git
+https://github.com/RaviTambade/webapp.git
+
+
+__________________________________________________________________________________________________________
+
+
+#sudo apt install docker.io
+# sudo systemctl start docker 
+# sudo systemctl status docker
+# sudo systemctl enable docker
+# sudo docker images
+# sudo docker ps			Lists running containers. 
+# sudo docker pull hello-world		Most of your images will be created on top of a base image from the Docker Hub registry.
+# sudo docker images			
+# sudo docker run hello-world
+
+# sudo docker container ls --all	List all containers runningus
+# sudo docker container --help
+
+
+Lab Instructions for pulling Readymade container images from Docker Hub
+		     Starting Containers with the help of Docker Container service
+		     Testing Applications running inside container
+
+
+
+
+a. Pull and Run nginx Image from Docker Hub
+
+#sudo docker pull nginx
+	
+#sudo docker run --name webserver -d -p 8080:80 nginx:latest
+	
+Access  url http://your external id address:8080  in  your client Browser  to invoke Web Application
+
+
+
+
+c. Pull Containerized applications from remote Git Repository
+
+ 
+
+  c.1 Build container for NodeJS Application
+	
+	#cd containerapps/nodeapp			--> set directory to NodeJS application folder
+
+	#sudo docker build -t nodeapp .  		--> build docker container with the help of DockerFile 
+
+
+
+  c.2 Run container for NodeJS Application
+
+	#sudo docker run -p 8081:8081 nodeapp		-->run docker container which has NodeJS EStore Web app hosted
+
+	Access  url http://your external id address:8081  in  your client Browser  to invoke Web Application

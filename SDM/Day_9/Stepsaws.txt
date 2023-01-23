@@ -1,0 +1,47 @@
+
+
+Steps for node js Application Deployment 
+
+1.Create node js Application
+	server .js and public folder with html files
+
+2.Test node js application running on Developer machine
+	node server.js 
+
+3.Create  Github Repo to your github subscription to store node js application.
+	login to github,create private repository
+	clone repo to local repo on dev machine
+	add server.js file, public folder with all html files.
+	add .gitignore file to bypass node_modules folder and package-lock.json file while pushing to remote.
+	push all changes back to git remote url main branch
+
+4.Create aws free tier account.
+	Access aws web site.
+	signup to aws console
+	provide your email and passsword to create free tier account
+	provide credit card or debit card information for account verification.
+	use your registered mobile number to receive verification code from aws.
+	complete the process of account creation
+	login to aws console using email and password mentioned above process.
+	Choose Mumbai Data Center for using aws  ec2 service as IAAS (infrastrcture as a service)
+	
+5.Use aws console to create virtual server using EC2 Service.
+
+6.Access remote virtual server using browser or putty client on windows ( from your machine).
+7.Install git on linux virtual Server
+8.Install node js on linux virutal Server.
+	set curl command 
+		sudo yum -y install curl
+	set source from where node js installable will be downloaded 
+		curl -sL https://rpm.nodesource.com/setup_16.x | sudo bash -
+	now you can install node js from above location.
+		sudo yum install -y nodejs
+
+
+	
+9.Clone git repo from github to Linux virtual Server.
+10.Install dependency node modules to run node js web application.
+11.Run Node js application in background in linux virtual Server.
+12.Set firewall setting for linux virtual server to accept network traffic from anywhere as incomming rule.
+13.Check public static Ip address of linux virtual server and port number where node application running.
+14.User your client machine browser or mobile browser to access web site running in linux virtual server.

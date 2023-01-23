@@ -1,0 +1,57 @@
+Q1.Write a Shell script which will do below operations:
+	- Accept filename string from the user
+	- If a file with same name is present in current directory then print "This is filename" and exit
+	- If a directory with same name is present in current directory then print "This is directory name" and exit
+	- If current directory does not have file/directory with input name then, create new file in with same name and write "Hello World" in it and exit.
+
+Q2.Print below pattern
+****
+***
+**
+*
+
+Q3.accept 2 numbers and  show a menu to user 
+	1 add
+	2 sub
+	3 multiply
+	4 divide
+  show output as per choice
+
+Q4.Write a C program to create a thread that prints hello world 50 times. 
+	The main thread should wait for the thread to finish and display 'bye bye'.
+
+Q5.Write a shell script that accepts a level number from user and prints as follows
+	For ex - if level is 4 print. (14 Marks)
+	1
+	2 2
+	3 3 3
+	4 4 4 4
+
+
+JAVA -COP
+Q1.Write a Java program to print following pattern: (13 Marks)
+	 5											
+	 454
+	 34543
+	 2345432
+	 123454321
+
+Q2.Write a Java program to find out the difference of the 
+largest and smallest elements of an array
+
+Q3.For below Main class write appropriate class and methods so the main() 
+will execute all the methods shown
+
+class Book
+{
+	Book book1=new Book(1,"C++","Yashwant Kanetkar",300.07f);
+	Book book2=new Book(2,"Java","Herbalt shield",500.07f);
+	if(book1.getBookPrice() > book2.getBookPrice())
+	{
+		System.out.println("C++ has more price than java book"+book1);
+	}
+	else
+	{
+		System.out.println("Java has more price than C++ book"+book2);
+	}
+}

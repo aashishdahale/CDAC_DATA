@@ -1,0 +1,325 @@
+
+	
+
+	Good Morning  :)
+
+	OS = operating system 
+
+Program = set of intructions given to Processor
+Software = set of programs to solve user problems
+
+system software  = software that deals with , mamages , works with system. Ex -  command prompt, drivers, compilers, interpreters, linkers,loaders ,OS
+
+application software = software to solve client problems
+Ex -word , zoom , excel , browsers, calc, meet , IDE , notepad, auto cad , matlab, add,.........
+
+OS  Definition  =  It is a system software , that acts as an interface between 
+	a. System and End User( human ) --GUI , CLI
+	b. System and Program User --- System calls
+OS manages the following ----
+a. process management
+b. memory management
+c. IO management (File /Disk )
+d. Authenication (Security )
+
+____________________________
+System ----
+	1. CPU 	
+	2. RAM 
+	3. HDD
+	4. IO Devices
+	5. Caches
+	6. IO coprocessor
+
+____________________________
+C program  ex.c ===Hard disk 
+	|
+	ex.exe =  Hard Disk 
+
+
+Hard Disk =  Non Volatile Storage = Secondary storage
+Hard disk is made up of ??
+	magnetic dipoles are arranged to store  BIT
+
+Binary digIT = Bit =  0  ,1 
+
+R & D   --  SSD =  material ???
+
+HDD  size ?  > 1 TB 
+
+______________________
+
+EVERY program MUST  be loaded in the RAM 
+
+RAM  = Primary storage  = Volatile Memory 
+
+It is made up of ?
+
+RAM size ? 4 GB ---- 128GB
+
+_________________________
+
+L1 , L2 Cache 
+made up  of ?
+
+R & D 
+                       HDD    SSD  RAM   L1 cache  L2 Cache
+material
+size
+access time
+brand
+
+
+__________________________________
+
+To tun the program  = CPU 
+    CPU   = ALU   + Registers
+
+
+ALU = Arithmetic Logic unit
+made up of ?  semiconductor circuits that perform 
+
+Arithmetic operations =  +  - *  /   %
+Relational operations =   <  >  <=  >=  ==  !=
+Logical operations =  AND , OR, NOT,
+
+Registers  in CPU  = Storage
+	small storage  =  4 bytes or 8 bytes
+
+
+WORD SIZE   =  32 bit  or 64 bit  ??
+  32 bits =  4 bytes
+  64 bits = 8 bytes
+At a time how many bits can be transferred from RAM to Register?
+Data cable
+
+
+Different Registers   ----   
+
+IR  = instruction register
+PC =  program counter  ( address of next instr )
+Accumulator
+DR0, DR1 = Data registers
+ADR0, ADR1 = Address of data registers  ( address of next operands)
+....
+.....
+
+    34  + 20  
+
+IR  =  +
+DR0 = 34
+DR1 = 20
+
+__________________________________
+
+ ex.c 
+       void main()
+       {
+	int a, b, sum;
+	printf("enter two numbers ");
+	scanf("%d,%d",&a,&b	);
+	sum = a +b;
+	printf("sum=%d",sum);
+       }
+
+After compilation
+
+     #300
+	jump  100   print ("enter two numbers ");
+	jump 200 scanf("%d,%d",&a,&b	);
+	sum = a +b;
+	jump 100 printf("sum=%d",sum);
+
+
+CPU  --- ALU  -- CAN execute ONLY CPU instructions!!!!
+
+CPU Intructions  =  + - * / % && ! ||  < > <= >= ==  !=
+IO  Instructions  =  printf scanf , fprintf ,getch putch .,....
+
+Who executes IO instructions  ?  IO co processor/DMA controller
+
+	DMA = Direct memory access
+
+Input DEVICE  ---------------> RAM
+RAM -----------------> Output Device  
+
+
+Input devices = KBD, mouse , scanner ,joystick, camera,mic, touchpad, touch screen , sensors, stylus , antenna , bar code reader,
+biometric scanners,  card readers ,  QR code scanners 
+
+
+output devices = monitor, printer, speakers , projectors, plotter, vending machine
+_________________________________________________
+
+Kernel =  OS
+
+   RAM is divided into 2 parts  
+	Kernel Space  = kernel programs are loaded 
+ 	User Space  = user program are loaded
+
+________________________________
+Kernel mode =  where privilaged instructions are executed 
+User mode  = non privilaged instructions are executed
+
+______________________________________
+
+Interrupts  = 
+	What is an interrupt ?
+	Who interrupts WHOM ?
+		Hardware interrupts 
+		   IO devices interrupt CPU 
+
+When the interrupt occurs --- Do something about it .
+	Handle the interrupts -- interrupt handling 
+
+Kernel space  = many ISR = interrupt service routines 
+	which interrupt which ISR  mapping  ???
+		interrupt table
+		IVT = interrupt vector table 
+
+		InterruptNo | PTR to ISR
+		    1		f1
+		    2                            f10
+		     3                           f11
+
+Types of interrupts ------
+Maskable  =  could be masked - could be ignored
+Non Maskable = CANNOT be masked - MUST be handled
+
+R & D  examples of Maskable and non maskable interrupts
+
+________________________________________
+
+Bootstrapping  ----
+	bootable code  ---it should be at a fixed location 
+	A .  Boot Sector = 0th sector of Hard disk
+	B.  EEPROM / ROM
+
+When the boot code is loaded then it will load the remaining OS from harddisk 
+
+POWER ON ------
+   POST = check what devices are connected
+BIOS  = Basic Input output system  
+	Invoke the BOOT LOADER
+
+
+GRUB LOADER =   will load the boot code from EEPROM or boot sector or boot CD  to the RAM
+This will load the remaining OS in the RAM.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

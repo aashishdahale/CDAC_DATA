@@ -1,0 +1,52 @@
+Scrum
+
+As an agile process, Scrum is extensively used by software companies for product development. In fact, this project management framework can be applied to any project that has complex requirements, aggressive deadlines and a generous amount of uniqueness. This lightweight framework is specially designed for small and close-knit teams developing complex software products.
+
+Scrum is the brainchild of a few software engineers and the idea was formally introduced in 1995 at the International Conference of Object Oriented Programming, Systems, Languages, Programming, and Applications by Jeff Sutherland and Ken Schwaber in their jointly presented paper. During the following years, Sutherland and Schwaber collaborated to merge their experiences, writings and industry best practices to describe the scrum methodology in details.
+
+
+The best part of Scrum is that, it isn’t inherently technical and adaptation of its tools and practices is rather easy. It is therefore no surprise that organizations are drawn to Scrum. For one thing, this framework offers numerous benefits such as mitigating risk, reducing cycle time and cost, facilitating frequent communication and delivering the right products.
+
+Its benefits and ease of use explains why many organizations, aside from those developing software, are also drawn to this framework. In addition, it has an appealing attribute from a managerial standpoint. And that is Scrum’s ability to boost team productivity. Using this framework, teams can become self-organized and perform better, which in turn frees up the management to focus on longer term strategy. Besides, its minimal structure facilitates frequent communication between team and product owner and ongoing process improvements. All these eventually results in enhanced productivity.
+
+
+Understand the Framework
+
+In order to implement Scrum, you need to first understand this framework. As said, it is a lightweight project management framework that includes only a few constituent parts. This means, Scrum can easily complement your existing process, thanks to its streamlined composition. However, you need to consider the specific role played by each piece in the framework in facilitating productivity.
+
+Scrum features three core roles that are committed to the project. These are the Product Owner, the Team and the Scrum Master. Before explaining how you can use Scrum to improve team productivity, you need to understand these three roles and the way they influence productivity on an individual level as well as when working together.
+The product owner in the Scrum framework represents the stakeholders and customers. It is the responsibility of the product owner to ensure that the team delivers value that represents the interests of the business. He/she is responsible for controlling orders of items in the product backlog and has the authority to ask team members to do work and/or change the backlog items’ order. Since product owner holds the product’s vision, he is also the person responsible for answering team members’ questions.
+
+Next comes the Scrum team, which typically includes around seven people (although it can vary between five and nine) working together in small and sustainable events called sprints, which is a series of iterations. High-performing Scrum teams are self-organizing and highly collaborative. They get to decide who works on what and which tools and techniques to implement to complete a project/task. They alone have the authority to create schedule estimates, if required. Their ultimate focus lies on “how to do the work,” both individually and collectively. Such collaborative teams naturally avoid silos like “not my job” thinking.
+
+Finally, we have the Scrum master who is the coach, teaching the team to attain higher-levels of self-organization, cohesiveness and performance. Apart from creating a self-organizing and high-performing team, a Scrum master is also responsible for helping team to remove any roadblocks coming in the way of their work.
+Clarify the Roles Clearly
+
+In a Scrum framework, it is extremely important to clarify the roles early on so that no one interferes with the others job. To be productive and successful using this framework, you need to ensure that there are no missing role clarifications, which usually lead to delayed decisions, pending tasks, missing responsibility, and the presence of a negative energy causing friction and stress within the team. For example, a Scrum master is no way the team’s boss and cannot ask the team to do a particular work. Similarly, a product owner cannot determine who is responsible for a particular task or how the work is being done.
+
+
+Another thing you need to keep in mind is to have enough time for review and reflection as this framework thrives on the culture of “inspect and adapt.” Scrum teams therefore need to focus on the continuous improvement of the product as well as of their process.
+
+Allow Your Team to Decide their Sprint Capacity
+
+In Scrum methodology, a sprint typically lasts from two to four weeks. However, don’t let anything, even the established norm, to determine the sprint capacity of your team. Only your team members should have this authority. As mentioned earlier, the Scrum team alone has the authority to decide who works on what and how to do the work. This also applies to determining the team’s sprint capacity.
+
+More often than not the product owners ask for a particular task to be delivered within a particular sprint. The teams too are hesitant to push back the demand, despite knowing that they probably cannot finish it within the said time. If your team is not convinced that they can deliver the task in a particular sprint, it is an indication that you are not truly letting your team members determine their own capacity.
+
+The Scrum Master plays an important role here. He/she is responsible to help the team agree only to the work they can deliver in a sprint and no more. Your team must be very excited about the Sprint Planning, convinced that they can deliver what is promised. The “Fist of Five” is a great technique to help you determine your team’s level of commitment and confidence to the Sprint plan.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

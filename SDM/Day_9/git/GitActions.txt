@@ -1,0 +1,79 @@
+GitHub Actions
+Actions & CI
+CD & Release Management
+Self-hoted runners
+Build management
+Package management
+Secretes management
+
+Actions Advantages
+	Fully integrated with GitHub
+	Responds to any GitHub event
+	Community-powered workflows
+	Any platform, any language, any cloud
+
+Key functionalities
+	Linux, Mac OS, Windows and containers
+	Matrix builds
+	Streaming, searchable, linkable logs
+	Built-in secret store
+	Easy to write, easy to share.
+
+Automate workflows
+
+Components of Actions
+
+
+Events:
+GitHub triggered events:
+	push, pull_request, public
+Scheduled events: schedule
+Manually triggered:
+		workflow-dispatch
+		(external systems)
+
+Workflows 
+
+workflows are like pipelines
+codify useful, customized process
+
+.yaml syntax
+.github/ workflows
+
+
+
+Worflows
+
+Workflow files glue together existing actions in sequesce
+	Listen for particular evetns
+	Then run pre-existing actions 
+	Or shell scripts
+
+
+
+Workflows
+Actions run in VMs (Linux, Win, Mac)
+	or Docker on Linux VM
+
+Logs streaming * artifacts
+Secret store with each repository or organization
+
+
+
+Actions:
+	Reusable units of code
+	Referencing vs authoring actions
+	Administrative features
+	Storesing shared Actions
+	Post your actions to the github marketplace
+
+
+
+
+
+
+
+
+
+
+

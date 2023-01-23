@@ -1,0 +1,248 @@
+LAB
+1-Oct-22
+1. practice signal code as discussed in class
+2. practice chmod command as discussed in class
+
+30-sep-22
+1. Write a shell script for following
+	a. find all the empty lines in a file and count them
+	b.show all lines without blank lines 
+	c. show all the lines that end with 0
+	d.show all the lines that begin with v
+	e.find all the lines that do not have echo 
+	
+2. write a shell script to accept a name from user and convert it to title case
+3. write a shell script that accepts a name from user many times in a loop till user enters done.
+each time a name is entered , add it to a file student_names.
+after all names are added show a menu 
+	1. show count
+	2. show all names sorted in asc order
+	3. show all names sorted in desc order
+	4. show all names as it is
+	5. quit
+	
+show menu many times till user enters 5
+
+4. try the thread program done in class 
+5. create a c program that has 3 threads
+	thread1 shows table of 2 to 10
+	thread shows factorial of 2 to 10
+	thread 3 shows fibonacci upto 10
+	after every display the thread should sleep for 1 sec
+	main thread should wait till all three threads are done
+	
+	
+29-sep-22
+1. Ex1 - print numbers from 1 to 20, using while loop
+2.Ex2  - use while loop
+Write a loop that asks user to enter name 
+and prints welcome name
+as long as user does not enter quit
+
+3. Print the squares of all numbers from 1 to 20
+use simple for loop
+4. print numbers from 1 to 20 using until loop
+5. use second type of for to print each word in a sentence , ask the user to enter a sentence
+ Also print the length of each word
+6.create a file student having
+   rollnum firstname lastname and marks
+   add few entries in the file
+   
+   write a shell script that shows a menu
+   	1. show topper
+   	2. show third topper
+   	3. show last
+   	4. show total number of students
+   	5. quit
+   repeat the loop till user does not say 5 
+   
+7. write a shell script to accept a number from user
+	ex - user enters 3 
+	show output as
+	
+	*
+	* *
+	* * *
+	
+	3
+	3 3 
+	3 3 3
+	
+	1
+	1 2
+	1 2 3
+	
+8.  ask the user to enter a string
+	show each letter of string on one line
+	ex -- welcome
+	w
+	e
+	l
+	c
+	o
+	m
+	e
+   	
+9. practice the exec program done in class for sort command
+ 
+   
+   
+
+
+
+28-sep-22
+1. accept 2 numbers from user and add them
+		    
+2. accept a number and tell whether it is odd or even 
+      
+3.  accept a number and tell whether it is greater that equal to or less than 100
+	    
+4. accept 2 numbers and  show a menu to user 
+	1 add
+	2 sub
+	3 multiply
+	4 divide
+  show output as per choice
+  
+5. accept a number and show square and cube of that number
+
+6. accept a filename from user, if file exists show contents of the file using cat
+
+7. accept a foldername from user , if folder exists show contents of folder inculding hidden files
+
+8. How many processes will be created ?
+      void main()
+      {    int x,y;
+      	   x= fork()
+      	   if(x > 0)
+      	   {
+      	   	fork();
+      	   	//fork();  //add it later
+      	   	printf("hi there %d\n",getpid());
+      	   }
+      	   else
+      	   {
+      	   	prinf("bye %d",getpid());
+      	   }	  
+      }
+      
+  9. Write a fork example such that parent process prints the tables from 2 to 20
+	2
+	4
+	6
+	8
+	...
+	20
+	3
+	6
+	9
+	12
+	15
+	...
+	30
+	4
+	8
+	12
+	16
+	20
+	..
+	40
+	...
+	20
+	40
+	60
+	..200
+	
+	Child process asks the user to enter a number
+	and it shows the square of that number
+	this happens for 5 times
+
+
+
+
+
+
+
+
+
+27-sep-22
+1. write a shell script to get a name from user and print welcome username
+2. write a shell script to get a filename and remove that file from current folder
+3. write a shell script to get a folder name and show contents of that folder including hidden files
+4. write a shell script to accept a folder name and create that folder in the parent folder
+5. write a c program to write 3 forks and a printf as discussed in class 
+6. write a shell script to show HOME,USER,SHELL and PATH environment variables 
+7. write a shell script to accept a PID of your running C program and kill that process
+
+
+26-sep-22
+1. remove  folder jupiter created yesterday
+2. remove non empty folder earth created yesterday
+3. create a 0 kb file in ./test1 folder
+4. create a file data in ./test1 using vi
+	add content save and quit , check the content using cat
+5.  open the data file try cut copy paste
+	exit without saving , check content using cat
+6. remove the data file
+7. see values of env variables HOME, USER, PWD, HOSTNAME, PS1
+8. change PS1 to hello 
+9. change PS1 to uname#working-dir
+
+
+
+24-sep-22
+1. KEEP pwd  /home/iet 
+     create a folder planets in iet
+     create folders earth jupiter in planets
+     create folder moon in earth
+      check using ls
+      
+      
+2. cd to planets  , check contents, check pwd 
+	cd to top folder check contents check pwd
+	from top folder cd to login home cd ~
+	
+3. move to any planets folder using cd , go back to login home ---play
+
+23-Sep-22
+1.  go from current folder to topmost using cd ..
+     at each level see contents using ls , see current folder name using pwd
+     
+2.  go from topmost folder to login home using cd ~
+3.  go directly to top folder using cd /
+4. go from top to bottom using cd home, cd iet , cd Desktop ...
+
+
+
+
+1. windows task manager ctrl+alt+del
+	see the number of processes 
+	ses their process Id
+	
+2. ubuntu  --- system monitor 
+	  see the number of processes
+	  see their process id
+	  
+ 3.  Either in Ubuntu/Windows 
+ 	start a browser check the entry in 
+ 	task manager /system monitor
+ 	check the PID 
+ 	
+ 	close the browser and recheck 
+ 	
+ 4. Open ubuntu terminal 
+ 	see the PROMPT
+ 	type a command clear on the PROMPT
+ 	type a command ls  to see the content of the current folder
+ 	type a command pwd - to see the path of current folder
+ 	go to that folder using GUI 
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	

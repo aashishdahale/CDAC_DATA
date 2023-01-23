@@ -1,0 +1,17 @@
+
+Scrum Sprint
+
+A Scrum sprint is an iteration of development work that is accomplished in a fixed timeframe. 
+A sprint usually lasts between one and four weeks, but it shouldn’t be longer than a month. 
+The length of a sprint is determined at the beginning of the agile project and it should be followed throughout the project.
+
+During a sprint, the Scrum team builds a set of features and functionalities predefined in the sprint goal.
+At the end of each sprint, a potential new release of the software is completed.
+
+Each agile sprint starts with a sprint planning meeting where the product owner (or manager), Scrum Master and development team come together to agree on which backlog features will be completed in the following sprint.
+
+While the product manager decides on the sprint goal and the criteria that need to be met to achieve the goal, the development team decides how much work can realistically be done during the sprint.
+
+Once the Scrum sprint begins, the product owner needs to leave the Scrum team to work independently until the end of the sprint and should only provide feedback and answer questions if needed. 
+
+The sprint ends when the time allocated for the sprint ends, regardless of whether all tasks have been completed. After that, a sprint review meeting takes place where the product owner determines whether the sprint goal has been achieved.

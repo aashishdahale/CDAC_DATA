@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+        $().ready(function(){
+            $("input").val(100)
+            $("#d1").hide()
+            
+            $("button").click(function()
+            {
+                $("button").each( function(){
+                    if ( $(this).prop("id")=="b1")
+                    {
+                        let v= $("#i1").prop("readOnly")
+                $("#i1").prop("readOnly",)
+                
+                    }
+                    else{
+                    let v =$("input").val()
+                    let sqr = v*v
+                    $("p").text(sqr)
+                    $("div").html("<b>YOU clicked the button</b>")        
+                    }
+            })
+            })
+
+            $("select").change(function(){
+                let v = $("select").val()
+                let str = v.slice(0,3).toUpperCase()
+                $("p").text(str)
+            })
+
+            $("#c1").change(function(){
+                let x = $("#c1").prop('checked')
+                console.log(x)
+                if(x)
+                    $("#d1").show()
+                else
+                   $("#d1").hide()
+
+            })
+       
+            $("p").click(function()
+            {
+                $("p").hide()
+            })
+        })
+        console.log("test...")
+    </script>
+</head>
+<body>
+    <input type="number" />
+    <button>show square</button>
+    <p>Good Morning ....</p>
+    <select>
+        <option>monday</option>
+        <option>tuesday</option>
+    </select>
+    
+    <label for="c1" >Educational Qualification:</label>
+    <input type="checkbox" id="c1" />
+    
+    <div id="d1">
+        <input type="text" value="Enter year of passing"/>
+        <select>
+            <option>SSC</option>
+            <option>HSC</option>
+        </select>
+    </div>
+    <div>
+        <input type="text" id="i1" />
+        <button id="b1">edit toggle</button>
+    </div>
+</body>
+<!-- <script>
+    $("p").hide(2000)
+</script> -->
+</html>

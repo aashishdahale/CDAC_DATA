@@ -1,0 +1,309 @@
+
+
+	
+Todays Agenda:
+
+	Design
+	Object Oriented Design
+	Function oriented Design
+	ER Design
+
+
+	Programming principles
+	Coding Convetions
+
+
+Design:
+	
+	Function oriented Design ( focus more on functionalities)
+		login
+		changepassword
+		registration
+		Listing products
+		product detail presentation
+		Shopping Cart
+		placing order
+		order cancellation
+		payment processing
+		product delivery tracking
+
+	Object Oriented Design:( focus more on objects)
+		
+		 think object , speak Objects:
+
+			OOA
+			OOD
+			OOP---------------C#, Java, Javascript, python
+		
+
+		What do you mean by object ?-------Real life entity
+ 
+
+		majior pillar of OOA
+			1.Abstraction
+			2.Encapsulation
+			3.Inheritance
+
+		minor pillars of OOA, OOD, OOP
+			concurrency
+			typing
+			modularity
+			hiearchy
+			Persistence
+
+
+
+  1.Abstraction:
+			Getting essential characteristics of system (object) depending on perspective of observer.
+
+
+			(Shopping Cart) use Case:
+
+		object collaboration:
+			Shopping Cart managment:
+					Session object
+						sessionid:54645435345345345345345345345  (120 bit)
+						 Shopping cart id -----------for one user;  
+						 				item--------item id, quantity (12, 4)
+										item -------item id  ,quantity (54,7)
+										item -------item id  ,quantity (45,37)
+
+					Session
+					       sessionid:54645435345345345345345345875  (120 bit)
+						cart id -----------for one user;  
+						 	item--------item id, quantity (76, 14)
+							item -------item id  ,quantity (4,17)
+
+				Session : (behaviour)
+					  abandon
+					  expire
+					  add to session
+					  remove from session
+					  get session Details
+				Shopping cart:
+					   add Item
+					   remove item
+					   find item
+					   get all items
+					   get subtotal
+				Item:
+					 set id
+					 get id 
+
+					set quantity
+					get quantity
+					get total
+
+
+
+
+	2.Encapsulation:
+
+			hide internal implementation of Shopping Cart
+			hide internal implementation of Product catalog managment
+
+			Hiding Complexity of System.
+			
+
+
+
+			Classification:
+					categorize:
+							grouping of similar type of objects
+				
+
+
+		 class:
+			
+
+      3: Inheritance: is a relationship between child objects and parent objects  (Hierachy:)
+
+			is used for reusibility point of view
+			
+			
+			 Person---------------
+						 firstname, lastname, email, contact number
+			 User
+						  loginname, password
+			 staff
+						  Role:
+									 
+			 vendor
+
+
+       4:Modularity:
+
+			Product Catalog
+					
+			ShoppingCart
+					
+			OrderProcessing
+			
+			Payment processing
+					
+			Shipping		
+
+
+Minor pillars of Object Orientation:
+		
+	concurrency:
+
+			multitasking
+			Each User request will be processed independently
+			
+
+			
+	Typing
+			strong Typing
+			
+			
+	persistence:
+			storing state 
+
+			store each order placed 
+			store payment done across order been place.
+			store details of Product
+			store credential of  user tyring to login
+			
+	
+
+____________________________________________________________________________________________________________________________________________________________________________________
+
+
+outcome of OOD:
+
+
+		identified objects
+				  state, behaviour
+		classified Objects
+				 Class----------------------------------------------
+		indentified relationship between objects
+
+
+
+
+
+set of Classes
+relation with differenct Classes
+				 association , inheritance
+			
+			DBManager:
+				 CRUD operations against business objects
+
+			
+			ProductManager
+				CRUD Operations against Product	
+			Product
+				ProductID,
+				Category
+				Title
+				Description
+				UnitPrice
+				QuantityInStock
+				
+			Item
+				ItemId
+				Quantity
+			Cart
+				Collection of Items
+			User
+				LoginName
+				password
+				firstName,
+				lastName
+				email
+				ContactNumber
+			Order
+				OrderID,
+				OrderDate
+				Customer,
+				OrderAmount
+				Status
+			Payment
+				paymentID
+				paymentDate
+				Amount
+				PaymentMode
+				
+			Delivery
+				DeliveryId
+				DeliveryDate
+				OrderID
+				ShippingAddress
+				Status	
+Modules (Packages)
+		
+		OrderProcessing
+		ShoppingCart
+		Paymentprocessing
+		Shipping
+
+
+_______________________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+Let us get started with Programming
+
+			class, objects, polymorphism , 
+			association, collections,  multithreading
+			
+	
+		Programming Principles:
+					
+			Design Patterns:
+				
+					Singleton  class:
+							private constructor
+							static  create
+
+
+				23 design Patterns
+	
+					Creational 
+							Factory
+					Behavioural
+							
+					Structural
+
+
+
+
+
+		Principles:
+
+		Conventions:-----------
+
+
+
+		Principles:
+				SOLID principle
+						:
+							S: Single Responsibility 
+
+
+							O: Open Closed Principle
+							L: Liskoves Substituion principle
+							I: Interface seggrigation principle
+							D: Dependency Inversion principele
+
+				Hollywood priciple:
+							Don't call us , we will call you.
+
+				DRY principle:
+
+							Don't repeat yourself
+
+
+
+
+
+
+
+
+
+
+		

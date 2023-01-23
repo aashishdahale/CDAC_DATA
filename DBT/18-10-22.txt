@@ -1,0 +1,1488 @@
+
+mysql> create database db2;
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select database();
++------------+
+| database() |
++------------+
+| NULL       |
++------------+
+1 row in set (0.00 sec)
+
+mysql> use db2;
+Database changed
+mysql> select database();
++------------+
+| database() |
++------------+
+| db2        |
++------------+
+1 row in set (0.00 sec)
+
+mysql> use db1;
+Database changed
+mysql> select database();
++------------+
+| database() |
++------------+
+| db1        |
++------------+
+1 row in set (0.00 sec)
+
+mysql> use db2;
+Database changed
+mysql> create table login (userID int, userName varchar(10));
+Query OK, 0 rows affected (0.69 sec)
+
+mysql> create table login1 (userID int(4), userName varchar(10));
+Query OK, 0 rows affected, 1 warning (0.07 sec)
+
+mysql> describe login;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| userID   | int         | YES  |     | NULL    |       |
+| userName | varchar(10) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+2 rows in set (0.02 sec)
+
+mysql> desc login1;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| userID   | int         | YES  |     | NULL    |       |
+| userName | varchar(10) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+drop table login;
+drop table login1;
+create table emp(empno int, ename varchar(10) not null, city varchar(10) default 'Pune');
+desc emp;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| empno | int         | YES  |     | NULL    |       |
+| ename | varchar(10) | NO   |     | NULL    |       |
+| city  | varchar(10) | YES  |     | Pune    |       |
++-------+-------------+------+-----+---------+-------+
+insert into emp values(1,'saleel','baroda');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> select * from emp;
++-------+--------+--------+
+| empno | ename  | city   |
++-------+--------+--------+
+|     1 | saleel | baroda |
++-------+--------+--------+
+1 row in set (0.00 sec)
+
+mysql> insert into emp values(2,'abc', default);
+select * from emp;
++-------+--------+--------+
+| empno | ename  | city   |
++-------+--------+--------+
+|     1 | saleel | baroda |
+|     2 | abc    | Pune   |
++-------+--------+--------+
+insert into emp values(3, 'a', null);
+select * from emp;
++-------+--------+--------+
+| empno | ename  | city   |
++-------+--------+--------+
+|     1 | saleel | baroda |
+|     2 | abc    | Pune   |
+|     3 | a      | NULL   |
++-------+--------+--------+
+insert into emp(ename, empno) values('b', 4);
+select * from emp;
++-------+--------+--------+
+| empno | ename  | city   |
++-------+--------+--------+
+|     1 | saleel | baroda |
+|     2 | abc    | Pune   |
+|     3 | a      | NULL   |
+|     4 | b      | Pune   |
++-------+--------+--------+
+desc emp;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| empno | int         | YES  |     | NULL    |       |
+| ename | varchar(10) | NO   |     | NULL    |       |
+| city  | varchar(10) | YES  |     | Pune    |       |
++-------+-------------+------+-----+---------+-------+
+select * from emp;
++-------+--------+--------+
+| empno | ename  | city   |
++-------+--------+--------+
+|     1 | saleel | baroda |
+|     2 | abc    | Pune   |
+|     3 | a      | NULL   |
+|     4 | b      | Pune   |
++-------+--------+--------+
+create table a(c1 int, c2 int, c3 int default (c1+c2));
+desc a;
++-------+------+------+-----+---------------+-------------------+
+| Field | Type | Null | Key | Default       | Extra             |
++-------+------+------+-----+---------------+-------------------+
+| c1    | int  | YES  |     | NULL          |                   |
+| c2    | int  | YES  |     | NULL          |                   |
+| c3    | int  | YES  |     | (`c1` + `c2`) | DEFAULT_GENERATED |
++-------+------+------+-----+---------------+-------------------+
+3 rows in set (0.00 sec)
+
+mysql> insert into a(c1, c2) values(4,5);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> select * from a;
++------+------+------+
+| c1   | c2   | c3   |
++------+------+------+
+|    4 |    5 |    9 |
++------+------+------+
+create table b(c1 int, c2 varchar(10), c3 datetime);
+desc b;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| c1    | int         | YES  |     | NULL    |       |
+| c2    | varchar(10) | YES  |     | NULL    |       |
+| c3    | datetime    | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> select now();
++---------------------+
+| now()               |
++---------------------+
+| 2022-10-18 04:19:49 |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> insert into b values(1,'oracleCR', now());
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select * from b;
++------+----------+---------------------+
+| c1   | c2       | c3                  |
++------+----------+---------------------+
+|    1 | oracleCR | 2022-10-18 04:22:11 |
++------+----------+---------------------+
+1 row in set (0.00 sec)
+
+mysql> drop table b;
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> create table b(c1 int, c2 varchar(10), c3 datetime default now());
+desc b;
++-------+-------------+------+-----+-------------------+-------------------+
+| Field | Type        | Null | Key | Default           | Extra             |
++-------+-------------+------+-----+-------------------+-------------------+
+| c1    | int         | YES  |     | NULL              |                   |
+| c2    | varchar(10) | YES  |     | NULL              |                   |
+| c3    | datetime    | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
++-------+-------------+------+-----+-------------------+-------------------+
+3 rows in set (0.00 sec)
+
+mysql> insert into b(c1, c2) values(1,'Neo4j');
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select * from b;
++------+-------+---------------------+
+| c1   | c2    | c3                  |
++------+-------+---------------------+
+|    1 | Neo4j | 2022-10-18 04:25:08 |
++------+-------+---------------------+
+1 row in set (0.00 sec)
+
+mysql> desc emp;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| empno | int         | YES  |     | NULL    |       |
+| ename | varchar(10) | NO   |     | NULL    |       |
+| city  | varchar(10) | YES  |     | Pune    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> desc a;
++-------+------+------+-----+---------------+-------------------+
+| Field | Type | Null | Key | Default       | Extra             |
++-------+------+------+-----+---------------+-------------------+
+| c1    | int  | YES  |     | NULL          |                   |
+| c2    | int  | YES  |     | NULL          |                   |
+| c3    | int  | YES  |     | (`c1` + `c2`) | DEFAULT_GENERATED |
++-------+------+------+-----+---------------+-------------------+
+3 rows in set (0.00 sec)
+
+mysql>
+mysql> select * from a;
++------+------+------+
+| c1   | c2   | c3   |
++------+------+------+
+|    4 |    5 |    9 |
++------+------+------+
+insert into a values(5, 5*2, default);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select * from a;
++------+------+------+
+| c1   | c2   | c3   |
++------+------+------+
+|    4 |    5 |    9 |
+|    5 |   10 |   15 |
++------+------+------+
+drop table emp;
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> create table t1 (c1 int, c2 int, c3 int default (c1+c2));
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> create table t2 (c1 int, c2 int, c3 int generated always as (c1+c2) virtual);
+Query OK, 0 rows affected (0.10 sec)
+
+mysql> desc t1;
++-------+------+------+-----+---------------+-------------------+
+| Field | Type | Null | Key | Default       | Extra             |
++-------+------+------+-----+---------------+-------------------+
+| c1    | int  | YES  |     | NULL          |                   |
+| c2    | int  | YES  |     | NULL          |                   |
+| c3    | int  | YES  |     | (`c1` + `c2`) | DEFAULT_GENERATED |
++-------+------+------+-----+---------------+-------------------+
+desc t2;
++-------+------+------+-----+---------+-------------------+
+| Field | Type | Null | Key | Default | Extra             |
++-------+------+------+-----+---------+-------------------+
+| c1    | int  | YES  |     | NULL    |                   |
+| c2    | int  | YES  |     | NULL    |                   |
+| c3    | int  | YES  |     | NULL    | VIRTUAL GENERATED |
++-------+------+------+-----+---------+-------------------+
+3 rows in set (0.00 sec)
+
+mysql> insert into t1 values(5,5,20);
+Query OK, 1 row affected (0.03 sec)
+
+insert into t2 values(5,5,default);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into t2(c1, c2) values(6,6);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into t1(c1, c2) values(6,6);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select * from t1;
++------+------+------+
+| c1   | c2   | c3   |
++------+------+------+
+|    5 |    5 |   20 |
+|    6 |    6 |   12 |
++------+------+------+
+2 rows in set (0.00 sec)
+
+mysql> select * from t2;
++------+------+------+
+| c1   | c2   | c3   |
++------+------+------+
+|    5 |    5 |   10 |
+|    6 |    6 |   12 |
++------+------+------+
+2 rows in set (0.00 sec)
+
+mysql> update t1 set c1=7 where c1=6;
+Query OK, 1 row affected (0.03 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update t2 set c1=7 where c1=6;
+Query OK, 1 row affected (0.04 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from t1;
++------+------+------+
+| c1   | c2   | c3   |
++------+------+------+
+|    5 |    5 |   20 |
+|    7 |    6 |   12 |
++------+------+------+
+2 rows in set (0.00 sec)
+
+mysql> select * from t2;
++------+------+------+
+| c1   | c2   | c3   |
++------+------+------+
+|    5 |    5 |   10 |
+|    7 |    6 |   13 |
++------+------+------+
+
+mysql> create table emp(id int primary key auto_increment, ename varchar(10), sal float(8,2), comm float(8,2), city varchar(10) default 'baroda', total int generated always as (sal+comm) virtual, password varbinary(10), zone enum('north', 'south', 'east', 'west'), URL varchar(20) invisible );
+Query OK, 0 rows affected, 2 warnings (0.10 sec)
+
+mysql> desc emp;
++----------+-------------------------------------+------+-----+---------+-------------------+
+| Field    | Type                                | Null | Key | Default | Extra             |
++----------+-------------------------------------+------+-----+---------+-------------------+
+| id       | int                                 | NO   | PRI | NULL    | auto_increment    |
+| ename    | varchar(10)                         | YES  |     | NULL    |                   |
+| sal      | float(8,2)                          | YES  |     | NULL    |                   |
+| comm     | float(8,2)                          | YES  |     | NULL    |                   |
+| city     | varchar(10)                         | YES  |     | baroda  |                   |
+| total    | int                                 | YES  |     | NULL    | VIRTUAL GENERATED |
+| password | varbinary(10)                       | YES  |     | NULL    |                   |
+| zone     | enum('north','south','east','west') | YES  |     | NULL    |                   |
+| URL      | varchar(20)                         | YES  |     | NULL    | INVISIBLE         |
++----------+-------------------------------------+------+-----+---------+-------------------+
+
+insert into emp(id,ename,sal,comm,city, total, password, zone, url) values(default,'saleel', 175.25, .37,default,default,'saleel','north','abc.com');
+select * from emp;
++----+--------+--------+------+--------+-------+--------------------+-------+
+| id | ename  | sal    | comm | city   | total | password           | zone  |
++----+--------+--------+------+--------+-------+--------------------+-------+
+|  1 | saleel | 175.25 | 0.37 | baroda |   176 | 0x73616C65656C     | north |
++----+--------+--------+------+--------+-------+--------------------+-------+
+1 row in set (0.00 sec)
+
+mysql> select id ,ename, sal, comm, city, total, password, zone, url from emp;
++----+--------+--------+------+--------+-------+--------------------+-------+---------+
+| id | ename  | sal    | comm | city   | total | password           | zone  | url     |
++----+--------+--------+------+--------+-------+--------------------+-------+---------+
+|  1 | saleel | 175.25 | 0.37 | baroda |   176 | 0x73616C65656C     | north | abc.com |
++----+--------+--------+------+--------+-------+--------------------+-------+---------+
+1 row in set (0.00 sec)
+
+mysql> select id ,ename, sal, comm, city, total, cast(password as char), zone, url from emp;
++----+--------+--------+------+--------+-------+------------------------+-------+---------+
+| id | ename  | sal    | comm | city   | total | cast(password as char) | zone  | url     |
++----+--------+--------+------+--------+-------+------------------------+-------+---------+
+|  1 | saleel | 175.25 | 0.37 | baroda |   176 | saleel                 | north | abc.com |
++----+--------+--------+------+--------+-------+------------------------+-------+---------+
+1 row in set (0.00 sec)
+
+insert into emp(id,ename,sal,comm, password, zone) values(101,'a', 4, 5, 'abc','north;);
+    '> ^C
+mysql> insert into emp(id,ename,sal,comm, password, zone) values(101,'a', 4, 5, 'abc','north');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into emp(id,ename,sal,comm, password, zone) values(default,'a', 4, 5, 'abc',1);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select * from emp;
++-----+--------+--------+------+--------+-------+--------------------+-------+
+| id  | ename  | sal    | comm | city   | total | password           | zone  |
++-----+--------+--------+------+--------+-------+--------------------+-------+
+|   1 | saleel | 175.25 | 0.37 | baroda |   176 | 0x73616C65656C     | north |
+| 101 | a      |   4.00 | 5.00 | baroda |     9 | 0x616263           | north |
+| 102 | a      |   4.00 | 5.00 | baroda |     9 | 0x616263           | north |
++-----+--------+--------+------+--------+-------+--------------------+-------+
+3 rows in set (0.00 sec)
+
+mysql> desc emp;
++----------+-------------------------------------+------+-----+---------+-------------------+
+| Field    | Type                                | Null | Key | Default | Extra             |
++----------+-------------------------------------+------+-----+---------+-------------------+
+| id       | int                                 | NO   | PRI | NULL    | auto_increment    |
+| ename    | varchar(10)                         | YES  |     | NULL    |                   |
+| sal      | float(8,2)                          | YES  |     | NULL    |                   |
+| comm     | float(8,2)                          | YES  |     | NULL    |                   |
+| city     | varchar(10)                         | YES  |     | baroda  |                   |
+| total    | int                                 | YES  |     | NULL    | VIRTUAL GENERATED |
+| password | varbinary(10)                       | YES  |     | NULL    |                   |
+| zone     | enum('north','south','east','west') | YES  |     | NULL    |                   |
+| URL      | varchar(20)                         | YES  |     | NULL    | INVISIBLE         |
++----------+-------------------------------------+------+-----+---------+-------------------+
+9 rows in set (0.00 sec)
+
+mysql> desc a;
++-------+------+------+-----+---------------+-------------------+
+| Field | Type | Null | Key | Default       | Extra             |
++-------+------+------+-----+---------------+-------------------+
+| c1    | int  | YES  |     | NULL          |                   |
+| c2    | int  | YES  |     | NULL          |                   |
+| c3    | int  | YES  |     | (`c1` + `c2`) | DEFAULT_GENERATED |
++-------+------+------+-----+---------------+-------------------+
+3 rows in set (0.00 sec)
+
+mysql> create table t1 (c1 int primary key auto_increment. c2 int);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '. c2 int)' at line 1
+mysql>
+mysql>
+mysql> create table t1 (c1 int primary key auto_increment, c2 int);
+ERROR 1050 (42S01): Table 't1' already exists
+mysql> create table t3 (c1 int primary key auto_increment, c2 int);
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> create table t4 (c1 int unique key auto_increment, c2 int);
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> desc t3;
++-------+------+------+-----+---------+----------------+
+| Field | Type | Null | Key | Default | Extra          |
++-------+------+------+-----+---------+----------------+
+| c1    | int  | NO   | PRI | NULL    | auto_increment |
+| c2    | int  | YES  |     | NULL    |                |
++-------+------+------+-----+---------+----------------+
+2 rows in set (0.00 sec)
+
+mysql> desc t4;
++-------+------+------+-----+---------+----------------+
+| Field | Type | Null | Key | Default | Extra          |
++-------+------+------+-----+---------+----------------+
+| c1    | int  | NO   | PRI | NULL    | auto_increment |
+| c2    | int  | YES  |     | NULL    |                |
++-------+------+------+-----+---------+----------------+
+2 rows in set (0.00 sec)
+
+mysql> create table t5 (c1 int unique key  not null, c2 int);
+Query OK, 0 rows affected (0.44 sec)
+
+mysql> desc t5;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| c1    | int  | NO   | PRI | NULL    |       |
+| c2    | int  | YES  |     | NULL    |       |
++-------+------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+create table t6 (c1 int primary key, c2 int not null unique);
+Query OK, 0 rows affected (0.13 sec)
+
+mysql> desc t6;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| c1    | int  | NO   | PRI | NULL    |       |
+| c2    | int  | NO   | UNI | NULL    |       |
++-------+------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> create table t7 (c1 int, c2 int,  primary key(c1));
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> desc t7;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| c1    | int  | NO   | PRI | NULL    |       |
+| c2    | int  | YES  |     | NULL    |       |
++-------+------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> create table t8 (c1 int, c2 int,  primary key(c1, c2));
+Query OK, 0 rows affected (0.11 sec)
+
+mysql> desc t8;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| c1    | int  | NO   | PRI | NULL    |       |
+| c2    | int  | NO   | PRI | NULL    |       |
++-------+------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> insert into t8 values(1,null);
+ERROR 1048 (23000): Column 'c2' cannot be null
+mysql> insert into t8 values(1,1);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select * from t8;
++----+----+
+| c1 | c2 |
++----+----+
+|  1 |  1 |
++----+----+
+1 row in set (0.00 sec)
+
+mysql> insert into t8 values(1,2);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select * from t8;
++----+----+
+| c1 | c2 |
++----+----+
+|  1 |  1 |
+|  1 |  2 |
++----+----+
+2 rows in set (0.00 sec)
+
+mysql> insert into t8 values(2,1);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select * from t8;
++----+----+
+| c1 | c2 |
++----+----+
+|  1 |  1 |
+|  1 |  2 |
+|  2 |  1 |
++----+----+
+desc t8;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| c1    | int  | NO   | PRI | NULL    |       |
+| c2    | int  | NO   | PRI | NULL    |       |
++-------+------+------+-----+---------+-------+
+desc t4;
++-------+------+------+-----+---------+----------------+
+| Field | Type | Null | Key | Default | Extra          |
++-------+------+------+-----+---------+----------------+
+| c1    | int  | NO   | PRI | NULL    | auto_increment |
+| c2    | int  | YES  |     | NULL    |                |
++-------+------+------+-----+---------+----------------+
+2 rows in set (0.00 sec)
+
+mysql> desc t7;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| c1    | int  | NO   | PRI | NULL    |       |
+| c2    | int  | YES  |     | NULL    |       |
++-------+------+------+-----+---------+-------+
+alter table t7 drop primary key;
+desc t7;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| c1    | int  | NO   |     | NULL    |       |
+| c2    | int  | YES  |     | NULL    |       |
++-------+------+------+-----+---------+-------+
+alter table t7 modify c1 int null;
+desc t7;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| c1    | int  | YES  |     | NULL    |       |
+| c2    | int  | YES  |     | NULL    |       |
++-------+------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> alter table t7 modify c1 char;
+Query OK, 0 rows affected (0.16 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc t7;
++-------+---------+------+-----+---------+-------+
+| Field | Type    | Null | Key | Default | Extra |
++-------+---------+------+-----+---------+-------+
+| c1    | char(1) | YES  |     | NULL    |       |
+| c2    | int     | YES  |     | NULL    |       |
++-------+---------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> create table a1 (id int, ename varchar(10));
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> insert into a1 values(1, 'saleel');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> select * from a1;
++------+--------+
+| id   | ename  |
++------+--------+
+|    1 | saleel |
++------+--------+
+1 row in set (0.00 sec)
+
+mysql> desc a1;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | NULL    |       |
+| ename | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> alter table a1 modify id varchar(10);
+Query OK, 1 row affected (0.12 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql> desc a1;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | varchar(10) | YES  |     | NULL    |       |
+| ename | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> insert into a1 values('a', 'saleel');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> select * from a1;
++------+--------+
+| id   | ename  |
++------+--------+
+| 1    | saleel |
+| a    | saleel |
++------+--------+
+2 rows in set (0.00 sec)
+
+mysql> alter table a1 modify id int;
+ERROR 1366 (HY000): Incorrect integer value: 'a' for column 'id' at row 2
+mysql> delete from a1 where id='a';
+Query OK, 1 row affected (0.06 sec)
+
+mysql> select * from a1;
++------+--------+
+| id   | ename  |
++------+--------+
+| 1    | saleel |
++------+--------+
+1 row in set (0.00 sec)
+
+mysql> desc a1;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | varchar(10) | YES  |     | NULL    |       |
+| ename | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> alter table a1 modify id int;
+Query OK, 1 row affected (0.14 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql> select * from a1;
++------+--------+
+| id   | ename  |
++------+--------+
+|    1 | saleel |
++------+--------+
+1 row in set (0.00 sec)
+
+mysql> alter table a1 modify ename varchar(20);
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table a1 modify ename varchar(4);
+ERROR 1265 (01000): Data truncated for column 'ename' at row 1
+mysql> alter table a1 modify ename varchar(6);
+Query OK, 1 row affected (0.13 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql> desc a1;
++-------+------------+------+-----+---------+-------+
+| Field | Type       | Null | Key | Default | Extra |
++-------+------------+------+-----+---------+-------+
+| id    | int        | YES  |     | NULL    |       |
+| ename | varchar(6) | YES  |     | NULL    |       |
++-------+------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> alter table a1 add primary key(id);
+Query OK, 0 rows affected (0.29 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc a1;
++-------+------------+------+-----+---------+-------+
+| Field | Type       | Null | Key | Default | Extra |
++-------+------------+------+-----+---------+-------+
+| id    | int        | NO   | PRI | NULL    |       |
+| ename | varchar(6) | YES  |     | NULL    |       |
++-------+------------+------+-----+---------+-------+
+mysql> use information_schema;
+Database changed
+mysql> use db2;
+Database changed
+mysql> show full tables;
++---------------+------------+
+| Tables_in_db2 | Table_type |
++---------------+------------+
+| a             | BASE TABLE |
+| a1            | BASE TABLE |
+| b             | BASE TABLE |
+| emp           | BASE TABLE |
+| t1            | BASE TABLE |
+| t2            | BASE TABLE |
+| t3            | BASE TABLE |
+| t4            | BASE TABLE |
+| t5            | BASE TABLE |
+| t6            | BASE TABLE |
+| t7            | BASE TABLE |
+| t8            | BASE TABLE |
++---------------+------------+
+12 rows in set (0.00 sec)
+
+mysql> show tables;
++---------------+
+| Tables_in_db2 |
++---------------+
+| a             |
+| a1            |
+| b             |
+| emp           |
+| t1            |
+| t2            |
+| t3            |
+| t4            |
+| t5            |
+| t6            |
+| t7            |
+| t8            |
++---------------+
+12 rows in set (0.00 sec)
+
+mysql> desc b;
++-------+-------------+------+-----+-------------------+-------------------+
+| Field | Type        | Null | Key | Default           | Extra             |
++-------+-------------+------+-----+-------------------+-------------------+
+| c1    | int         | YES  |     | NULL              |                   |
+| c2    | varchar(10) | YES  |     | NULL              |                   |
+| c3    | datetime    | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
++-------+-------------+------+-----+-------------------+-------------------+
+use information_schema
+
+mysql> select TABLE_NAME,COLUMN_NAME,DATA_TYPE from columns where TABLE_SCHEMA='db2';
++------------+-------------+-----------+
+| TABLE_NAME | COLUMN_NAME | DATA_TYPE |
++------------+-------------+-----------+
+| a          | c1          | int       |
+| a          | c2          | int       |
+| a          | c3          | int       |
+| a1         | id          | int       |
+| a1         | ename       | varchar   |
+| b          | c1          | int       |
+| b          | c2          | varchar   |
+| b          | c3          | datetime  |
+| emp        | id          | int       |
+| emp        | ename       | varchar   |
+| emp        | sal         | float     |
+| emp        | comm        | float     |
+| emp        | city        | varchar   |
+| emp        | total       | int       |
+| emp        | password    | varbinary |
+| emp        | zone        | enum      |
+| emp        | URL         | varchar   |
+| t1         | c1          | int       |
+| t1         | c2          | int       |
+| t1         | c3          | int       |
+| t2         | c1          | int       |
+| t2         | c2          | int       |
+| t2         | c3          | int       |
+| t3         | c1          | int       |
+| t3         | c2          | int       |
+| t4         | c1          | int       |
+| t4         | c2          | int       |
+| t5         | c1          | int       |
+| t5         | c2          | int       |
+| t6         | c1          | int       |
+| t6         | c2          | int       |
+| t7         | c1          | char      |
+| t7         | c2          | int       |
+| t8         | c1          | int       |
+| t8         | c2          | int       |
++------------+-------------+-----------+
+35 rows in set (0.00 sec)
+
+mysql> select TABLE_NAME,COLUMN_NAME,DATA_TYPE from columns where TABLE_SCHEMA='db2' and table_name='emp';
++------------+-------------+-----------+
+| TABLE_NAME | COLUMN_NAME | DATA_TYPE |
++------------+-------------+-----------+
+| emp        | id          | int       |
+| emp        | ename       | varchar   |
+| emp        | sal         | float     |
+| emp        | comm        | float     |
+| emp        | city        | varchar   |
+| emp        | total       | int       |
+| emp        | password    | varbinary |
+| emp        | zone        | enum      |
+| emp        | URL         | varchar   |
++------------+-------------+-----------+
+9 rows in set (0.00 sec)
+
+mysql> select COLUMN_NAME from columns where TABLE_SCHEMA='db2' and table_name='emp';
++-------------+
+| COLUMN_NAME |
++-------------+
+| id          |
+| ename       |
+| sal         |
+| comm        |
+| city        |
+| total       |
+| password    |
+| zone        |
+| URL         |
++-------------+
+9 rows in set (0.00 sec)
+
+mysql> desc table_constraints;
++--------------------+-------------+------+-----+---------+-------+
+| Field              | Type        | Null | Key | Default | Extra |
++--------------------+-------------+------+-----+---------+-------+
+| CONSTRAINT_CATALOG | varchar(64) | YES  |     | NULL    |       |
+| CONSTRAINT_SCHEMA  | varchar(64) | YES  |     | NULL    |       |
+| CONSTRAINT_NAME    | varchar(64) | YES  |     | NULL    |       |
+| TABLE_SCHEMA       | varchar(64) | YES  |     | NULL    |       |
+| TABLE_NAME         | varchar(64) | YES  |     | NULL    |       |
+| CONSTRAINT_TYPE    | varchar(11) | NO   |     |         |       |
+| ENFORCED           | varchar(3)  | NO   |     |         |       |
++--------------------+-------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> select TABLE_NAME, CONSTRAINT_NAME,  CONSTRAINT_TYPE from table_constraints where CONSTRAINT_SCHEMA='db2';
++------------+-----------------+-----------------+
+| TABLE_NAME | CONSTRAINT_NAME | CONSTRAINT_TYPE |
++------------+-----------------+-----------------+
+| a1         | PRIMARY         | PRIMARY KEY     |
+| emp        | PRIMARY         | PRIMARY KEY     |
+| t3         | PRIMARY         | PRIMARY KEY     |
+| t4         | c1              | UNIQUE          |
+| t5         | c1              | UNIQUE          |
+| t6         | c2              | UNIQUE          |
+| t6         | PRIMARY         | PRIMARY KEY     |
+| t8         | PRIMARY         | PRIMARY KEY     |
++------------+-----------------+-----------------+
+8 rows in set (0.00 sec)
+
+mysql> use db2;
+Database changed
+mysql> desc  t4;
++-------+------+------+-----+---------+----------------+
+| Field | Type | Null | Key | Default | Extra          |
++-------+------+------+-----+---------+----------------+
+| c1    | int  | NO   | PRI | NULL    | auto_increment |
+| c2    | int  | YES  |     | NULL    |                |
++-------+------+------+-----+---------+----------------+
+2 rows in set (0.00 sec)
+
+mysql> desc  t5;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| c1    | int  | NO   | PRI | NULL    |       |
+| c2    | int  | YES  |     | NULL    |       |
++-------+------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> desc  t6;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| c1    | int  | NO   | PRI | NULL    |       |
+| c2    | int  | NO   | UNI | NULL    |       |
++-------+------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> ALTER TABLE TABLE_NAME
+	
+		ADD NEW COLUMN after col_name /  first, 
+		MODIFY COLUMN DETAILS [DATATYPE OR SIZE]
+		CHANGE OLD_CNM NEW_CNM DATATYPE(SIZE)
+		DROP COLUMN COL_NAME
+		
+		
+		
+---------------------------------------------------
+
+
+mysql> use db2;
+Database changed
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> show tables;
++---------------+
+| Tables_in_db2 |
++---------------+
+| a             |
+| a1            |
+| b             |
+| emp           |
+| t1            |
+| t2            |
+| t3            |
+| t4            |
+| t5            |
+| t6            |
+| t7            |
+| t8            |
++---------------+
+12 rows in set (0.00 sec)
+
+mysql> DESC A1;
++-------+------------+------+-----+---------+-------+
+| Field | Type       | Null | Key | Default | Extra |
++-------+------------+------+-----+---------+-------+
+| id    | int        | NO   | PRI | NULL    |       |
+| ename | varchar(6) | YES  |     | NULL    |       |
++-------+------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM A1;
++----+--------+
+| id | ename  |
++----+--------+
+|  1 | saleel |
++----+--------+
+1 row in set (0.00 sec)
+
+mysql> ALTER TABLE A1 CHANGE ENAME FIRSTNAME VARCHAR(10);
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESC A1;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| id        | int         | NO   | PRI | NULL    |       |
+| FIRSTNAME | varchar(10) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> ALTER TBALE A1 DROP COLUMN FIRSTNAME;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'TBALE A1 DROP COLUMN FIRSTNAME' at line 1
+mysql> ALTER TABLE A1 DROP COLUMN FIRSTNAME;
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESC A1;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| id    | int  | NO   | PRI | NULL    |       |
++-------+------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> ALTER TABLE A1 ADD COLUMN ENAME VARCHAR(10);
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESC A1;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | NO   | PRI | NULL    |       |
+| ENAME | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> ALTER TABLE A1 ADD COLUMN c4 int;
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE A1 ADD COLUMN c3 int;
+Query OK, 0 rows affected (0.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc a1;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | NO   | PRI | NULL    |       |
+| ENAME | varchar(10) | YES  |     | NULL    |       |
+| c4    | int         | YES  |     | NULL    |       |
+| c3    | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> ALTER TABLE A1 ADD COLUMN c2 int after ename;
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc a1;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | NO   | PRI | NULL    |       |
+| ENAME | varchar(10) | YES  |     | NULL    |       |
+| c2    | int         | YES  |     | NULL    |       |
+| c4    | int         | YES  |     | NULL    |       |
+| c3    | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> ALTER TABLE A1 ADD COLUMN c0 int first;
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc a1;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| c0    | int         | YES  |     | NULL    |       |
+| id    | int         | NO   | PRI | NULL    |       |
+| ENAME | varchar(10) | YES  |     | NULL    |       |
+| c2    | int         | YES  |     | NULL    |       |
+| c4    | int         | YES  |     | NULL    |       |
+| c3    | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> deac a1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'deac a1' at line 1
+mysql> desc a1;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| c0    | int         | YES  |     | NULL    |       |
+| id    | int         | NO   | PRI | NULL    |       |
+| ENAME | varchar(10) | YES  |     | NULL    |       |
+| c2    | int         | YES  |     | NULL    |       |
+| c4    | int         | YES  |     | NULL    |       |
+| c3    | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> alter table a1 add c5 int, c6 int;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'c6 int' at line 1
+mysql> alter table a1 add c5 int, add c6 int;
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc a1;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| c0    | int         | YES  |     | NULL    |       |
+| id    | int         | NO   | PRI | NULL    |       |
+| ENAME | varchar(10) | YES  |     | NULL    |       |
+| c2    | int         | YES  |     | NULL    |       |
+| c4    | int         | YES  |     | NULL    |       |
+| c3    | int         | YES  |     | NULL    |       |
+| c5    | int         | YES  |     | NULL    |       |
+| c6    | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> alter table a1 add (c7 int, c8 int);
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc a1;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| c0    | int         | YES  |     | NULL    |       |
+| id    | int         | NO   | PRI | NULL    |       |
+| ENAME | varchar(10) | YES  |     | NULL    |       |
+| c2    | int         | YES  |     | NULL    |       |
+| c4    | int         | YES  |     | NULL    |       |
+| c3    | int         | YES  |     | NULL    |       |
+| c5    | int         | YES  |     | NULL    |       |
+| c6    | int         | YES  |     | NULL    |       |
+| c7    | int         | YES  |     | NULL    |       |
+| c8    | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+10 rows in set (0.00 sec)
+
+mysql> alter table a1 drop c8;
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc a1;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| c0    | int         | YES  |     | NULL    |       |
+| id    | int         | NO   | PRI | NULL    |       |
+| ENAME | varchar(10) | YES  |     | NULL    |       |
+| c2    | int         | YES  |     | NULL    |       |
+| c4    | int         | YES  |     | NULL    |       |
+| c3    | int         | YES  |     | NULL    |       |
+| c5    | int         | YES  |     | NULL    |       |
+| c6    | int         | YES  |     | NULL    |       |
+| c7    | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+mysql> alter table a1 drop (c5, c6, c7);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(c5, c6, c7)' at line 1
+mysql> alter table a1 drop c5, drop c6, drop c7, add loginname varchar(10);
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc a1;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| c0        | int         | YES  |     | NULL    |       |
+| id        | int         | NO   | PRI | NULL    |       |
+| ENAME     | varchar(10) | YES  |     | NULL    |       |
+| c2        | int         | YES  |     | NULL    |       |
+| c4        | int         | YES  |     | NULL    |       |
+| c3        | int         | YES  |     | NULL    |       |
+| loginname | varchar(10) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> desc a1;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| c0        | int         | YES  |     | NULL    |       |
+| id        | int         | NO   | PRI | NULL    |       |
+| ENAME     | varchar(10) | YES  |     | NULL    |       |
+| c2        | int         | YES  |     | NULL    |       |
+| c4        | int         | YES  |     | NULL    |       |
+| c3        | int         | YES  |     | NULL    |       |
+| loginname | varchar(10) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> alter table a1 drop id, add _ID int, change ename firstName varchar(10), modify loginname char(40);
+Query OK, 1 row affected (0.11 sec)
+Records: 1  Duplicates: 0  Warnings: 0
+
+mysql> desc a1;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| c0        | int         | YES  |     | NULL    |       |
+| firstName | varchar(10) | YES  |     | NULL    |       |
+| c2        | int         | YES  |     | NULL    |       |
+| c4        | int         | YES  |     | NULL    |       |
+| c3        | int         | YES  |     | NULL    |       |
+| loginname | char(40)    | YES  |     | NULL    |       |
+| _ID       | int         | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> alter table a1 modify _ID int first;
+Query OK, 0 rows affected (0.23 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc a1;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| _ID       | int         | YES  |     | NULL    |       |
+| c0        | int         | YES  |     | NULL    |       |
+| firstName | varchar(10) | YES  |     | NULL    |       |
+| c2        | int         | YES  |     | NULL    |       |
+| c4        | int         | YES  |     | NULL    |       |
+| c3        | int         | YES  |     | NULL    |       |
+| loginname | char(40)    | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> create table a2(id int, phone int, emailid varchar(10));
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> alter table a2 add constraint pk_id primary key(id);
+Query OK, 0 rows affected (0.13 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc a2;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| id      | int         | NO   | PRI | NULL    |       |
+| phone   | int         | YES  |     | NULL    |       |
+| emailid | varchar(10) | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> alter table a2 add unique key(phone);
+Query OK, 0 rows affected (0.08 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table a2 add constraint uni_emailID unique key(emailid);
+Query OK, 0 rows affected (0.05 sec)                                                                           Records: 0  Duplicates: 0  Warnings: 0                                                                                                                                                                                        mysql> desc a2;                                                                                                +---------+-------------+------+-----+---------+-------+                                                       | Field   | Type        | Null | Key | Default | Extra |                                                       +---------+-------------+------+-----+---------+-------+                                                       | id      | int         | NO   | PRI | NULL    |       |                                                       | phone   | int         | YES  | UNI | NULL    |       |                                                       | emailid | varchar(10) | YES  | UNI | NULL    |       |                                                       +---------+-------------+------+-----+---------+-------+                                                       3 rows in set (0.00 sec)                                                                                                                                                                                                      mysql> select TABLE_NAME, CONSTRAINT_NAME,  CONSTRAINT_TYPE from table_constraints where CONSTRAINT_SCHEMA='db2';
+ERROR 1146 (42S02): Table 'db2.table_constraints' doesn't exist
+mysql>
+mysql> select TABLE_NAME, CONSTRAINT_NAME,  CONSTRAINT_TYPE from information_schema.table_constraints where CONSTRAINT_SCHEMA='db2';
++------------+-----------------+-----------------+
+| TABLE_NAME | CONSTRAINT_NAME | CONSTRAINT_TYPE |
++------------+-----------------+-----------------+
+| a2         | phone           | UNIQUE          |
+| a2         | PRIMARY         | PRIMARY KEY     |
+| a2         | uni_emailID     | UNIQUE          |
+| emp        | PRIMARY         | PRIMARY KEY     |
+| t3         | PRIMARY         | PRIMARY KEY     |
+| t4         | c1              | UNIQUE          |
+| t5         | c1              | UNIQUE          |
+| t6         | c2              | UNIQUE          |
+| t6         | PRIMARY         | PRIMARY KEY     |
+| t8         | PRIMARY         | PRIMARY KEY     |
++------------+-----------------+-----------------+
+10 rows in set (0.00 sec)
+
+mysql> select TABLE_NAME, CONSTRAINT_NAME,  CONSTRAINT_TYPE from information_schema.table_constraints where CONSTRAINT_SCHEMA='db2' and table_name='a2';
++------------+-----------------+-----------------+
+| TABLE_NAME | CONSTRAINT_NAME | CONSTRAINT_TYPE |
++------------+-----------------+-----------------+
+| a2         | phone           | UNIQUE          |
+| a2         | PRIMARY         | PRIMARY KEY     |
+| a2         | uni_emailID     | UNIQUE          |
++------------+-----------------+-----------------+
+3 rows in set (0.00 sec)
+
+mysql> desc a2;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| id      | int         | NO   | PRI | NULL    |       |
+| phone   | int         | YES  | UNI | NULL    |       |
+| emailid | varchar(10) | YES  | UNI | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> alter table a2 drop index  phone;
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc a2;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| id      | int         | NO   | PRI | NULL    |       |
+| phone   | int         | YES  |     | NULL    |       |
+| emailid | varchar(10) | YES  | UNI | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> alter table a2 drop index  emailid;
+ERROR 1091 (42000): Can't DROP 'emailid'; check that column/key exists
+mysql>
+mysql>
+mysql> alter table a2 drop index uni_emailID;
+Query OK, 0 rows affected (0.06 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc a1;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| _ID       | int         | YES  |     | NULL    |       |
+| c0        | int         | YES  |     | NULL    |       |
+| firstName | varchar(10) | YES  |     | NULL    |       |
+| c2        | int         | YES  |     | NULL    |       |
+| c4        | int         | YES  |     | NULL    |       |
+| c3        | int         | YES  |     | NULL    |       |
+| loginname | char(40)    | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+7 rows in set (0.00 sec)
+
+mysql> desc a2;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| id      | int         | NO   | PRI | NULL    |       |
+| phone   | int         | YES  |     | NULL    |       |
+| emailid | varchar(10) | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> alter table a2 add constraint abc unique key(phone);
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> alter table a2 add constraint abc unique key(emailid);
+ERROR 1061 (42000): Duplicate key name 'abc'
+mysql> create table a3 (emailid varchar(10));
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> alter table a3 add constraint abc unique key(emailid);
+Query OK, 0 rows affected (0.08 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql>
+mysql>
+mysql>
+mysql> create table a4 (c1 int, c2 int);
+Query OK, 0 rows affected (0.10 sec)
+
+mysql> alter table a4 add constraint pk_c1_c2 primary key(c1,c2);
+Query OK, 0 rows affected (0.20 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc a4;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| c1    | int  | NO   | PRI | NULL    |       |
+| c2    | int  | NO   | PRI | NULL    |       |
++-------+------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> select TABLE_NAME, CONSTRAINT_NAME,  CONSTRAINT_TYPE from information_schema.table_constraints where CONSTRAINT_SCHEMA='db2' and table_name='a4';
++------------+-----------------+-----------------+
+| TABLE_NAME | CONSTRAINT_NAME | CONSTRAINT_TYPE |
++------------+-----------------+-----------------+
+| a4         | PRIMARY         | PRIMARY KEY     |
++------------+-----------------+-----------------+
+1 row in set (0.00 sec)
+
+mysql> desc a4;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| c1    | int  | NO   | PRI | NULL    |       |
+| c2    | int  | NO   | PRI | NULL    |       |
++-------+------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> alter table a4 drop primary key;
+Query OK, 0 rows affected (0.12 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc a4;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| c1    | int  | NO   |     | NULL    |       |
+| c2    | int  | NO   |     | NULL    |       |
++-------+------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> select TABLE_NAME, CONSTRAINT_NAME,  CONSTRAINT_TYPE from information_schema.table_constraints where CONSTRAINT_SCHEMA='db2' and table_name='a4';
+Empty set (0.00 sec)
+
+mysql> alter table a4 add constraint pk_c1_c2 primary key(c1,c2);
+Query OK, 0 rows affected (0.12 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc a4;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| c1    | int  | NO   | PRI | NULL    |       |
+| c2    | int  | NO   | PRI | NULL    |       |
++-------+------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> alter table a4 drop c2;
+Query OK, 0 rows affected (0.13 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select TABLE_NAME, CONSTRAINT_NAME,  CONSTRAINT_TYPE from information_schema.table_constraints where CONSTRAINT_SCHEMA='db2' and table_name='a4';
++------------+-----------------+-----------------+
+| TABLE_NAME | CONSTRAINT_NAME | CONSTRAINT_TYPE |
++------------+-----------------+-----------------+
+| a4         | PRIMARY         | PRIMARY KEY     |
++------------+-----------------+-----------------+
+1 row in set (0.00 sec)
+
+mysql> desc a4;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| c1    | int  | NO   | PRI | NULL    |       |
++-------+------+------+-----+---------+-------+
+1 row in set (0.00 sec)
+
+mysql> show tables;
++---------------+
+| Tables_in_db2 |
++---------------+
+| a             |
+| a1            |
+| a2            |
+| a3            |
+| a4            |
+| b             |
+| emp           |
+| t1            |
+| t2            |
+| t3            |
+| t4            |
+| t5            |
+| t6            |
+| t7            |
+| t8            |
++---------------+
+15 rows in set (0.00 sec)
+
+mysql> drop database db2;
+Query OK, 15 rows affected (1.03 sec)
+
+mysql> create database db2;
+Query OK, 1 row affected (0.10 sec)
+
+mysql> use db2;
+Database changed
+mysql> show tables;
+Empty set (0.00 sec)
+
+mysql> create table t1(id int, ename varchar(10), sal int check( sal> 5000));
+Query OK, 0 rows affected (0.49 sec)
+
+mysql> desc t1;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | NULL    |       |
+| ename | varchar(10) | YES  |     | NULL    |       |
+| sal   | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> insert into t1 values(1,'a', 1000);
+ERROR 3819 (HY000): Check constraint 't1_chk_1' is violated.
+mysql> select TABLE_NAME, CONSTRAINT_NAME,  CONSTRAINT_TYPE from information_schema.table_constraints where CONSTRAINT_SCHEMA='db2';
++------------+-----------------+-----------------+
+| TABLE_NAME | CONSTRAINT_NAME | CONSTRAINT_TYPE |
++------------+-----------------+-----------------+
+| t1         | t1_chk_1        | CHECK           |
++------------+-----------------+-----------------+
+1 row in set (0.00 sec)
+
+mysql> insert into t1 values(1,'a', 6000);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select * from t1;
++------+-------+------+
+| id   | ename | sal  |
++------+-------+------+
+|    1 | a     | 6000 |
++------+-------+------+
+1 row in set (0.00 sec)
+
+mysql> create table t2(c1 int, c2 int, c3 int check ((c1+c2) > 50000));
+ERROR 3813 (HY000): Column check constraint 't2_chk_1' references other column.
+mysql> create table t2(c1 int, c2 int, c3 int check (c1+c2 > 5000));
+ERROR 3813 (HY000): Column check constraint 't2_chk_1' references other column.
+mysql> create table t2(c3 int check ((c1+c2) > 5000), c1 int , c2 int);
+ERROR 3813 (HY000): Column check constraint 't2_chk_1' references other column.
+mysql> create table t2(c1 int, c2 int, c3 int);
+Query OK, 0 rows affected (0.10 sec)
+
+mysql> drop table t2;
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> create table t2(c1 int , c2 int, c3 int check(c3 > (c1+c2));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> create table t2(c1 int , c2 int, c3 int check(c3 > c1+c2);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql>
+mysql> create table t2(c1 int, c2 int, c3 int check(c3 > 5000);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> create table t2(c1 int , c2 int, c3 int check(c3 > c1+c2));
+ERROR 3813 (HY000): Column check constraint 't2_chk_1' references other column.
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> create table t2(c1 int , c2 int, c3 int check(c3 > (c1+c2)));
+ERROR 3813 (HY000): Column check constraint 't2_chk_1' references other column.
+mysql>
+mysql>
+mysql>
+mysql> drop table t2;
+ERROR 1051 (42S02): Unknown table 'db2.t2'
+mysql>
+mysql> drop table t1;
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> create table t2(c1 int , c2 int, c3 int check(c3 > (c1+c2) ) );
+ERROR 3813 (HY000): Column check constraint 't2_chk_1' references other column.
+mysql>
+mysql>
+mysql>
+mysql>
+mysql> create table t2(c1 int , c2 int, c3 int check((c1+c2) > 5000 ) );
+ERROR 3813 (HY000): Column check constraint 't2_chk_1' references other column.
+mysql>
+mysql> create table t2(c1 int , c2 int, c3 int,  check(c3 > (c1+c2) ) );
+Query OK, 0 rows affected (0.10 sec)
+
+mysql>
+
+		
+
+

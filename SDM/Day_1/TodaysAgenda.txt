@@ -1,0 +1,244 @@
+
+SDLC:
+	Software Development Life Cycle
+
+	Trainer : Ravi Tambade
+	Company: Transflower Learning Pvt. Ltd.
+
+____________________________________________________________________________________
+
+Programming: What did you learn till now ?
+
+
+	    Writing logic in the form set instructions (program)
+				conditional statements
+				Looping statements
+				variable declarations
+				Object constructions
+	    Writing set of programs using abstraction as Class
+				constructors, getters and setters, abstract methods, Finalizers
+	    Writing set of classes, interfaces  using packages
+	    Writing set of packages  using Object Model (JDBC)
+
+
+	     User Interface Programming ( Front End Programming)
+				 Client side  UI Programming
+		  	         Server Side  UI Programming (Web Programming)
+				 Server Side Core Programming
+						JSP
+						Servlet
+						Spring MVC
+						Spring Boot
+						Introduction to Micro Services
+
+	     Database Programming ( Back end)
+				 SQL DB Programming ( Oracle, MySQL)
+					DDL, DML, DCL
+					TCL (Transaction)
+					joins
+					functions
+					Cursor
+					stored Procedures
+					triggers
+
+				No SQL Programming ( Mongo DB)
+					JSON
+					CRUD Operations
+
+
+
+What about  following things ?
+	
+	Build:
+		Build Process
+	Testing:
+	Deployment:
+	Maintainance:
+
+___________________________________________________________________________________________________
+
+ Are you goine to be Software Enggineer ?
+
+
+
+Software Enggineering:
+
+Let us understand first Software:
+
+	Software:
+		payrole system for HR department
+		ERP ( Enterprise Resource Planning)
+		Library management System
+		
+		 Software Enggineering:
+		 Process
+		 Methodology
+		 Tools
+		 CD/CI ( Continous Development/ Continous Integration) ( Pipeline) 
+		 Managing Code base
+		 Software Testing  ( Mannual Testing)
+				   ( Automation Testing)
+		
+	Different Role played by Software Engineer:
+		
+		Team member for Release Team
+		Data Analyst
+		Database Administrator (DBA)
+		Data Engg.
+		DevOps Engg.
+		QA Team member
+		Mannual Tester
+		Automation Tester
+		Front End Application Developer
+		Web Application Developer
+		Mobile Application Developer
+		REST API Developer
+		Cloud Engg.
+			AWS Cloud Developer
+			GCP Cloud Developer
+			Azure Cloud Develper
+
+__________________________________________________________________________________________________________________________
+Module SDM: Software  Development Methdologies
+
+	 IT Job
+
+	 SDLC : Software Development Life Cycle
+	 STLC : Software Testing Life Cycle
+
+	 Project:
+		 Resource:
+			  Project Team
+			  Roles
+			  Responsibilities
+		 tools:
+		 libraries:
+		 Framework:
+		 Build tools
+		 Project Tracking , Management ( jira as tool)
+		 Agile Methodology
+		 Sprint, Scrum, 
+		 Project management portal
+
+	 Delivarables:
+			program
+			Application
+			Service
+			Cloud Application
+
+	 Production Ready Application:Deployment ( N tier Architecture Micro Services Arhitecture)
+	 Cloud Deployment:Public Cloud, Private Cloud, Hybrid Cloud, AWS, Virtualization, Containrization
+	 Micro Services: Container, Docker, Kubernetes ( Container orchestration)
+	 DevOps:Jenkins, Anisble Github Actions
+	 Software Testing :  Junit, NUnit, Selenium tool
+			     Automation Testing
+___________________________________________________________________________________________________________
+
+
+	Todays Agenda:
+
+		1. you (Software Enggineer)
+		2. Software, Architecture, Framework, Object Model, reusable real world entities, Objects,
+											       Blue prints
+											       Abstraction
+											       Classes
+		3. Prcoess
+		4: Engineering
+
+
+
+
+
+
+	Software Enggineer:
+	
+	Role of Software engineer:
+
+				a. Developeing Software ( Building software)
+				b. Maintaining Software
+				c. Deploying Software--------------- to Eniviornment----Testing Env.
+											Production env.
+
+
+
+	Examples of Software:
+			1.Zoom  Software ( Application Software)
+			Server product 
+						 
+				Thick Servers
+				( online servies)
+				( for zoom meetings, etc.)
+			Client product ( product help to connect online services)
+
+			2.Chrome Browser ( Thin client Software)
+					Cross platform Browser
+					Platform independent Browser
+					platform neutral Browser
+					Accessing remote website
+						  Send HTTP request to remote web site
+						  Recive HTTP response from remote web site
+						  Render the response in the form Presentation
+
+							Thick and Thin:
+							Depends on functionality being executed
+
+
+			Thick Client Software
+				word , power point , Excel--------
+					save file,
+					create documents
+				        format existing documents
+					Search contents in document
+							
+________________________________________________________________________________________________________________________
+					
+ Where is the location of software  deployed ?
+		Client Software Single User Softare
+
+		 (Stand alone Application) 
+			(Monolithic Application) ( complete functionality in one process)
+			(Desktopp Application)
+			Browser----------chrome.exe (Exeuctable file for windows) (Thin client)
+			word-------------winword.exe (Exeuctable file for windows) (Thick Client)
+
+			excel, mspaint, postman ------Windows Application (GUI )
+						 ( UI Logic, Core Business Logic, Data Access Logic)
+			postman ------Windows Application (GUI )
+					(.exe and set of dll files)
+		
+				
+		Server Software	
+				( Multi User Software)
+				( or Multile server (Cluster))
+						(Contiously running)
+						1.Keep listening on port no for client requests
+						{
+						2.receive request
+						3.maintain session for each connected User
+							tarck session, manage session
+						4.Dispatching (routing) incomming request to handler
+						
+						5.process request
+						6.Fetch data from external data source
+						7.Apply core business Logic
+						8.format response
+						9.Send response
+						}
+		
+		
+		Examples of Server Softwares:
+			Oracle DB Software
+			Tomcat 
+			Glassfish
+			SQL server
+			Xamp server
+			Mongo DB server
+	
+									
+								
+	 Catia Design Software
+			   
+
+					
+
+

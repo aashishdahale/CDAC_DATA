@@ -1,0 +1,11 @@
+
+public class TestPersonArray {
+
+	public static void main(String[] args) {
+	
+		Person[] ob=new Person[10];
+		PersonService.acceptPesrsondata(ob);
+		PersonService.displayPersondata(ob);
+	}
+
+}
