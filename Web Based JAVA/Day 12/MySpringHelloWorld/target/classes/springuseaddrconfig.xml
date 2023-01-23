@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+	xmlns:context="http://www.springframework.org/schema/context">
+	<bean id="u1" class="com.demo.beans.User" autowire="byName">
+	  <property name="uid" value="10"></property>
+	  <property name="fname" value="Aswini"></property>
+	  <property name="lname" value="Phatak"></property>
+	<!-- <property name="addr" ref="a1"></property> -->
+	<!-- <property name="addr" >
+	  <bean class="com.demo.beans.Address">
+		<property name="street" value="Aundh"></property>
+		<property name="city" value="Pune"></property>
+	  </bean>
+	</property> -->
+	</bean>
+	
+	
+	<bean id="addr" class="com.demo.beans.Address">
+		<property name="street" value="Baner111"></property>
+		<property name="city" value="Pune"></property>
+	</bean>
+	
+	<bean id="a1" class="com.demo.beans.Address">
+		<property name="street" value="Aundh"></property>
+		<property name="city" value="Pune"></property>
+	</bean>
+	<bean id="a2" class="com.demo.beans.Address">
+		<property name="street" value="Kothrud"></property>
+		<property name="city" value="Pune"></property>
+	</bean>
+	
+	
+</beans>

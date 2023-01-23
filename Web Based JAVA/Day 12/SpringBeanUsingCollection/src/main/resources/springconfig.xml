@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+	xmlns:context="http://www.springframework.org/schema/context">
+	
+<bean id="placeholderconfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+   <property name="location" value="data.properties"></property>
+</bean>
+<bean id="st1" class="com.demo.beans.Student">
+  <property name="id" value="${stud.id}"></property>
+  <property name="name" value="${stud.name}"></property>
+  <property name="courses">
+  <list>
+     <value>${stud.c1}</value>
+     <value>${stud.c2}</value>
+     <value>${stud.c3}</value>
+     
+  </list>
+  
+ </property>
+</bean>
+<bean id="u1" class="com.demo.beans.User">
+<property name="uid" value="10"></property>
+<property name="uname" value="Revati"></property>
+<property name="addrlist">
+<list>
+      <ref bean="a1"></ref>
+      <ref bean="a2"></ref>
+      <ref bean="a3"></ref>
+</list>
+</property>
+</bean>
+
+<bean id="a1" class="com.demo.beans.Address">
+<property name="aid" value="11"></property>
+<property name="street" value="Baner"></property>
+<property name="city" value="Pune"></property>
+
+</bean>
+
+<bean id="a2" class="com.demo.beans.Address">
+<property name="aid" value="12"></property>
+<property name="street" value="Kothrud"></property>
+<property name="city" value="Pune"></property>
+
+</bean>
+<bean id="a3" class="com.demo.beans.Address">
+<property name="aid" value="13"></property>
+<property name="street" value="Shivaji nagar"></property>
+<property name="city" value="Pune"></property>
+
+</bean>
+
+	
+</beans>
